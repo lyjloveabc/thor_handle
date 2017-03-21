@@ -43,7 +43,7 @@ class JjyWater_1702(object):
 
             enter_num = self.get_enter_num(house_info_group[house_info_id])
             if enter_num is None:
-                # print('delete from subscription_enter where house_info_id = ' + house_info_id + ' and period_id = 65;')
+                print('delete from subscription_enter where house_info_id = ' + house_info_id + ' and period_id = 67;')
                 # print('delete from subscription_enter where id = ' + record_id + ';')
                 # print(count)
                 count += 1
@@ -56,7 +56,7 @@ class JjyWater_1702(object):
 
                 sql = 'update subscription_enter set detail = \'{new_detail}\', status = \'ENTER\' where id = {sub_enter_id};'.format(new_detail=new_detail,
                                                                                                                                       sub_enter_id=record_id)
-                print(sql)
+                # print(sql)
 
     @staticmethod
     def remove_pre_zero(param):
