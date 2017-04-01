@@ -3,7 +3,7 @@
 """
 
 
-class OldUserAssociationNewUser(object):
+class OldUserToNewUser(object):
     __BASE_PATH = 'file/'
 
     def __init__(self):
@@ -13,7 +13,7 @@ class OldUserAssociationNewUser(object):
 
     def handle(self):
         old = dict()
-        with open(OldUserAssociationNewUser.__BASE_PATH + 'admin_employee.txt', 'r') as f:
+        with open(OldUserToNewUser.__BASE_PATH + 'admin_employee.txt', 'r') as f:
             for line in f.readlines():
                 temp = line[:-1].split(',')
                 mobile = temp[0]
@@ -31,7 +31,7 @@ class OldUserAssociationNewUser(object):
                 }
 
         print('BEGIN;')
-        with open(OldUserAssociationNewUser.__BASE_PATH + 'user.txt', 'r') as f:
+        with open(OldUserToNewUser.__BASE_PATH + 'user.txt', 'r') as f:
             for line in f.readlines():
                 temp = line[:-1].split(',')
                 id = temp[0]
@@ -43,7 +43,7 @@ class OldUserAssociationNewUser(object):
 
 
 if __name__ == '__main__':
-    handle = OldUserAssociationNewUser()
+    handle = OldUserToNewUser()
     handle.handle()
 
     # select
