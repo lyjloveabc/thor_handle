@@ -25,9 +25,6 @@ class OldUserToNewUser(object):
                 old_user = old_user_group[key]
                 sex = 'M' if old_user['sex'] == '1' else 'F'
                 category_name = '未知' if old_user['type'] == '0' else category_group[old_user['type']]
-                # if '刘士欣' in old_user['name']:
-                #     print(old_user['name'])
-                #     print(str(old_user['name']).replace('"', ''))
                 sql = self.base_sql.format(account=key, password=old_user['password'], name=str(old_user['name']).replace('"', ''),
                                            identity_card=str(old_user['Idcard']).replace('"', ''), nickname=str(old_user['name']).replace('"', ''), sex=sex, mobile=key,
                                            avatar_url=old_user['avtar'], address=old_user['address'], email='',
@@ -112,7 +109,7 @@ class OldUserToNewUser(object):
                     'id': temp[0],
                     'title': temp[1]
                 }
-                category_group[category['id']] = category
+                category_group[category['id']] = category['title']
         return category_group
 
 
