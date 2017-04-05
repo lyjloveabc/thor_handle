@@ -15,7 +15,7 @@ class AvatarMapper(object):
 
     def handle(self):
         old = dict()
-        with open(AvatarMapper.__BASE_PATH + 'admin_employee.txt', 'r') as f:
+        with open(AvatarMapper.__BASE_PATH + 'admin_employee_avatar.txt', 'r') as f:
             for line in f.readlines():
                 temp = line[:-1].split(',')
                 old[temp[0]] = temp[1]
