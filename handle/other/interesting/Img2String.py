@@ -18,7 +18,7 @@ if __name__ == '__main__':
     WIDTH = 120
     HEIGHT = 80
     OUTPUT = None
-    im = Image.open('file/5D9C8DEE6B47E037277C43CC6C48F468.jpg')
+    im = Image.open('file/D8AC474EB4B49404FF0AC250FAC75088.jpg')
     im = im.resize((WIDTH, HEIGHT), Image.NEAREST)
 
     txt = ""
