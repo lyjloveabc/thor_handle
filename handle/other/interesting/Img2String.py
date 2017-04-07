@@ -15,9 +15,9 @@ def get_char(r, g, b, alpha=256):
 
 
 if __name__ == '__main__':
-    WIDTH = 60
-    HEIGHT = 40
-    im = Image.open('file/9CC70EDC-0EB9-4049-8F18-D607CB0527C0.png')
+    WIDTH = 120
+    HEIGHT = 80
+    im = Image.open('file/2B973C0B-09C7-4C1F-84B2-CFF83C2B9F52.png')
     im = im.resize((WIDTH, HEIGHT), Image.NEAREST)
 
     txt = ""
