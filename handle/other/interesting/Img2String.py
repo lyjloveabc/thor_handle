@@ -15,10 +15,9 @@ def get_char(r, g, b, alpha=256):
 
 
 if __name__ == '__main__':
-    WIDTH = 120
-    HEIGHT = 80
-    OUTPUT = None
-    im = Image.open('file/D8AC474EB4B49404FF0AC250FAC75088.jpg')
+    WIDTH = 60
+    HEIGHT = 40
+    im = Image.open('file/WechatIMG3.jpeg')
     im = im.resize((WIDTH, HEIGHT), Image.NEAREST)
 
     txt = ""
