@@ -35,12 +35,11 @@ class OldUserToNewUser(object):
             keys = old_user_group.keys()
             for key in keys:
                 if key not in already_exist_mobile:
-                    key_format = key.replace('"', '').replace(' ', '')
                     old_user = old_user_group[key]
                     sex = 'M' if old_user['sex'] == '1' else 'F'
-                    sql = self.base_sql.format(account=key_format, password=old_user['password'], name=str(old_user['name']).replace('"', ''),
+                    sql = self.base_sql.format(account=key, password=old_user['password'], name=str(old_user['name']).replace('"', ''),
                                                identity_card=str(old_user['Idcard']).replace('"', ''), nickname=str(old_user['name']).replace('"', ''), sex=sex,
-                                               mobile=key_format,
+                                               mobile=key,
                                                avatar_url=old_user['avtar'], address=old_user['address'], email='',
                                                emergency_contact=old_user['emergency_name'], emergency_mobile=old_user['emergency_mobile'],
                                                last_login_time='1970-01-01 00:00:01', last_login_ip='',
