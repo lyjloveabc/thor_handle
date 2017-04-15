@@ -11,7 +11,7 @@ class ZoneCategory(object):
 
     @staticmethod
     def handle():
-        zone_ids = ["1", "2", "5"] + [str(x) for x in range(9, 22)]
+        zone_ids = ["1", "2", "5"] + [str(x) for x in range(9, 23)]
         print('BEGIN;')
         for zId in zone_ids:
             sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 1, '绿化');"

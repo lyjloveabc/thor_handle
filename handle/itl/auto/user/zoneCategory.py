@@ -42,3 +42,6 @@ if __name__ == '__main__':
     handle = ZoneCategory()
     handle.handle()
 
+
+# select id, category_id, zone_id from user
+# select id, zone_id, category_pool_id from itl_zone_category

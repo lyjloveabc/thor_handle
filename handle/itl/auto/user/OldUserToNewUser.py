@@ -13,26 +13,39 @@ class OldUserToNewUser(object):
                         'values (now(), now(), "{account}", "{password}", "{name}", "{identity_card}", "{nickname}", "{sex}", "{mobile}", "{avatar_url}", ' \
                         '"{address}", "{email}", "{emergency_contact}", "{emergency_mobile}", "{last_login_time}", "{last_login_ip}", "{category_id}", ' \
                         '"{category_name}", "{company_id}", {zone_id}, "{zone_ids}", "{is_on_job}", "{departure_time}", "{job_title_id}", "{job_title_name}");'
+        self.zone_category_group = dict()
+
+        with open(OldUserToNewUser.__BASE_PATH + 'itl_zone_category.txt', 'r') as f:
+            for line in f.readlines():
+                line_split = line[:-1].split(',')
+                zone_category = {
+                    'id': line_split[0],
+                    'zone_id': line_split[1],
+                    'category_pool_id': line_split[2]
+                }
+                self.zone_category_group[zone_category['zone_id'] + ',' + zone_category['category_pool_id']] = zone_category['id']
 
     def handle(self):
         old_user_group = OldUserToNewUser.get_old_user_group()
         category_group = OldUserToNewUser.get_category_group()
         already_exist_mobile = OldUserToNewUser.get_already_exist_mobile()
 
-        with open(OldUserToNewUser.__BASE_PATH + 'out.sql', 'w') as f:
+        with open(OldUserToNewUser.__BASE_PATH + 'out2222.sql', 'w') as f:
             f.write('BEGIN;\n')
             keys = old_user_group.keys()
             for key in keys:
                 if key not in already_exist_mobile:
+                    key_format = key.replace('"', '').replace(' ', '')
                     old_user = old_user_group[key]
                     sex = 'M' if old_user['sex'] == '1' else 'F'
-                    category_name = '未知' if old_user['type'] == '0' else category_group[old_user['type']]
-                    sql = self.base_sql.format(account=key, password=old_user['password'], name=str(old_user['name']).replace('"', ''),
+                    sql = self.base_sql.format(account=key_format, password=old_user['password'], name=str(old_user['name']).replace('"', ''),
                                                identity_card=str(old_user['Idcard']).replace('"', ''), nickname=str(old_user['name']).replace('"', ''), sex=sex,
-                                               mobile=key,
+                                               mobile=key_format,
                                                avatar_url=old_user['avtar'], address=old_user['address'], email='',
                                                emergency_contact=old_user['emergency_name'], emergency_mobile=old_user['emergency_mobile'],
-                                               last_login_time='1970-01-01 00:00:01', last_login_ip='', category_id=old_user['type'], category_name=category_name,
+                                               last_login_time='1970-01-01 00:00:01', last_login_ip='',
+                                               category_id=self.get_zone_category_id(old_user['zone_id'], old_user['type']),
+                                               category_name=category_group[old_user['type']],
                                                company_id=old_user['cid'],
                                                zone_id=old_user['zone_id'], zone_ids=old_user['zone_id'], is_on_job='1', departure_time='1970-01-01 00:00:01',
                                                job_title_id='0',
@@ -114,6 +127,9 @@ class OldUserToNewUser(object):
                 }
                 category_group[category['id']] = category['title']
         return category_group
+
+    def get_zone_category_id(self, zone_id, cat_id):
+        return self.zone_category_group[zone_id + ',' + cat_id]
 
     @staticmethod
     def get_already_exist_mobile():
