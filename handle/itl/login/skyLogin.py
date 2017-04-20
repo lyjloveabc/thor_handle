@@ -4,6 +4,8 @@
 import requests
 import json
 
+from utils.excelReadUtil import ExcelReadUtil
+
 
 class SkyLogin:
     __BASE_PATH = 'file/'
@@ -20,13 +22,14 @@ class SkyLogin:
 
     @staticmethod
     def get_account_pwd_group():
-        account_pwd_group = list()
-
-        account_pwd = {
-            'account': '18768111223',
-            'pwd': '123456'
+        field_index_dict = {
+            'account': 2,
+            'pwd': 5
         }
-        account_pwd_group.append(account_pwd)
+        account_pwd_group = ExcelReadUtil.read_file(SkyLogin.__BASE_PATH + '天眼账号列表.xlsx', field_index_dict)
+        for item in account_pwd_group:
+            item['account'] = int(item['account'])
+
         return account_pwd_group
 
     def is_ok(self, account_pwd):
