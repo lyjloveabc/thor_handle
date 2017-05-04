@@ -1,0 +1,5 @@
+select admin_employee.name, admin_employee.mobile from admin_employee
+left join admin_user on admin_user.mobile = admin_employee.mobile
+where admin_employee.`password` != admin_user.`password`;
+
+
