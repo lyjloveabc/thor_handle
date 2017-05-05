@@ -1,9 +1,9 @@
 """
-小区分类数据
+小区分类池
 """
 
 
-class ZoneCategory(object):
+class CategoryPool(object):
     __BASE_PATH = 'file/'
 
     def __init__(self):
@@ -39,5 +39,5 @@ class ZoneCategory(object):
 if __name__ == '__main__':
     data = ["1", "2", "5"] + [str(x) for x in range(9, 24)]
 
-    handle = ZoneCategory()
+    handle = CategoryPool()
     handle.handle(data)
