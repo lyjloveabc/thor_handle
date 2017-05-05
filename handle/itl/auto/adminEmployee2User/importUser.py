@@ -1,6 +1,7 @@
 """
 全部admin_employee导入到user
 就是初始化
+用过一次就不用了
 """
 
 
@@ -133,5 +134,6 @@ class ImportUser(object):
 
 
 if __name__ == '__main__':
-    handle = ImportUser()
-    handle.handle()
+    # handle = ImportUser()
+    # handle.handle()
+    pass
