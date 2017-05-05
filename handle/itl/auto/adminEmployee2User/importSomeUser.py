@@ -1,13 +1,12 @@
 """
 根据admin_employee数据，导入user数据
-可以读取文件
-也可以是几个账号
 """
+import os
 
 
 class ImportSomeUser:
-    __BASE_PATH = 'file/'
-    __DAY = '_20170504'
+    DAY = '_20170504'
+    BASE_PATH = 'file/' + DAY + '/'
 
     def __init__(self):
         self.base_sql = 'insert into user' \
@@ -23,12 +22,15 @@ class ImportSomeUser:
                         '"{category_name}", "{company_id}", {zone_id}, "{zone_ids}", "{is_on_job}", "{departure_time}",' \
                         '"{job_title_id}", "{job_title_name}", "{old_user_id}");'
 
+        if not os.path.exists(ImportSomeUser.BASE_PATH):
+            os.mkdir(ImportSomeUser.BASE_PATH)
+
     def handle(self):
         mobile_group = set()
         admin_employee_group = ImportSomeUser.get_admin_employee_group()
         zone_category_group = ImportSomeUser.get_zone_category_group()
 
-        with open(ImportSomeUser.__BASE_PATH + 'ImportSomeUser_out' + ImportSomeUser.__DAY + '.sql', 'w') as f:
+        with open(ImportSomeUser.BASE_PATH + 'ImportSomeUser_out' + ImportSomeUser.DAY + '.sql', 'w') as f:
             f.write('BEGIN;\n')
 
             admin_employee_group_keys = admin_employee_group.keys()
@@ -62,12 +64,9 @@ class ImportSomeUser:
 
     @staticmethod
     def get_admin_employee_group():
-        """
-        select admin_employee.*, job_post.`name` from admin_employee left join job_post on job_post.id = admin_employee.job_post_id;
-        """
         old_user_group = dict()
 
-        with open(ImportSomeUser.__BASE_PATH + 'admin_employee' + ImportSomeUser.__DAY + '.txt', 'r') as f:
+        with open(ImportSomeUser.BASE_PATH + 'admin_employee_some' + ImportSomeUser.DAY + '.txt', 'r') as f:
             for line in f.readlines():
                 temp = line[:-1].split(';')
                 old_user = {'id': temp[0],
@@ -118,7 +117,7 @@ class ImportSomeUser:
         """
         zone_category_group = dict()
 
-        with open(ImportSomeUser.__BASE_PATH + 'itl_zone_category' + ImportSomeUser.__DAY + '.txt', 'r') as f:
+        with open(ImportSomeUser.BASE_PATH + 'itl_zone_category' + ImportSomeUser.DAY + '.txt', 'r') as f:
             for line in f.readlines():
                 line_split = line[:-1].split(';')
                 zone_category = {
