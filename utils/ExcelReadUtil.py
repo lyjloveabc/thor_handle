@@ -9,7 +9,7 @@ logging.basicConfig()
 logger = logging.getLogger(__name__)
 
 
-class ExcelReadUtil(object):
+class ExcelReadUtil:
     __FIRST_SHEET_INDEX = 0
 
     def __init__(self):
