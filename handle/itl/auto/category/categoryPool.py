@@ -1,43 +1,33 @@
 """
 小区分类池
+select title from admin_services_type order by id;
 """
 
 
 class CategoryPool(object):
-    __BASE_PATH = 'file/'
+    BASE_PATH = 'file/'
 
     def __init__(self):
         pass
 
     @staticmethod
-    def handle(zone_ids):
+    def handle(name_group):
+        if len(name_group) < 1:
+            return
+
         print('BEGIN;')
-        for zId in zone_ids:
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 1, '绿化');"
-            print(sql)
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 2, '清洁');"
-            print(sql)
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 3, '工程维修');"
-            print(sql)
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 4, '安保');"
-            print(sql)
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 5, '电梯');"
-            print(sql)
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 6, '服务中心');"
-            print(sql)
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 7, '其他');"
-            print(sql)
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 8, '邻里');"
-            print(sql)
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 9, '室内维修');"
-            print(sql)
-            sql = "insert into itl_zone_category(zone_id, category_pool_id, category_pool_name) values(" + zId + ", 10, '养护');"
+        for name in name_group:
+            sql = 'insert into itl_category_pool(gmt_create, gmt_modify, name) values(now(), now(), "' + name + '");'
             print(sql)
         print('COMMIT;')
 
 
 if __name__ == '__main__':
-    data = ["1", "2", "5"] + [str(x) for x in range(9, 24)]
+    data = list()
+
+    with open(CategoryPool.BASE_PATH + 'category_pool_temp.txt', 'r') as f:
+        for line in f.readlines():
+            data.append(line[:-1])
 
     handle = CategoryPool()
     handle.handle(data)
