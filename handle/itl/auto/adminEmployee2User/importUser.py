@@ -5,7 +5,7 @@
 """
 
 
-class ImportUser(object):
+class ImportUser:
     __BASE_PATH = 'file/'
     __DAY = '_20170504'
 

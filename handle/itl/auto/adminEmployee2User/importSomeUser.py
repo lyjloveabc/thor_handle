@@ -1,10 +1,11 @@
 """
-全部admin_employee导入到user
-就是初始化
+根据admin_employee数据，导入user数据
+可以读取文件
+也可以是几个账号
 """
 
 
-class ImportSomeUser(object):
+class ImportSomeUser:
     __BASE_PATH = 'file/'
     __DAY = '_20170504'
 
