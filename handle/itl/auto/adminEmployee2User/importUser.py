@@ -1,11 +1,12 @@
 """
-全新导入 这个脚本不用了-20170504
+全部admin_employee导入到user
+就是初始化
 """
 
 
 class ImportUser(object):
     __BASE_PATH = 'file/'
-    __DAY = '_20170503'
+    __DAY = '_20170504'
 
     def __init__(self):
         self.base_sql = 'insert into user' \
@@ -23,10 +24,7 @@ class ImportUser(object):
 
     def handle(self):
         mobile_group = set()
-
         admin_employee_group = ImportUser.get_admin_employee_group()
-        admin_user_group = ImportUser.get_admin_user_group()
-
         zone_category_group = ImportUser.get_zone_category_group()
 
         with open(ImportUser.__BASE_PATH + 'ImportUser_out' + ImportUser.__DAY + '.sql', 'w') as f:
@@ -59,29 +57,12 @@ class ImportUser(object):
                 mobile_group.add(key)
                 f.write(sql + '\n')
 
-            admin_user_group_keys = admin_user_group.keys()
-            for key in admin_user_group_keys:
-                if key in mobile_group:
-                    continue
-                admin_user = admin_user_group[key]
-                sql = self.base_sql.format(account=key, password=admin_user['password'], name=admin_user['nickname'],
-                                           identity_card='', nickname=admin_user['nickname'],
-                                           sex='', mobile=key, avatar_url='', address='',
-                                           email='', emergency_contact='', emergency_mobile='',
-                                           last_login_time='1970-01-01 00:00:01', last_login_ip='127.0.0.1',
-                                           category_id='0', category_name='', company_id='0',
-                                           zone_id=admin_user['zone_id'], zone_ids=admin_user['zone_ids'],
-                                           is_on_job=1, departure_time='1970-01-01 00:00:01',
-                                           job_title_id='0', job_title_name='', old_user_id='0')
-                mobile_group.add(key)
-                f.write(sql + '\n')
-
             f.write('COMMIT;\n')
 
     @staticmethod
     def get_admin_employee_group():
         """
-        sql: select admin_employee.*, job_post.`name` from admin_employee left join job_post on job_post.id = admin_employee.job_post_id;
+        select admin_employee.*, job_post.`name` from admin_employee left join job_post on job_post.id = admin_employee.job_post_id;
         """
         old_user_group = dict()
 
@@ -127,26 +108,6 @@ class ImportUser(object):
                     print('没有mobile: ', old_user['id'])
                 else:
                     old_user_group[old_user['mobile']] = old_user
-        return old_user_group
-
-    @staticmethod
-    def get_admin_user_group():
-        """
-        sql: select mobile, nickname, password, zone_id, zone_ids from admin_user;
-        """
-        old_user_group = dict()
-
-        with open(ImportUser.__BASE_PATH + 'admin_user' + ImportUser.__DAY + '.txt', 'r') as f:
-            for line in f.readlines():
-                temp = line[:-1].split(';')
-                old_user = {
-                    'mobile': temp[0],
-                    'nickname': temp[1],
-                    'password': temp[2],
-                    'zone_id': temp[3],
-                    'zone_ids': temp[4]
-                }
-                old_user_group[old_user['mobile']] = old_user
         return old_user_group
 
     @staticmethod
