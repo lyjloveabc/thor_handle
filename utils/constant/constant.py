@@ -18,3 +18,6 @@ class Constant:
     SPIDER_INIT = '---spider __init__!'
     SPIDER_DEL = '---spider __del__!'
     SPIDER_CLOSED = '---spider closed!'
+
+    # =========================== 路径 ===========================
+    BASE_PATH = 'file/'
