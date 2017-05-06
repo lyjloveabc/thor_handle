@@ -34,7 +34,7 @@ class ImportSomeUserSql:
 
 
 if __name__ == '__main__':
-    mobiles = ['1111', '2222']
+    mobiles = ['17757547192', '15664205670']
 
     handle = ImportSomeUserSql()
     handle.handle(mobiles)
