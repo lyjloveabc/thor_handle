@@ -1,0 +1,1 @@
+projectManager customerServiceManager customerService cleanerManager cleaner gardenerManager gardener securityManager gateSentry patrolPost monitoringPost carportSecurity engineeringManager maintainer liftWorker energyMeterReader subFinance businessExecutive jobAdjustment firstPermissionSystemAdmin
