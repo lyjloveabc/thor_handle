@@ -33,7 +33,7 @@ class OldUserSql:
 
 
 if __name__ == '__main__':
-    mobiles = ['17757547192', '15664205670']
+    mobiles = ['18800000000']
 
     handle = OldUserSql()
     handle.handle(mobiles)
