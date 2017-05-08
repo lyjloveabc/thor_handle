@@ -1,10 +1,9 @@
 """
-ImportSomeUser 脚本需要的 sql
-生成的第一条sql是查询
+sql
 """
 
 
-class ImportSomeUserSql:
+class OldUserSql:
     @staticmethod
     def handle(mobile_group):
         if len(mobile_group) < 1:
@@ -17,12 +16,12 @@ class ImportSomeUserSql:
               'where admin_employee.mobile in ('
 
         print('查询user表是否已经存在:')
-        print(ImportSomeUserSql.get_sql(sql_user, mobile_group))
+        print(OldUserSql.get_sql(sql_user, mobile_group))
 
         print()
 
         print('获取adminEmployee:')
-        print(ImportSomeUserSql.get_sql(sql, mobile_group))
+        print(OldUserSql.get_sql(sql, mobile_group))
 
     @staticmethod
     def get_sql(sql, mobile_group):
@@ -36,5 +35,5 @@ class ImportSomeUserSql:
 if __name__ == '__main__':
     mobiles = ['17757547192', '15664205670']
 
-    handle = ImportSomeUserSql()
+    handle = OldUserSql()
     handle.handle(mobiles)
