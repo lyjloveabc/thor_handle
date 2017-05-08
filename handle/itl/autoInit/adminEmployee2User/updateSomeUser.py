@@ -18,8 +18,8 @@ class UpdateSomeUser:
                         'last_login_ip = "{last_login_ip}", category_id = "{category_id}",' \
                         'category_name = "{category_name}", company_id = "{company_id}",' \
                         'zone_id = "{zone_id}", zone_ids = "{zone_ids}", is_on_job = "{is_on_job}",' \
-                        'departure_time = "{departure_time}", job_title_id = "{departure_time}",' \
-                        'job_title_name = "{job_title_name}", old_user_id = "{old_user_id}"' \
+                        'departure_time = "{departure_time}", job_title_id = "{job_title_id}",' \
+                        'job_title_name = "{job_title_name}", old_user_id = "{old_user_id}" ' \
                         'where account = "{account}";'
         # if not os.path.exists(UpdateSomeUser.BASE_PATH):
         #     os.mkdir(UpdateSomeUser.BASE_PATH)
