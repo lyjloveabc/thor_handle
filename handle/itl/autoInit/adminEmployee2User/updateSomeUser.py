@@ -5,7 +5,7 @@
 
 
 class UpdateSomeUser:
-    DAY = '_20170508'
+    DAY = '_20170511'
     BASE_PATH = 'file/' + DAY + '/'
 
     def __init__(self):
@@ -13,8 +13,8 @@ class UpdateSomeUser:
                         'gmt_modify = now(), password = "{password}", name = "{name}",' \
                         'identity_card = "{identity_card}", nickname = "{nickname}",' \
                         'sex = "{sex}", mobile = "{mobile}", avatar_url = "{avatar_url}",' \
-                        'address = "{address}", email = "{email}", emergency_contact = "{emergency_contact},' \
-                        'emergency_mobile = "{emergency_mobile}, last_login_time = "{last_login_time}",' \
+                        'address = "{address}", email = "{email}", emergency_contact = "{emergency_contact}",' \
+                        'emergency_mobile = "{emergency_mobile}", last_login_time = "{last_login_time}",' \
                         'last_login_ip = "{last_login_ip}", category_id = "{category_id}",' \
                         'category_name = "{category_name}", company_id = "{company_id}",' \
                         'zone_id = "{zone_id}", zone_ids = "{zone_ids}", is_on_job = "{is_on_job}",' \

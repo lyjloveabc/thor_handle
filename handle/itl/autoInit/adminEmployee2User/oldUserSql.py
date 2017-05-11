@@ -9,7 +9,7 @@ class OldUserSql:
         if len(mobile_group) < 1:
             return
 
-        sql_user = 'select count(1) from user where mobile in ('
+        sql_user = 'select * from user where mobile in ('
 
         sql = 'select admin_employee.*, job_post.`name` ' \
               'from admin_employee left join job_post on job_post.id = admin_employee.job_post_id ' \
@@ -34,7 +34,10 @@ class OldUserSql:
 
 if __name__ == '__main__':
     mobiles = [
-        '15157116059'
+        '13758173150',
+        '18072753210',
+        '18668238935',
+        '15168401829',
     ]
 
     handle = OldUserSql()
