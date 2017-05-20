@@ -72,6 +72,10 @@ class SystemUtil:
                 else:
                     logging.error(ResultCode.CONDITION_NOT_CONFORM)
 
+    @staticmethod
+    def remove_pre_zero(param):
+        return str(int(param))
+
 
 if __name__ == '__main__':
     SystemUtil.batch_rename_file('/Users/luoyanjie/PycharmProjects/thor_handle')
