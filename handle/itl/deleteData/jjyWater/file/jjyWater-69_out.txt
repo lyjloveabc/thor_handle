@@ -58,5 +58,6 @@ delete from subscription_enter where id = 6319 and period_id =69;
 delete from subscription_enter where id = 6321 and period_id =69;
 delete from subscription_enter where id = 6322 and period_id =69;
 delete from subscription_enter where id = 6323 and period_id =69;
+delete from subscription_enter where id = 5862 and period_id =69;
 delete from subscription_enter where id = 6142 and period_id =69;
 delete from subscription_enter where id = 6209 and period_id =69;

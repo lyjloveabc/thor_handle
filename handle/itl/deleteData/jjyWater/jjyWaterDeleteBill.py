@@ -1,5 +1,5 @@
 """
-删除景江苑多余的、无效的水费抄录记录
+删除景江苑多余的、无效的水费账单数据
 
 获取景江苑房屋信息：select id, house, building, door from house_info where zone_id = 2;
 
@@ -15,7 +15,7 @@ from utils.constant.constant import Constant
 from utils.system.systemUtil import SystemUtil
 
 
-class JjyWaterDeleteSubEnter:
+class JjyWaterDeleteBill:
     def __init__(self):
         self.valid_house_info_group = set()  # 景江苑有效房户
         with open(Constant.BASE_PATH + 'valid_house_info.txt', 'r') as f:
@@ -51,4 +51,4 @@ class JjyWaterDeleteSubEnter:
 
 
 if __name__ == '__main__':
-    JjyWaterDeleteSubEnter().handle('69')
+    JjyWaterDeleteBill().handle('70')
