@@ -42,4 +42,4 @@ if __name__ == '__main__':
 
     obj = FileMix()
     obj.handle(data)
-    SystemUtil.batch_rename_file(data)
+    SystemUtil.batch_rename_file_2(data)

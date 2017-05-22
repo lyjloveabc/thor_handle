@@ -1,6 +1,7 @@
 """
 sql
 """
+from utils.constant.constant import Constant
 
 
 class OldUserSql:
@@ -33,9 +34,11 @@ class OldUserSql:
 
 
 if __name__ == '__main__':
-    mobiles = [
-        '17757104059'
-    ]
+    mobiles = list()
+
+    with open(Constant.BASE_PATH + '_20170522/account.txt', 'r') as f:
+        for line in f.readlines():
+            mobiles.append(line[:-1])
 
     handle = OldUserSql()
     handle.handle(mobiles)
