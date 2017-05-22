@@ -34,11 +34,9 @@ class OldUserSql:
 
 
 if __name__ == '__main__':
-    mobiles = list()
-
-    with open(Constant.BASE_PATH + '_20170522/account.txt', 'r') as f:
-        for line in f.readlines():
-            mobiles.append(line[:-1])
+    mobiles = [
+        '15234714868'
+    ]
 
     handle = OldUserSql()
     handle.handle(mobiles)
