@@ -1,33 +1,9 @@
-'id' : temp[0],
-'cid' : temp[1],
-'type' : temp[2],
-'manager' : temp[3],
-'zone_id' : temp[4],
-'name' : temp[5],
-'job' : temp[6],
-'sex' : temp[7],
-'mobile' : temp[8],
-'emergency_mobile' : temp[9],
-'emergency_name' : temp[10],
-'password' : temp[11],
-'avtar' : temp[12],
-'address' : temp[13],
-'Idcard' : temp[14],
-'status' : temp[15],
-'is_employ' : temp[16],
-'work_status' : temp[17],
-'sort_num' : temp[18],
-'app_version' : temp[19],
-'device_type' : temp[20],
-'score' : temp[21],
-'level' : temp[22],
-'on_job' : temp[23],
-'in_list' : temp[24],
-'job_post_id' : temp[25],
-'jpid' : temp[26],
-'has_kpi' : temp[27],
-'switch' : temp[28],
-'role' : temp[29],
-'baas' : temp[30],
-'day_time' : temp[31],
-'day_time2' : temp[32],
+select
+zones.name as '小区', admin_employee.name as '员工姓名',
+admin_services_type.title as '部门/类别', duty.content as '报事内容',
+duty.create_at as '报事时间'
+from duty
+left join zones on zones.id = duty.zone_id
+left join admin_employee on admin_employee.id = duty.employee_id
+left join admin_services_type on admin_services_type.id = admin_employee.type
+where duty.zone_id = 2 and duty.duty_type = 'POST_THING'
