@@ -35,8 +35,7 @@ class OldUserSql:
 
 if __name__ == '__main__':
     mobiles = [
-        '18757182082',
-        '15317754046',
+        '13567377756',
     ]
 
     handle = OldUserSql()
