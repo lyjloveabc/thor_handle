@@ -38,7 +38,7 @@ class FileMix:
 
 
 if __name__ == '__main__':
-    data = '/Users/luoyanjie/temp'
+    data = '/Users/luoyanjie/temp/'
 
     obj = FileMix()
     obj.handle(data)
