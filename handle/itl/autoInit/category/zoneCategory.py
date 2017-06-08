@@ -37,7 +37,8 @@ class ZoneCategory(object):
 
 
 if __name__ == '__main__':
-    data = ['1', '2', '5'] + [str(x) for x in range(9, 24)]
+    # data = ['1', '2', '5'] + [str(x) for x in range(9, 24)]
+    data = ['28']
 
     handle = ZoneCategory()
     handle.handle(data)

@@ -20,7 +20,8 @@ class AddPointsLevel(object):
 
 
 if __name__ == '__main__':
-    data = ['24', '25', '26', '27']
+    # data = ['24', '25', '26', '27']
+    data = ['1', '2', '5'] + [str(x) for x in range(9, 29)]
 
     handle = AddPointsLevel()
     handle.handle(data)
