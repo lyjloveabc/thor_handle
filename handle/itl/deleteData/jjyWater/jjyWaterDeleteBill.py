@@ -51,4 +51,4 @@ class JjyWaterDeleteBill:
 
 
 if __name__ == '__main__':
-    JjyWaterDeleteBill().handle('70')
+    JjyWaterDeleteBill().handle('71')

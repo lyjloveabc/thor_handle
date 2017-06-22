@@ -51,4 +51,4 @@ class JjyWaterDeleteSubEnter:
 
 
 if __name__ == '__main__':
-    JjyWaterDeleteSubEnter().handle('69')
+    JjyWaterDeleteSubEnter().handle('71')
