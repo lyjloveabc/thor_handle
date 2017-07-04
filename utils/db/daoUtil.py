@@ -4,8 +4,8 @@
 import logging
 from datetime import datetime
 
-from thor_crawl.utils.db.mysql.mySQLConfig import MySQLConfig
-from thor_crawl.utils.db.mysql.mySQLUtil import MySQLUtil
+from utils.db.mysql.mySQLConfig import MySQLConfig
+from utils.db.mysql.mySQLUtil import MySQLUtil
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s: %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
