@@ -1,6 +1,6 @@
 # 20170627 bill 账单折扣相关
 ALTER TABLE `itianluo`.bill
-  ADD `discount_num` DECIMAL(10, 2) NOT NULL DEFAULT ''
+  ADD `discount_num` DECIMAL(10, 2) DEFAULT NULL
 COMMENT '折扣数值，实收金额和应收金额的比值';
 
 ALTER TABLE `itianluo`.bill
@@ -26,16 +26,16 @@ COMMENT '该小区的账单是否顺序付款，1必须顺序付款，0可以任
 
 # 给用户增加上下班时间的列
 ALTER TABLE `itianluo`.`user`
-  ADD COLUMN `check_in_time` SMALLINT NULL
+  ADD COLUMN `check_in_time` SMALLINT NOT NULL DEFAULT 830
 COMMENT '上班时间 0830'
   AFTER `work_status`,
-  ADD COLUMN `check_out_time` SMALLINT NULL
+  ADD COLUMN `check_out_time` SMALLINT NOT NULL DEFAULT 2290
 COMMENT '下班时间 2290'
   AFTER `check_in_time`;
 
 # 增加班次
 ALTER TABLE `itianluo`.`user`
-  ADD COLUMN `shift_plan` VARCHAR(6) NULL
+  ADD COLUMN `shift_plan` VARCHAR(6) NOT NULL DEFAULT '白班'
 COMMENT '倒班，例如，白班、晚班'
   AFTER `check_out_time`;
 
