@@ -1,4 +1,9 @@
+import logging
 import pymysql
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+log = logging.getLogger(__name__)
 
 
 class MySQLUtil:

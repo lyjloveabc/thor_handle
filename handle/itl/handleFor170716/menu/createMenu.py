@@ -1,66 +1,95 @@
 """
 上线的工具入口整理
 """
-import os
-
-from utils.db.daoUtil import DaoUtils
-from utils.db.mysql.mySQLConfig import MySQLConfig
+from handle.itl.handleFor170716.dbUtil import DbUtil
+from handle.itl.handleFor170716.menu.menuData import MenuData
 
 
-class CommonTool:
-    BASE_PATH = 'file/'
+class CreateMenu:
+    _BASE_SQL_PERMISSION = "INSERT INTO permission " \
+                           "(gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) " \
+                           "VALUES (now(), now(), '{parent_id}', '{code}', '{name}', '{type}', '{function_url}','{menu_type}', '{icon_url}', '{description}', " \
+                           "'{sort_num}', '{checked}', '{menu_kind}');"
 
-    def __init__(self):
-        self.dao = DaoUtils(**{'dbType': 'MySQL', 'config': MySQLConfig.inner()})
+    _BASE_SQL_R = 'INSERT INTO role_permission_relation' \
+                  '(gmt_create, gmt_modify, role_code, permission_code) ' \
+                  'VALUES ' \
+                  '(now(), now(), "{role_code}", "{permission_code}");'
 
-        self.base_sql = 'insert into permission' \
-                        '(gmt_create, gmt_modify, parent_id, code, name, type, function_url,' \
-                        'menu_type, icon_url, description, sort_num, checked, menu_kind) ' \
-                        'values ' \
-                        '(now(), now(), "0", "{code}", "{name}", "MENU", "{function_url}",' \
-                        '"{menu_type}", "{icon_url}", "{description}", "{sort_num}", "TRUE", "{menu_kind}");'
-
-        self.r_base_sql = 'insert into role_permission_relation' \
-                          '(gmt_create, gmt_modify, role_code, permission_code) ' \
-                          'values ' \
-                          '(now(), now(), "{role_code}", "{permission_code}");'
-
-        self.common_tools = [
-            {'code': 'commonTool_releaseTask', 'name': '发布任务', 'menu_type': '1', 'sort_num': '1', 'menu_kind': 'COMMONLY_TOOL'},
-            {'code': 'commonTool_releaseMatter', 'name': '发布报事', 'menu_type': '2', 'sort_num': '2', 'menu_kind': 'COMMONLY_TOOL'},
-            {'code': 'commonTool_releaseRepair', 'name': '发布报修', 'menu_type': '3', 'sort_num': '4', 'menu_kind': 'COMMONLY_TOOL'}
-        ]
-
-        if not os.path.exists(CommonTool.BASE_PATH):
-            os.mkdir(CommonTool.BASE_PATH)
+    def __init__(self, *args, **kw):
+        self.dbUtil = DbUtil()
 
     def handle(self):
-        self.create_common_tool()
-        self.create_role_permission_r()
+        self._delete_old_data()
+        self._create_plus()
+        self._create_tool()
+        self._create_my()
 
-    def create_common_tool(self):
-        with open(CommonTool.BASE_PATH + 'commonTool_out.sql', 'a') as f:
-            f.write('BEGIN;\n')
-            for common_tool in self.common_tools:
-                sql = self.base_sql.format(code=common_tool['code'], name=common_tool['name'], function_url='', menu_type=common_tool['menu_type'],
-                                           icon_url='', description=common_tool['name'], sort_num=common_tool['sort_num'], menu_kind=common_tool['menu_kind'])
-                f.write(sql + '\n')
-            f.write('COMMIT;\n')
+    def _delete_old_data(self):
+        sql_define = ["DELETE FROM permission WHERE type = 'MENU';", "DELETE FROM role_permission_relation;"]
+        self.dbUtil.out_sql(sql_define, '删除所有的permission，role_permission_relation数据')
+        self.dbUtil.exe_on_db(sql_define)
 
-    def create_role_permission_r(self):
-        role_codes = self.dao.get_all('select code from role order by id;')
+    def _create_plus(self):
+        sql_define_permission = list()
+        sql_define_r = list()
 
-        with open(CommonTool.BASE_PATH + 'commonTool_out.sql', 'a') as f:
-            f.write('BEGIN;\n')
+        role_codes = self.dbUtil.get_all_role()
 
-            for role_code in role_codes:
-                for common_tool in self.common_tools:
-                    sql = self.r_base_sql.format(role_code=role_code['code'], permission_code=common_tool['code'])
-                    f.write(sql + '\n')
+        for plus in MenuData.COMMON_PLUS:
+            sql_define_permission.append(CreateMenu._BASE_SQL_PERMISSION.format(parent_id=0, code=plus['code'], name=plus['name'], type='MENU', function_url='',
+                                                                                menu_type=plus['menu_type'], icon_url='', description=plus['name'],
+                                                                                sort_num=plus['sort_num'], checked='TRUE', menu_kind=plus['menu_kind']))
+        for role_code in role_codes:
+            for plus in MenuData.COMMON_PLUS:
+                sql_define_r.append(CreateMenu._BASE_SQL_R.format(role_code=role_code['code'], permission_code=plus['code']))
+        self.dbUtil.out_sql(sql_define_permission, '创建管家端右上角+号的菜单')
+        self.dbUtil.out_sql(sql_define_r, '创建右上角的+菜单和角色对应的关系')
+        self.dbUtil.exe_on_db(sql_define_permission)
+        self.dbUtil.exe_on_db(sql_define_r)
 
-            f.write('COMMIT;\n')
+    def _create_tool(self):
+        sql_define_permission = list()
+        sql_define_r = list()
+
+        role_codes = self.dbUtil.get_all_role()
+
+        for tool in MenuData.TOOLS:
+            sql_define_permission.append(CreateMenu._BASE_SQL_PERMISSION.format(parent_id=0, code=tool['code'], name=tool['name'], type='MENU',
+                                                                                function_url=tool['function_url'] if 'function_url' in tool else '',
+                                                                                menu_type=tool['menu_type'], icon_url=tool['icon_url'],
+                                                                                description=tool['name'], sort_num=tool['sort_num'], checked='TRUE',
+                                                                                menu_kind='HOUSEKEEPER'))
+        for role_code in role_codes:
+            for plus in MenuData.TOOLS:
+                sql_define_r.append(CreateMenu._BASE_SQL_R.format(role_code=role_code['code'], permission_code=plus['code']))
+        self.dbUtil.out_sql(sql_define_permission, '创建管家端工具入口')
+        self.dbUtil.out_sql(sql_define_r, '创建家端工具入口和角色对应的关系')
+        self.dbUtil.exe_on_db(sql_define_permission)
+        self.dbUtil.exe_on_db(sql_define_r)
+
+    def _create_my(self):
+        sql_define_permission = list()
+        sql_define_r = list()
+
+        role_codes = self.dbUtil.get_all_role()
+
+        for my in MenuData.MY:
+            sql_define_permission.append(CreateMenu._BASE_SQL_PERMISSION.format(
+                parent_id=0, code=my['code'], name=my['name'], type='MENU',
+                function_url='',
+                menu_type=my['menu_type'], icon_url=my['icon_url'],
+                description=my['name'], sort_num=my['sort_num'], checked='TRUE',
+                menu_kind='HOUSEKEEPER_MY_TAB'))
+        for role_code in role_codes:
+            for plus in MenuData.MY:
+                sql_define_r.append(CreateMenu._BASE_SQL_R.format(role_code=role_code['code'], permission_code=plus['code']))
+        self.dbUtil.out_sql(sql_define_permission, '创建管家端我的TAB里面的菜单')
+        self.dbUtil.out_sql(sql_define_r, '创建管家端我的TAB里面的菜单和角色对应的关系')
+        self.dbUtil.exe_on_db(sql_define_permission)
+        self.dbUtil.exe_on_db(sql_define_r)
 
 
 if __name__ == '__main__':
-    handle = CommonTool()
+    handle = CreateMenu()
     handle.handle()
