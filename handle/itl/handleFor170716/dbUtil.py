@@ -10,7 +10,7 @@ from utils.db.mysql.mySQLConfig import MySQLConfig
 
 
 class DbUtil:
-    _BASE_PATH = './'
+    _BASE_PATH = './sql/'
     _DIRECT_EXE_ON_DB = True
 
     def __init__(self):
