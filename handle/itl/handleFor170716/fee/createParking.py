@@ -1,12 +1,11 @@
 """
 处理菜单
 """
-from handle.itl.handleFor170716.dbUtil import DbUtil
 
 
 class CreateParking:
     def __init__(self, *args, **kw):
-        self.dbUtil = DbUtil()
+        self.dbUtil = kw['dbUtil']
 
     def handle(self):
         self._product_type()
@@ -28,7 +27,7 @@ class CreateParking:
         self.dbUtil.exe_on_db(sql_define)
 
     def _subscription(self):
-        sql_define = ["INSERT INTO product (name, product_id, zone_id, gmt_create, gmt_modify, num,"
+        sql_define = ["INSERT INTO subscription (name, product_id, zone_id, gmt_create, gmt_modify, num,"
                       "total_amount, status, year_start_month)"
                       "VALUES('翡翠城车位费', 16, 1, now(), now(), 0, 0.00, "
                       "'VALID', '01');"]

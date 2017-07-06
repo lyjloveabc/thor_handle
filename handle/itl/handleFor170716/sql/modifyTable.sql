@@ -39,12 +39,6 @@ ALTER TABLE `itianluo`.`user`
 COMMENT '倒班，例如，白班、晚班'
   AFTER `check_out_time`;
 
-# 20170620 zones 表新增company_id
-ALTER TABLE `itianluo`.`zones`
-  ADD COLUMN `company_id` INT(11) UNSIGNED NULL DEFAULT NULL
-COMMENT '公司id'
-  AFTER `lngandlat`;
-
 # 20170620 zones 表新增company_id索引
 ALTER TABLE `itianluo`.`zones`
   ADD INDEX `company` (`company_id` ASC);

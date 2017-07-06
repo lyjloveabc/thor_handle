@@ -1,12 +1,11 @@
 """
 填充数据
 """
-from handle.itl.handleFor170716.dbUtil import DbUtil
 
 
 class PaddingData:
     def __init__(self, *args, **kw):
-        self.dbUtil = DbUtil()
+        self.dbUtil = kw['dbUtil']
 
     def handle(self):
         self._bill()

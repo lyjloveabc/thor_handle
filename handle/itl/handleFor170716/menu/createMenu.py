@@ -1,7 +1,6 @@
 """
 处理菜单
 """
-from handle.itl.handleFor170716.dbUtil import DbUtil
 from handle.itl.handleFor170716.menu.menuData import MenuData
 
 
@@ -17,7 +16,7 @@ class CreateMenu:
                   '(now(), now(), "{role_code}", "{permission_code}");'
 
     def __init__(self, *args, **kw):
-        self.dbUtil = DbUtil()
+        self.dbUtil = kw['dbUtil']
 
     def handle(self):
         self._delete_old_data()
@@ -26,7 +25,8 @@ class CreateMenu:
         self._create_my()
 
     def _delete_old_data(self):
-        sql_define = ["DELETE FROM permission WHERE type = 'MENU';", "DELETE FROM role_permission_relation;"]
+        sql_define = ["DELETE FROM permission WHERE type = 'MENU' AND menu_kind IN ('COMMONLY_TOOL', 'HOUSEKEEPER_MY_TAB', 'HOUSEKEEPER');",
+                      "DELETE FROM role_permission_relation WHERE id >= 2438 and id <= 3373;"]
         self.dbUtil.out_sql(sql_define, '删除所有的permission，role_permission_relation数据')
         self.dbUtil.exe_on_db(sql_define)
 
