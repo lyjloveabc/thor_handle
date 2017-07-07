@@ -4,7 +4,7 @@
 import re
 import xml.dom.minidom
 
-from utils.excelReadUtil import ExcelReadUtil
+from utils.file.excel.excelReadUtil import ExcelReadUtil
 
 __AUTHOR = 'thor'
 

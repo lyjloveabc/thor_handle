@@ -64,7 +64,7 @@ class MenuData:
         {'code': 'HOUSEKEEPER_MY_TAB_我发布的报事', 'name': '我发布的报事', 'menu_type': '6', 'sort_num': '980', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-baoshi@3x.png'},
         {'code': 'HOUSEKEEPER_MY_TAB_我发布的审批', 'name': '我发布的审批', 'menu_type': '7', 'sort_num': '970', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-faqishenpi@3x.png'},
         {'code': 'HOUSEKEEPER_MY_TAB_我的考勤', 'name': '我的考勤', 'menu_type': '8', 'sort_num': '960', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-kaoqin@3x.png'},
-        {'code': 'HOUSEKEEPER_MY_TAB_待完成任务', 'name': '待完成任务', 'menu_type': '9', 'sort_num': '950', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-linshi@3x.pngg'},
+        {'code': 'HOUSEKEEPER_MY_TAB_待完成任务', 'name': '待完成任务', 'menu_type': '9', 'sort_num': '950', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-linshi@3x.png'},
         {'code': 'HOUSEKEEPER_MY_TAB_待我审批', 'name': '待我审批', 'menu_type': '10', 'sort_num': '940', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-daiwoshenpi@3x.png'},
         {'code': 'HOUSEKEEPER_MY_TAB_收到的投诉', 'name': '收到的投诉', 'menu_type': '11', 'sort_num': '930', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-tousu@3x.png'},
         {'code': 'HOUSEKEEPER_MY_TAB_收到的表扬', 'name': '收到的表扬', 'menu_type': '12', 'sort_num': '920', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-biaoyang@3x.png'},
