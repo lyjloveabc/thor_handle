@@ -14,7 +14,7 @@ class DbUtil:
     _DIRECT_EXE_ON_DB = False
 
     def __init__(self):
-        self.dao = DaoUtils(**{'dbType': 'MySQL', 'config': MySQLConfig.localhost()})
+        self.dao = DaoUtils(**{'dbType': 'MySQL', 'config': MySQLConfig.stable()})
         self.time = datetime.now().strftime('%Y%m%d%H%M%S')
 
         self.users = self.get_all_user()

@@ -12,7 +12,7 @@ class PaddingData:
         self._insert_user_id()
 
     def _bill(self):
-        sql_define = ["UPDATE BILL SET is_checked=1, financial_income=ought_amount;"]
+        sql_define = ["UPDATE bill SET is_checked=1, financial_income=ought_amount;"]
         self.dbUtil.out_sql(sql_define, '所有已经存在的账单给新添加的is_checked、financial_income字段设置默认值')
         self.dbUtil.exe_on_db(sql_define)
 

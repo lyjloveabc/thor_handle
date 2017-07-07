@@ -3,12 +3,12 @@
 一、总体
 
 二、执行流程(3、4、5可以合并成一个sql文件)
-1、线上所有数据全量导入预发布环境；
-2、用测试环境的permission、role_permission_relation替换预发布环境的这两张表
+1、(用时448.855876s)线上所有数据全量导入预发布环境；
+2、(用时0.788712s+0.793527s)用测试环境的permission、role_permission_relation替换预发布环境的这两张表
 
-3、执行createTable.sql
-4、执行modifyTable.sql
-5、执行out.sql
+3、(用时0.777761s)执行createTable.sql
+4、(用时4.642782s)执行modifyTable.sql
+5、(用时)执行out.sql
 
 6、抽样验证数据正确性
 

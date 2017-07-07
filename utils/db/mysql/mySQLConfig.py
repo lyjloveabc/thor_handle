@@ -36,3 +36,12 @@ class MySQLConfig:
         config['password'] = '^itianluo@0928$'
         config['db'] = 'itianluo'
         return config
+
+    @staticmethod
+    def stable():
+        config = MySQLConfig.__common_config()
+        config['host'] = '106.15.201.198'
+        config['user'] = 'itianluo'
+        config['password'] = 'Itianluo303!'
+        config['db'] = 'itianluo'
+        return config

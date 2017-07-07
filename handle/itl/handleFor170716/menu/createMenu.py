@@ -26,7 +26,7 @@ class CreateMenu:
 
     def _delete_old_data(self):
         sql_define = ["DELETE FROM permission WHERE type = 'MENU' AND menu_kind IN ('COMMONLY_TOOL', 'HOUSEKEEPER_MY_TAB', 'HOUSEKEEPER');",
-                      "DELETE FROM role_permission_relation WHERE id >= 2438 and id <= 3373;"]
+                      "DELETE FROM role_permission_relation WHERE id >= 2438 and id <= 3426 and id != 3374;"]
         self.dbUtil.out_sql(sql_define, '删除所有的permission，role_permission_relation数据')
         self.dbUtil.exe_on_db(sql_define)
 
