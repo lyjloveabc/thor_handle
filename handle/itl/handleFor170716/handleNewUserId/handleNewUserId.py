@@ -38,8 +38,8 @@ class HandleNewUserId:
 
         for plus in MenuData.COMMON_PLUS:
             sql_define_permission.append(HandleNewUserId._BASE_SQL_PERMISSION.format(parent_id=0, code=plus['code'], name=plus['name'], type='MENU', function_url='',
-                                                                                menu_type=plus['menu_type'], icon_url='', description=plus['name'],
-                                                                                sort_num=plus['sort_num'], checked='TRUE', menu_kind=plus['menu_kind']))
+                                                                                     menu_type=plus['menu_type'], icon_url='', description=plus['name'],
+                                                                                     sort_num=plus['sort_num'], checked='TRUE', menu_kind=plus['menu_kind']))
         for role_code in role_codes:
             for plus in MenuData.COMMON_PLUS:
                 sql_define_r.append(HandleNewUserId._BASE_SQL_R.format(role_code=role_code['code'], permission_code=plus['code']))
@@ -56,10 +56,10 @@ class HandleNewUserId:
 
         for tool in MenuData.TOOLS:
             sql_define_permission.append(HandleNewUserId._BASE_SQL_PERMISSION.format(parent_id=0, code=tool['code'], name=tool['name'], type='MENU',
-                                                                                function_url=tool['function_url'] if 'function_url' in tool else '',
-                                                                                menu_type=tool['menu_type'], icon_url=tool['icon_url'],
-                                                                                description=tool['name'], sort_num=tool['sort_num'], checked='TRUE',
-                                                                                menu_kind='HOUSEKEEPER'))
+                                                                                     function_url=tool['function_url'] if 'function_url' in tool else '',
+                                                                                     menu_type=tool['menu_type'], icon_url=tool['icon_url'],
+                                                                                     description=tool['name'], sort_num=tool['sort_num'], checked='TRUE',
+                                                                                     menu_kind='HOUSEKEEPER'))
         for role_code in role_codes:
             for plus in MenuData.TOOLS:
                 sql_define_r.append(HandleNewUserId._BASE_SQL_R.format(role_code=role_code['code'], permission_code=plus['code']))

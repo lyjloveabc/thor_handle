@@ -15,6 +15,11 @@ class CreateMenu:
                   'VALUES ' \
                   '(now(), now(), "{role_code}", "{permission_code}");'
 
+    _BASE_ROLE = 'INSERT INTO role' \
+                 '(gmt_create, gmt_modify, code, name, description) ' \
+                 'VALUES ' \
+                 '(now(), now(), "{code}", "{name}", "{description}");'
+
     def __init__(self, *args, **kw):
         self.dbUtil = kw['dbUtil']
 
@@ -26,7 +31,7 @@ class CreateMenu:
 
     def _delete_old_data(self):
         sql_define = ["DELETE FROM permission WHERE type = 'MENU' AND menu_kind IN ('COMMONLY_TOOL', 'HOUSEKEEPER_MY_TAB', 'HOUSEKEEPER');",
-                      "DELETE FROM role_permission_relation WHERE id >= 2438 and id <= 3426 and id != 3374;"]
+                      "DELETE FROM role_permission_relation WHERE id >= 2438 AND id != 3374;"]
         self.dbUtil.out_sql(sql_define, '删除所有的permission，role_permission_relation数据')
         self.dbUtil.exe_on_db(sql_define)
 
@@ -88,6 +93,14 @@ class CreateMenu:
         self.dbUtil.out_sql(sql_define_r, '创建管家端我的TAB里面的菜单和角色对应的关系')
         self.dbUtil.exe_on_db(sql_define_permission)
         self.dbUtil.exe_on_db(sql_define_r)
+
+    def _create_role(self):
+        sql_define = list()
+
+        for role in MenuData.ROLE:
+            sql_define.append(CreateMenu._BASE_ROLE.format(code=role['name'], name=role['name'], description=role['description']))
+        self.dbUtil.out_sql(sql_define, '添加新的角色')
+        self.dbUtil.exe_on_db(sql_define)
 
 
 if __name__ == '__main__':
