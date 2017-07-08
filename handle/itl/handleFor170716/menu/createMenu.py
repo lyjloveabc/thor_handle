@@ -1,5 +1,5 @@
 """
-处理菜单
+创建所有菜单
 """
 from handle.itl.handleFor170716.dbUtil import DbUtil
 from handle.itl.handleFor170716.menu.data.menuData import MenuData

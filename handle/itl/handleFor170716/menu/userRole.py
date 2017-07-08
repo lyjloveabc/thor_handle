@@ -1,5 +1,5 @@
 """
-
+更新已经存在的用户的所有的用户角色关系
 """
 from handle.itl.handleFor170716.dbUtil import DbUtil
 from handle.itl.handleFor170716.menu.data.roleData import RoleData
