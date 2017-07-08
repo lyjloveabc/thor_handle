@@ -2,7 +2,7 @@
 处理新的用户ID
 """
 from handle.itl.handleFor170716.dbUtil import DbUtil
-from handle.itl.handleFor170716.menu.menuData import MenuData
+from handle.itl.handleFor170716.menu.data.menuData import MenuData
 
 
 class HandleNewUserId:

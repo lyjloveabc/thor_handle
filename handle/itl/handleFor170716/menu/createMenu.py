@@ -1,7 +1,8 @@
 """
 处理菜单
 """
-from handle.itl.handleFor170716.menu.menuData import MenuData
+from handle.itl.handleFor170716.dbUtil import DbUtil
+from handle.itl.handleFor170716.menu.data.menuData import MenuData
 
 
 class CreateMenu:
@@ -24,14 +25,13 @@ class CreateMenu:
         self.dbUtil = kw['dbUtil']
 
     def handle(self):
-        self._delete_old_data()
+        # self._delete_old_data()
         self._create_plus()
         self._create_tool()
         self._create_my()
 
     def _delete_old_data(self):
-        sql_define = ["DELETE FROM permission WHERE type = 'MENU' AND menu_kind IN ('COMMONLY_TOOL', 'HOUSEKEEPER_MY_TAB', 'HOUSEKEEPER');",
-                      "DELETE FROM role_permission_relation WHERE id >= 2438 AND id != 3374;"]
+        sql_define = ["DELETE FROM permission WHERE type = 'MENU' AND menu_kind IN ('COMMONLY_TOOL', 'HOUSEKEEPER_MY_TAB', 'HOUSEKEEPER');"]
         self.dbUtil.out_sql(sql_define, '删除所有的permission，role_permission_relation数据')
         self.dbUtil.exe_on_db(sql_define)
 
@@ -49,7 +49,7 @@ class CreateMenu:
             for plus in MenuData.COMMON_PLUS:
                 sql_define_r.append(CreateMenu._BASE_SQL_R.format(role_code=role_code['code'], permission_code=plus['code']))
         self.dbUtil.out_sql(sql_define_permission, '创建管家端右上角+号的菜单')
-        self.dbUtil.out_sql(sql_define_r, '创建右上角的+菜单和角色对应的关系')
+        # self.dbUtil.out_sql(sql_define_r, '创建右上角的+菜单和角色对应的关系')
         self.dbUtil.exe_on_db(sql_define_permission)
         self.dbUtil.exe_on_db(sql_define_r)
 
@@ -69,7 +69,7 @@ class CreateMenu:
             for plus in MenuData.TOOLS:
                 sql_define_r.append(CreateMenu._BASE_SQL_R.format(role_code=role_code['code'], permission_code=plus['code']))
         self.dbUtil.out_sql(sql_define_permission, '创建管家端工具入口')
-        self.dbUtil.out_sql(sql_define_r, '创建家端工具入口和角色对应的关系')
+        # self.dbUtil.out_sql(sql_define_r, '创建家端工具入口和角色对应的关系')
         self.dbUtil.exe_on_db(sql_define_permission)
         self.dbUtil.exe_on_db(sql_define_r)
 
@@ -90,7 +90,7 @@ class CreateMenu:
             for plus in MenuData.MY:
                 sql_define_r.append(CreateMenu._BASE_SQL_R.format(role_code=role_code['code'], permission_code=plus['code']))
         self.dbUtil.out_sql(sql_define_permission, '创建管家端我的TAB里面的菜单')
-        self.dbUtil.out_sql(sql_define_r, '创建管家端我的TAB里面的菜单和角色对应的关系')
+        # self.dbUtil.out_sql(sql_define_r, '创建管家端我的TAB里面的菜单和角色对应的关系')
         self.dbUtil.exe_on_db(sql_define_permission)
         self.dbUtil.exe_on_db(sql_define_r)
 
@@ -104,5 +104,5 @@ class CreateMenu:
 
 
 if __name__ == '__main__':
-    handle = CreateMenu()
+    handle = CreateMenu(**{'dbUtil': DbUtil()})
     handle.handle()
