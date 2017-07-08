@@ -24,21 +24,6 @@ ALTER TABLE `itianluo`.zones
   ADD `paid_in_order` TINYINT NOT NULL DEFAULT 0
 COMMENT '该小区的账单是否顺序付款，1必须顺序付款，0可以任意付款';
 
-# 给用户增加上下班时间的列
-ALTER TABLE `itianluo`.`user`
-  ADD COLUMN `check_in_time` SMALLINT NOT NULL DEFAULT 830
-COMMENT '上班时间 0830'
-  AFTER `work_status`,
-  ADD COLUMN `check_out_time` SMALLINT NOT NULL DEFAULT 2290
-COMMENT '下班时间 2290'
-  AFTER `check_in_time`;
-
-# 增加班次
-ALTER TABLE `itianluo`.`user`
-  ADD COLUMN `shift_plan` VARCHAR(6) NOT NULL DEFAULT '白班'
-COMMENT '倒班，例如，白班、晚班'
-  AFTER `check_out_time`;
-
 # 20170620 zones 表新增company_id索引
 ALTER TABLE `itianluo`.`zones`
   ADD INDEX `company` (`company_id` ASC);

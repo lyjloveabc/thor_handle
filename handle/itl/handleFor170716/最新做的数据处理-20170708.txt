@@ -1,5 +1,8 @@
+数据更新（跟到时候推到线上的数据完全一致），三个应用已经重启了
+
 1、（只在预发布执行）权限、角色、用户、相互之间的关系、角色属性
 permission、role、role_permission_relation、user、user_role_relation、role_attribute
 
 2、（预发布、线上都执行了）所有公司创建、已存在的小区挂公司、所有已存在的用户挂小区
 
+预发布环境
