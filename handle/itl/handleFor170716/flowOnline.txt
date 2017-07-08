@@ -1,7 +1,7 @@
 数据迁移操作流程
 
 一、、执行流程(3、4、5可以合并成一个sql文件)
-1、permission、role、role_permission_relation、user、user_role_relation替换
+1、permission、role、role_permission_relation、user、user_role_relation、role_attribute替换
 2、
 
 3、执行createTable.sql

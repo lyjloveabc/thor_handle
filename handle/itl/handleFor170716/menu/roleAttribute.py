@@ -6,7 +6,7 @@ from handle.itl.handleFor170716.menu.data.roleData import RoleData
 
 
 class RoleAttribute:
-    _BASE_SQL_PERMISSION = "INSERT INTO role " \
+    _BASE_SQL_PERMISSION = "INSERT INTO role_attribute " \
                            "(gmt_create, gmt_modify, role_code, can_be_bonus_points, can_be_complaint_praise, can_change_zone, can_be_repair_task) " \
                            "VALUES (now(), now(), '{role_code}', '1', '1', '1', '1');"
 
