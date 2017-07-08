@@ -17,8 +17,8 @@ class DbUtil:
         self.dao = DaoUtils(**{'dbType': 'MySQL', 'config': MySQLConfig.localhost()})
         self.time = datetime.now().strftime('%Y%m%d%H%M%S')
 
-        #self.users = self.get_all_user()
-        #self.admin_emp = self.get_all_admin_emp()
+        self.users = self.get_all_user()
+        self.admin_emp = self.get_all_admin_emp()
 
         if not os.path.exists(DbUtil._BASE_PATH):
             os.mkdir(DbUtil._BASE_PATH)
@@ -95,9 +95,6 @@ class DbUtil:
     def get_all_chat(self):
         return self.dao.get_all('SELECT id, reply_id FROM chat;')
 
-    def temp(self):
-        return self.dao.get_all('SELECT id FROM user_role_relation WHERE role_code = \'customerService\';')
-
     def get_about_appraisal(self):
         return [
             {'table': 'appraisal', 'data': self.get_all_appraisal()},
@@ -106,6 +103,13 @@ class DbUtil:
             {'table': 'appraisal_adjust', 'data': self.get_all_appraisal_adjust()},
             {'table': 'appraisal_assignee', 'data': self.get_all_appraisal_assignee()},
         ]
+
+    # START TEMP
+    def temp(self):
+        return self.dao.get_all('SELECT id FROM user_role_relation WHERE role_code = \'customerService\';')
+
+    def role_permission_relation(self):
+        return self.dao.get_all('SELECT role_code, permission_code FROM role_permission_relation WHERE role_code IN (\'propertyManager\', \'xiaoer\');')
 
 
 if __name__ == '__main__':
