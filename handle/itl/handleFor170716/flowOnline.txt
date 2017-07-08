@@ -1,0 +1,36 @@
+数据迁移操作流程
+
+一、、执行流程(3、4、5可以合并成一个sql文件)
+1、permission、role、role_permission_relation、user、user_role_relation替换
+2、
+
+3、执行createTable.sql
+4、执行modifyTable.sql
+5、执行out.sql
+
+6、抽样验证数据正确性
+
+二、数据处理和准备
+1、permission：管家端用到的permission新生成导入，admin+小二使用@九公建立的数据；
+2、已有的账单没有打折，审核状态全部是已审核，财务收款字段的值就是账单应收，优惠金额为0，审批ID字段为空；
+3、各个迁移模块填充user_id：
+    能耗录入：subscription_enter
+    报修：task、task_map
+    投诉表扬：appraisal、appraisal_emp、appraisal_progress、appraisal_adjust、appraisal_assignee
+    总结计划：summary_plan
+    bug报告：bug_report
+4、咨询模块reply_id、reply_name更新为新的用户体系数据：chat表
+5、创建一个车位费产品类型和产品，翡翠城订阅这个产品
+
+三、表结构修改，其他老数据的处理
+1、所有小区账单不需要顺序支付
+2、用户上班时间为830，下班时间为2290
+3、所有用户都设置为上班中
+4、所有用户都是白班
+*5、小区没有挂公司
+6、小区的省份、类型、鸟蓝图等信息没有设置
+7、小区部门没有设置负责人
+8、已有的抽检数据没有挂任务；
+9、已有的巡更数据没有挂任务；
+10、房屋种类没有设置
+11、房屋在第几层没有设置

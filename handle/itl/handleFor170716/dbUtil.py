@@ -111,6 +111,9 @@ class DbUtil:
     def role_permission_relation(self):
         return self.dao.get_all('SELECT role_code, permission_code FROM role_permission_relation WHERE role_code IN (\'propertyManager\', \'xiaoer\');')
 
+    def get_all_zones(self):
+        return self.dao.get_all('SELECT id FROM user_role_relation WHERE role_code = \'customerService\';')
+
 
 if __name__ == '__main__':
     handle = DbUtil()
