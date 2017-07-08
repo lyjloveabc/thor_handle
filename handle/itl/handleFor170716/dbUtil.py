@@ -17,8 +17,8 @@ class DbUtil:
         self.dao = DaoUtils(**{'dbType': 'MySQL', 'config': MySQLConfig.localhost()})
         self.time = datetime.now().strftime('%Y%m%d%H%M%S')
 
-        self.users = self.get_all_user()
-        self.admin_emp = self.get_all_admin_emp()
+        # self.users = self.get_all_user()
+        # self.admin_emp = self.get_all_admin_emp()
 
         if not os.path.exists(DbUtil._BASE_PATH):
             os.mkdir(DbUtil._BASE_PATH)
@@ -113,6 +113,9 @@ class DbUtil:
 
     def get_all_zones(self):
         return self.dao.get_all('SELECT id FROM user_role_relation WHERE role_code = \'customerService\';')
+
+    def get_wh_role_per_r(self):
+        return self.dao.get_all('SELECT role_code, permission_code FROM role_permission_relation WHERE id >= 3432 AND id <= 4029;')
 
 
 if __name__ == '__main__':

@@ -68,22 +68,7 @@ class MenuData:
         {'code': 'HOUSEKEEPER_MY_TAB_待我审批', 'name': '待我审批', 'menu_type': '10', 'sort_num': '940', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-daiwoshenpi@3x.png'},
         {'code': 'HOUSEKEEPER_MY_TAB_收到的投诉', 'name': '收到的投诉', 'menu_type': '11', 'sort_num': '930', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-tousu@3x.png'},
         {'code': 'HOUSEKEEPER_MY_TAB_收到的表扬', 'name': '收到的表扬', 'menu_type': '12', 'sort_num': '920', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-biaoyang@3x.png'},
-        {'code': 'HOUSEKEEPER_MY_TAB_更多', 'name': '更多', 'menu_type': '1', 'sort_num': '910', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-zongjie@3x.png'},
-        {'code': 'HOUSEKEEPER_MY_TAB_负责小区', 'name': '负责小区', 'menu_type': '2', 'sort_num': '900', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-zhuhu@3x.png'},
-        {'code': 'HOUSEKEEPER_MY_TAB_岗位职责', 'name': '岗位职责', 'menu_type': '3', 'sort_num': '890', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-gangweirenwu@3x.png'}
-    ]
-
-    ROLE = [
-        {'code': 'HOUSEKEEPER_MY_TAB_我发布的任务', 'name': '我发布的任务', 'description': '4'},
-        {'code': 'HOUSEKEEPER_MY_TAB_我发布的报修', 'name': '我发布的报修', 'description': '5'},
-        {'code': 'HOUSEKEEPER_MY_TAB_我发布的报事', 'name': '我发布的报事', 'description': '6'},
-        {'code': 'HOUSEKEEPER_MY_TAB_我发布的审批', 'name': '我发布的审批', 'description': '7'},
-        {'code': 'HOUSEKEEPER_MY_TAB_我的考勤', 'name': '我的考勤', 'description': '8'},
-        {'code': 'HOUSEKEEPER_MY_TAB_待完成任务', 'name': '待完成任务', 'description': '9'},
-        {'code': 'HOUSEKEEPER_MY_TAB_待我审批', 'name': '待我审批', 'description': '10'},
-        {'code': 'HOUSEKEEPER_MY_TAB_收到的投诉', 'name': '收到的投诉', 'description': '11'},
-        {'code': 'HOUSEKEEPER_MY_TAB_收到的表扬', 'name': '收到的表扬', 'description': '12'},
-        {'code': 'HOUSEKEEPER_MY_TAB_更多', 'name': '更多', 'description': '1'},
-        {'code': 'HOUSEKEEPER_MY_TAB_负责小区', 'name': '负责小区', 'description': '2'},
-        {'code': 'HOUSEKEEPER_MY_TAB_岗位职责', 'name': '岗位职责', 'description': '3'}
+        {'code': 'HOUSEKEEPER_MY_TAB_负责小区', 'name': '负责小区', 'menu_type': '2', 'sort_num': '910', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-zhuhu@3x.png'},
+        {'code': 'HOUSEKEEPER_MY_TAB_岗位职责', 'name': '岗位职责', 'menu_type': '3', 'sort_num': '900', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-gangweirenwu@3x.png'},
+        {'code': 'HOUSEKEEPER_MY_TAB_更多', 'name': '更多', 'menu_type': '1', 'sort_num': '890', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-zongjie@3x.png'}
     ]

@@ -1,3 +1,8 @@
+# 删除所有的permission，role_permission_relation数据
+BEGIN;
+DELETE FROM permission WHERE type = 'MENU' AND menu_kind IN ('COMMONLY_TOOL', 'HOUSEKEEPER_MY_TAB', 'HOUSEKEEPER');
+COMMIT;
+
 # 创建管家端右上角+号的菜单
 BEGIN;
 INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'commonTool_releaseTask', '发布任务', 'MENU', '','1', '', '发布任务', '5', 'TRUE', 'COMMONLY_TOOL');
@@ -43,8 +48,8 @@ INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, fun
 INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'HOUSEKEEPER_MY_TAB_待我审批', '待我审批', 'MENU', '','10', 'http://oda3qkbe9.bkt.clouddn.com/icon-daiwoshenpi@3x.png', '待我审批', '940', 'TRUE', 'HOUSEKEEPER_MY_TAB');
 INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'HOUSEKEEPER_MY_TAB_收到的投诉', '收到的投诉', 'MENU', '','11', 'http://oda3qkbe9.bkt.clouddn.com/icon-tousu@3x.png', '收到的投诉', '930', 'TRUE', 'HOUSEKEEPER_MY_TAB');
 INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'HOUSEKEEPER_MY_TAB_收到的表扬', '收到的表扬', 'MENU', '','12', 'http://oda3qkbe9.bkt.clouddn.com/icon-biaoyang@3x.png', '收到的表扬', '920', 'TRUE', 'HOUSEKEEPER_MY_TAB');
-INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'HOUSEKEEPER_MY_TAB_更多', '更多', 'MENU', '','1', 'http://oda3qkbe9.bkt.clouddn.com/icon-zongjie@3x.png', '更多', '910', 'TRUE', 'HOUSEKEEPER_MY_TAB');
-INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'HOUSEKEEPER_MY_TAB_负责小区', '负责小区', 'MENU', '','2', 'http://oda3qkbe9.bkt.clouddn.com/icon-zhuhu@3x.png', '负责小区', '900', 'TRUE', 'HOUSEKEEPER_MY_TAB');
-INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'HOUSEKEEPER_MY_TAB_岗位职责', '岗位职责', 'MENU', '','3', 'http://oda3qkbe9.bkt.clouddn.com/icon-gangweirenwu@3x.png', '岗位职责', '890', 'TRUE', 'HOUSEKEEPER_MY_TAB');
+INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'HOUSEKEEPER_MY_TAB_负责小区', '负责小区', 'MENU', '','2', 'http://oda3qkbe9.bkt.clouddn.com/icon-zhuhu@3x.png', '负责小区', '910', 'TRUE', 'HOUSEKEEPER_MY_TAB');
+INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'HOUSEKEEPER_MY_TAB_岗位职责', '岗位职责', 'MENU', '','3', 'http://oda3qkbe9.bkt.clouddn.com/icon-gangweirenwu@3x.png', '岗位职责', '900', 'TRUE', 'HOUSEKEEPER_MY_TAB');
+INSERT INTO permission (gmt_create, gmt_modify, parent_id, code, name, type, function_url, menu_type, icon_url, description, sort_num, checked, menu_kind) VALUES (now(), now(), '0', 'HOUSEKEEPER_MY_TAB_更多', '更多', 'MENU', '','1', 'http://oda3qkbe9.bkt.clouddn.com/icon-zongjie@3x.png', '更多', '890', 'TRUE', 'HOUSEKEEPER_MY_TAB');
 COMMIT;
 

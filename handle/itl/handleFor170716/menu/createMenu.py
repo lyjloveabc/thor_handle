@@ -25,7 +25,7 @@ class CreateMenu:
         self.dbUtil = kw['dbUtil']
 
     def handle(self):
-        # self._delete_old_data()
+        self._delete_old_data()
         self._create_plus()
         self._create_tool()
         self._create_my()
@@ -93,14 +93,6 @@ class CreateMenu:
         # self.dbUtil.out_sql(sql_define_r, '创建管家端我的TAB里面的菜单和角色对应的关系')
         self.dbUtil.exe_on_db(sql_define_permission)
         self.dbUtil.exe_on_db(sql_define_r)
-
-    def _create_role(self):
-        sql_define = list()
-
-        for role in MenuData.ROLE:
-            sql_define.append(CreateMenu._BASE_ROLE.format(code=role['name'], name=role['name'], description=role['description']))
-        self.dbUtil.out_sql(sql_define, '添加新的角色')
-        self.dbUtil.exe_on_db(sql_define)
 
 
 if __name__ == '__main__':
