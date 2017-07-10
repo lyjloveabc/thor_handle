@@ -5,7 +5,7 @@ import os
 
 
 class ImportSomeUser:
-    DAY = '_20170707'
+    DAY = '_20170710'
     BASE_PATH = 'file/' + DAY + '/'
 
     def __init__(self):

@@ -1,7 +1,6 @@
 """
 sql
 """
-from utils.constant.constant import Constant
 
 
 class OldUserSql:
@@ -40,14 +39,7 @@ if __name__ == '__main__':
     #     for line in f.readlines():
     #         mobiles.append(line[:-1])
     mobiles = [
-        '18516538263',
-        '13761185134',
-        '18755200749',
-        '13651728178',
-        '17721359569',
-        '15021075683',
-        '18751659964',
-        '18217512259'
+        '13735831467',
     ]
 
     for item in mobiles:
