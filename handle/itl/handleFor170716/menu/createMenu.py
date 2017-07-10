@@ -29,6 +29,7 @@ class CreateMenu:
         self._create_plus()
         self._create_tool()
         self._create_my()
+        self._create_yj()
 
     def _delete_old_data(self):
         sql_define = ["DELETE FROM permission WHERE type = 'MENU' AND menu_kind IN ('COMMONLY_TOOL', 'HOUSEKEEPER_MY_TAB', 'HOUSEKEEPER');"]
@@ -91,6 +92,24 @@ class CreateMenu:
                 sql_define_r.append(CreateMenu._BASE_SQL_R.format(role_code=role_code['code'], permission_code=plus['code']))
         self.dbUtil.out_sql(sql_define_permission, '创建管家端我的TAB里面的菜单')
         # self.dbUtil.out_sql(sql_define_r, '创建管家端我的TAB里面的菜单和角色对应的关系')
+        self.dbUtil.exe_on_db(sql_define_permission)
+        self.dbUtil.exe_on_db(sql_define_r)
+
+    def _create_yj(self):
+        sql_define_permission = list()
+        sql_define_r = list()
+
+        for my in MenuData.YJ:
+            sql_define_permission.append(CreateMenu._BASE_SQL_PERMISSION.format(
+                parent_id=0, code=my['code'], name=my['name'], type='MENU',
+                function_url='',
+                menu_type=my['menu_type'], icon_url=my['icon_url'],
+                description=my['name'], sort_num=my['sort_num'], checked='TRUE',
+                menu_kind='HOUSEKEEPER_MY_TAB'))
+        for yj in MenuData.YJ:
+            sql_define_r.append(CreateMenu._BASE_SQL_R.format(role_code='小二', permission_code=yj['code']))
+        self.dbUtil.out_sql(sql_define_permission, '创建杨戬的数据')
+        self.dbUtil.out_sql(sql_define_r, '创建杨戬的数据：菜单角色')
         self.dbUtil.exe_on_db(sql_define_permission)
         self.dbUtil.exe_on_db(sql_define_r)
 

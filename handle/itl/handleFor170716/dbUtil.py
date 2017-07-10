@@ -26,10 +26,10 @@ class DbUtil:
     def out_sql(self, data, remark=''):
         with open(DbUtil._BASE_PATH + 'out' + self.time + '.sql', 'a') as f:
             f.write('# ' + remark + Constant.NEW_LINE)
-            f.write(Constant.SQL_BEGIN + Constant.NEW_LINE)
+            # f.write(Constant.SQL_BEGIN + Constant.NEW_LINE)
             for row in data:
                 f.write(row + Constant.NEW_LINE)
-            f.write(Constant.SQL_COMMIT + Constant.NEW_LINE)
+            # f.write(Constant.SQL_COMMIT + Constant.NEW_LINE)
             f.write(Constant.NEW_LINE)
 
     def exe_on_db(self, data):

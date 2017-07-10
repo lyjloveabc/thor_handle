@@ -3,17 +3,18 @@
 """
 from openpyxl import Workbook
 
+from handle.itl.handleFor170716.dbUtil import DbUtil
 from utils.file.excel.readUtil import ReadUtil
 
 
 class ToLegal:
     _TYPE = {'确认': '1A', '拍照': '1B', '检查': '1C', '抽检': '1D', '巡更': '1E'}
     _RATE = {'日': 'D', '周': 'W', '月': 'M', '年': 'Y'}
-    _ROLE = {'日': 'D', '周': 'W', '月': 'M', '年': 'Y'}
+    _ROLE = []
 
     def __init__(self, *args, **kw):
-
-        pass
+        self.dbUtil = kw['dbUtil']
+        _ROLE = self.dbUtil.get_all_role()
 
     def handle(self):
         field_index = {
@@ -36,6 +37,7 @@ class ToLegal:
 
         for index in range(1, len(data)):
             if not ToLegal._check_param(data[index]):
+                print(data[index])
                 a.append(data[index])
             else:
                 ws.cell(row=index, column=1).value = ToLegal._type_name_to_type(data[index]['type'])
@@ -47,12 +49,14 @@ class ToLegal:
                 ws.cell(row=index, column=7).value = data[index]['role']
                 ws.cell(row=index, column=8).value = data[index]['role']
 
-        wb.save(filename="/Users/luoyanjie/abc222.xlsx")  # 保存
+        wb.save(filename="/Users/luoyanjie/abc2223.xlsx")  # 保存
 
     @staticmethod
     def _check_param(row):
         start_time = int(row['startTime'])
         end_time = int(row['endTime']) if int(row['endTime']) != -1 else 1
+        print(row['type'] in ToLegal._TYPE)
+        print()
         return row['type'] in ToLegal._TYPE \
                and len(row['content'].strip()) <= 256 \
                and len(row['content'].strip()) <= 512 \
@@ -70,5 +74,5 @@ class ToLegal:
 
 
 if __name__ == '__main__':
-    handle = ToLegal()
+    handle = ToLegal(**{'dbUtil': DbUtil()})
     handle.handle()

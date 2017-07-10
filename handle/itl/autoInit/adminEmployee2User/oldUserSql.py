@@ -9,11 +9,11 @@ class OldUserSql:
         if len(mobile_group) < 1:
             return
 
-        sql_user = 'select * from user where mobile in ('
+        sql_user = 'SELECT * FROM user WHERE mobile IN ('
 
-        sql = 'select admin_employee.*, job_post.`name` ' \
-              'from admin_employee left join job_post on job_post.id = admin_employee.job_post_id ' \
-              'where admin_employee.mobile in ('
+        sql = 'SELECT admin_employee.*, job_post.`name` ' \
+              'FROM admin_employee LEFT JOIN job_post ON job_post.id = admin_employee.job_post_id ' \
+              'WHERE admin_employee.mobile IN ('
 
         print('查询user表是否已经存在:')
         print(OldUserSql.get_sql(sql_user, mobile_group))
@@ -39,7 +39,18 @@ if __name__ == '__main__':
     #     for line in f.readlines():
     #         mobiles.append(line[:-1])
     mobiles = [
-        '13735831467',
+        '18329145008',
+        '13588327010',
+        '18358181923',
+        '13867458823',
+        '15268814624',
+        '15158049755',
+        '13967170449',
+        '15973802195',
+        '13819463619',
+        '15637781561',
+        '15038798321',
+        '18368846479',
     ]
 
     for item in mobiles:

@@ -72,3 +72,15 @@ class MenuData:
         {'code': 'HOUSEKEEPER_MY_TAB_岗位职责', 'name': '岗位职责', 'menu_type': '3', 'sort_num': '900', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-gangweirenwu@3x.png'},
         {'code': 'HOUSEKEEPER_MY_TAB_更多', 'name': '更多', 'menu_type': '1', 'sort_num': '890', 'icon_url': 'http://oda3qkbe9.bkt.clouddn.com/icon-zongjie@3x.png'}
     ]
+
+    YJ = [
+        {'code': 'admin_itlZoneTask', 'name': '导入项目任务', 'menu_type': '', 'sort_num': '3', 'icon_url': ''},
+        {'code': 'admin_RoleManager', 'name': '职能管理', 'menu_type': '', 'sort_num': '4', 'icon_url': ''},
+        {'code': 'admin_Permission', 'name': '功能入口管理', 'menu_type': '', 'sort_num': '5', 'icon_url': ''},
+        {'code': 'admin_itlMenuGroup', 'name': '项目功能对应入口', 'menu_type': '', 'sort_num': '6', 'icon_url': ''},
+        {'code': 'admin_ItlZoneMenuFilter', 'name': '项目功能开通', 'menu_type': '', 'sort_num': '7', 'icon_url': ''},
+        {'code': 'admin_ItlCompany', 'name': '物业公司管理', 'menu_type': '', 'sort_num': '11', 'icon_url': ''},
+        {'code': 'admin_zoneBlock', 'name': '项目的苑配置', 'menu_type': '', 'sort_num': '9', 'icon_url': ''},
+        {'code': 'admin_houseLimit', 'name': '导入房号表', 'menu_type': '', 'sort_num': '8', 'icon_url': ''},
+        {'code': 'admin_Zone', 'name': '项目管理', 'menu_type': '', 'sort_num': '10', 'icon_url': ''},
+    ]
