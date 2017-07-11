@@ -36,7 +36,7 @@ class ToLegal:
         ws = wb.active  # 获取当前活跃的worksheet,默认就是第一个worksheet
 
         for index in range(1, len(data)):
-            if not ToLegal._check_param(data[index]):
+            if ToLegal._check_param(data[index]):
                 print(data[index])
                 a.append(data[index])
             else:

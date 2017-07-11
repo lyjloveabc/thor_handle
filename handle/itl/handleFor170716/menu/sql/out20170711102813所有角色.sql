@@ -1,0 +1,32 @@
+# 新增所有的角色
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '第一权限管理员', '第一权限管理员', '第一权限管理员');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '项目负责人', '项目负责人', '项目负责人');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '客服负责人', '客服负责人', '客服负责人');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '保洁负责人', '保洁负责人', '保洁负责人');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '保洁', '保洁', '保洁');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '绿化负责人', '绿化负责人', '绿化负责人');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '绿化', '绿化', '绿化');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '保安负责人', '保安负责人', '保安负责人');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '门岗', '门岗', '门岗');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '巡逻岗', '巡逻岗', '巡逻岗');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '监控岗', '监控岗', '监控岗');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '车库岗', '车库岗', '车库岗');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '工程负责人', '工程负责人', '工程负责人');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '工程', '工程', '工程');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '外部维修商', '外部维修商', '外部维修商');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '财务', '财务', '财务');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '外围观测者', '外围观测者', '外围观测者');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '苹果审核专用', '苹果审核专用', '苹果审核专用');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '巡更', '巡更', '巡更');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '业委会', '业委会', '业委会');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '管家客服', '管家客服', '管家客服');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '前台客服', '前台客服', '前台客服');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '保安领班', '保安领班', '保安领班');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '高配', '高配', '高配');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '弱电', '弱电', '弱电');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '行政内务', '行政内务', '行政内务');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '抽检', '抽检', '抽检');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '小二', '小二', '小二');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '物业公司管理员', '物业公司管理员', '物业公司管理员');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '项目管理员', '项目管理员', '项目管理员');
+
