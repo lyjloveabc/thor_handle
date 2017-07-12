@@ -24,10 +24,6 @@ ALTER TABLE `itianluo`.zones
   ADD `paid_in_order` TINYINT NOT NULL DEFAULT 0
 COMMENT '该小区的账单是否顺序付款，1必须顺序付款，0可以任意付款';
 
-# 20170620 zones 表新增company_id索引
-ALTER TABLE `itianluo`.`zones`
-  ADD INDEX `company` (`company_id` ASC);
-
 # 20170621 itl_sampling_log 表新增launch_task_id自增ID
 ALTER TABLE `itianluo`.`itl_sampling_log`
   ADD COLUMN `launch_task_id` INT NOT NULL
