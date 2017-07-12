@@ -28,5 +28,5 @@ INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now()
 INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '抽检', '抽检', '抽检');
 INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '小二', '小二', '小二');
 INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '物业公司管理员', '物业公司管理员', '物业公司管理员');
-INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '项目管理员', '项目管理员', '项目管理员');
+INSERT INTO role (gmt_create, gmt_modify, code, name, description) VALUES (now(), now(), '后台项目管理员', '后台项目管理员', '后台项目管理员');
 
