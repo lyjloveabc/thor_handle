@@ -1,5 +1,4 @@
 # 角色属性表新增所有的角色对应的属性
-BEGIN;
 INSERT INTO role_attribute (gmt_create, gmt_modify, role_code, can_be_bonus_points, can_be_complaint_praise, can_change_zone, can_be_repair_task) VALUES (now(), now(), '第一权限管理员', '1', '1', '1', '1');
 INSERT INTO role_attribute (gmt_create, gmt_modify, role_code, can_be_bonus_points, can_be_complaint_praise, can_change_zone, can_be_repair_task) VALUES (now(), now(), '项目负责人', '1', '1', '1', '1');
 INSERT INTO role_attribute (gmt_create, gmt_modify, role_code, can_be_bonus_points, can_be_complaint_praise, can_change_zone, can_be_repair_task) VALUES (now(), now(), '客服负责人', '1', '1', '1', '1');
@@ -29,5 +28,5 @@ INSERT INTO role_attribute (gmt_create, gmt_modify, role_code, can_be_bonus_poin
 INSERT INTO role_attribute (gmt_create, gmt_modify, role_code, can_be_bonus_points, can_be_complaint_praise, can_change_zone, can_be_repair_task) VALUES (now(), now(), '抽检', '1', '1', '1', '1');
 INSERT INTO role_attribute (gmt_create, gmt_modify, role_code, can_be_bonus_points, can_be_complaint_praise, can_change_zone, can_be_repair_task) VALUES (now(), now(), '小二', '1', '1', '1', '1');
 INSERT INTO role_attribute (gmt_create, gmt_modify, role_code, can_be_bonus_points, can_be_complaint_praise, can_change_zone, can_be_repair_task) VALUES (now(), now(), '物业公司管理员', '1', '1', '1', '1');
-COMMIT;
+INSERT INTO role_attribute (gmt_create, gmt_modify, role_code, can_be_bonus_points, can_be_complaint_praise, can_change_zone, can_be_repair_task) VALUES (now(), now(), '后台项目管理员', '1', '1', '1', '1');
 

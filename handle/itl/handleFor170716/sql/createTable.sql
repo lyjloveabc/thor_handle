@@ -163,34 +163,6 @@ CREATE TABLE `itl_bill_discount_log` (
   COMMENT '账单打折记录（一条打折账单一条记录）';
 ################################ END 账单打折记录 ################################
 
-################################ START 房屋车位关系表 ################################
-# 20170703 房屋车位关系表
-DROP TABLE IF EXISTS `itl_house_parking`;
-CREATE TABLE `itl_house_parking` (
-  `id`            INT         NOT NULL  AUTO_INCREMENT
-  COMMENT '数据库自增ID',
-  `created_time`  DATETIME    NOT NULL  DEFAULT '1970-01-01 00:00:00'
-  COMMENT '数据创建时间',
-  `modified_time` DATETIME    NOT NULL  DEFAULT '1970-01-01 00:00:00'
-  COMMENT '数据修改时间',
-
-  `house_info_id` INT         NOT NULL
-  COMMENT '房屋ID',
-  `zone_id`       INT         NOT NULL
-  COMMENT '小区ID',
-  `parking_code`  VARCHAR(20) NOT NULL
-  COMMENT '车位号',
-
-  `car_number`    VARCHAR(10) NOT NULL  DEFAULT ''
-  COMMENT '车牌',
-
-  PRIMARY KEY (`id`)
-)
-  ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4
-  COMMENT '房屋车位关系表';
-################################ END 房屋车位关系表 ################################
-
 ################################ START 物业上传文件的状态记录 ################################
 # 物业上传文件的状态记录
 CREATE TABLE `itianluo`.`itl_wuye_file_upload` (
