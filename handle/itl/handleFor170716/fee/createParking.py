@@ -1,6 +1,7 @@
 """
 处理菜单
 """
+from handle.itl.handleFor170716.dbUtil import DbUtil
 
 
 class CreateParking:
@@ -10,7 +11,7 @@ class CreateParking:
     def handle(self):
         self._product_type()
         self._product()
-        self._subscription()
+        # self._subscription()
 
     def _product_type(self):
         sql_define = ["INSERT INTO product_type (id, name, bill_name, code, icon, gmt_create, gmt_modify, description, status)"
@@ -36,5 +37,5 @@ class CreateParking:
 
 
 if __name__ == '__main__':
-    handle = CreateParking()
+    handle = CreateParking(**{'dbUtil': DbUtil()})
     handle.handle()

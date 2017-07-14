@@ -11,13 +11,13 @@ if __name__ == '__main__':
     dbUtil = DbUtil()
 
     # 创建管家端涉及到的所有菜单、以及角色对应这些菜单
-    createMenu = CreateMenu(**{'dbUtil': dbUtil})
-    createMenu.handle()
-
-    # 账单数据填充，user_id字段填充
-    paddingData = PaddingData(**{'dbUtil': dbUtil})
-    paddingData.handle()
+    # createMenu = CreateMenu(**{'dbUtil': dbUtil})
+    # createMenu.handle()
 
     # 创建一个车位费，翡翠城订阅这个车位费
     createParking = CreateParking(**{'dbUtil': dbUtil})
     createParking.handle()
+
+    # 账单数据填充，user_id字段填充
+    paddingData = PaddingData(**{'dbUtil': dbUtil})
+    paddingData.handle()

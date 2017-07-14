@@ -21,7 +21,7 @@ class ZoneCompany:
             sql = ZoneCompany._BASE_SQL.format(company_id=row['company_id'], id=row['id'])
             sql_define.append(sql)
 
-        self.dbUtil.out_sql(sql_define, '更新小区的公司名称')
+        self.dbUtil.out_sql(sql_define, '更新现有小区的公司名称')
         self.dbUtil.exe_on_db(sql_define)
 
 

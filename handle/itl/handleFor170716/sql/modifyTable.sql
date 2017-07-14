@@ -26,7 +26,7 @@ COMMENT '该小区的账单是否顺序付款，1必须顺序付款，0可以任
 
 # 20170621 itl_sampling_log 表新增launch_task_id自增ID
 ALTER TABLE `itianluo`.`itl_sampling_log`
-  ADD COLUMN `launch_task_id` INT NOT NULL
+  ADD COLUMN `launch_task_id` INT DEFAULT NULL
 COMMENT '这条抽检记录对应的是哪条抽检任务';
 
 # 20170621 itl_zone_category 表新增 leader_user_ids 部门负责人
@@ -36,31 +36,31 @@ COMMENT '部门负责人ID字符串，多个用英文字段隔开';
 
 # 20170621 itl_patrol_log 表新增launch_task_id自增ID
 ALTER TABLE `itianluo`.`itl_patrol_log`
-  ADD COLUMN `launch_task_id` INT NOT NULL
+  ADD COLUMN `launch_task_id` INT DEFAULT NULL
 COMMENT '这条巡更记录对应的是哪条巡更任务';
 
 # 20170625 itl_sampling_log 表新增do_task_id自增ID
 ALTER TABLE `itianluo`.`itl_sampling_log`
-  ADD COLUMN `do_task_id` INT NOT NULL
+  ADD COLUMN `do_task_id` INT DEFAULT NULL
 COMMENT '这条抽检记录对应的是哪条执行记录';
 
 # 20170621 itl_patrol_log 表新增do_task_id自增ID
 ALTER TABLE `itianluo`.`itl_patrol_log`
-  ADD COLUMN `do_task_id` INT NOT NULL
+  ADD COLUMN `do_task_id` INT DEFAULT NULL
 COMMENT '这条巡更记录对应的是哪条巡更任务';
 
 # 给zones添加初始化需要的字段
 ALTER TABLE `itianluo`.`zones`
-  ADD COLUMN `province` VARCHAR(20) NULL
+  ADD COLUMN `province` VARCHAR(20) DEFAULT NULL
 COMMENT '省份'
   AFTER `company_id`,
-  ADD COLUMN `info` TEXT NULL
+  ADD COLUMN `info` TEXT DEFAULT NULL
 COMMENT 'son存储额外信息，包含鸟瞰图、正门图、其他备注'
   AFTER `province`,
-  ADD COLUMN `type` VARCHAR(20) NULL
+  ADD COLUMN `type` VARCHAR(20) DEFAULT NULL
 COMMENT '项目类型，住宅、写字楼、商业体、其他公建'
   AFTER `info`,
-  ADD COLUMN `subtype` VARCHAR(20) NULL
+  ADD COLUMN `subtype` VARCHAR(20) DEFAULT NULL
 COMMENT '住宅类型：高层、小高层、多层、别墅、排屋'
   AFTER `type`;
 
