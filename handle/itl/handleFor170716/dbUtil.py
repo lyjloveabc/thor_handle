@@ -14,11 +14,13 @@ class DbUtil:
     _DIRECT_EXE_ON_DB = False
 
     def __init__(self):
-        self.dao = DaoUtils(**{'dbType': 'MySQL', 'config': MySQLConfig.localhost()})
+        self.dao = DaoUtils(**{'dbType': 'MySQL', 'config': MySQLConfig.stable_sky()})
         self.time = datetime.now().strftime('%Y%m%d%H%M%S')
 
-        # self.users = self.get_all_user()
-        # self.admin_emp = self.get_all_admin_emp()
+        self.users = self.get_all_user()
+        self.admin_emp = self.get_all_admin_emp()
+
+        self.where = ''
 
         if not os.path.exists(DbUtil._BASE_PATH):
             os.mkdir(DbUtil._BASE_PATH)
@@ -63,7 +65,7 @@ class DbUtil:
         return self.dao.get_all('SELECT id, mobile FROM admin_employee ORDER BY id;')
 
     def get_all_subscription_enter(self):
-        return self.dao.get_all('SELECT id, admin_employee_id FROM subscription_enter;')
+        return self.dao.get_all('SELECT id, admin_employee_id FROM subscription_enter ' + self.where + ';')
 
     def get_all_repair(self):
         return self.dao.get_all('SELECT id, guid, employee_id FROM task;')

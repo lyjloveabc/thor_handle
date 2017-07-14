@@ -13,7 +13,7 @@ class MySQLConfig:
     @staticmethod
     def __common_config():
         config = {
-            'port': 3306,
+            'port': 3307,
             'charset': MySQLConfig.CHARSET,
             'cursorclass': MySQLConfig.CURSOR_CLASS
         }
@@ -44,4 +44,13 @@ class MySQLConfig:
         config['user'] = 'itianluo'
         config['password'] = 'Itianluo303!'
         config['db'] = 'itianluo'
+        return config
+
+    @staticmethod
+    def stable_sky():
+        config = MySQLConfig.__common_config()
+        config['host'] = 'localhost'
+        config['user'] = 'itianluo'
+        config['password'] = 'Itianluo303!'
+        config['db'] = 'sky'
         return config

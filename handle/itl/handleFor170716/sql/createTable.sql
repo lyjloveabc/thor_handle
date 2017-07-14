@@ -1,3 +1,5 @@
+START TRANSACTION;
+
 ################################ START 审批 ################################
 # 20170615 审批发起记录
 DROP TABLE IF EXISTS `itl_approval`;
@@ -165,7 +167,8 @@ CREATE TABLE `itl_bill_discount_log` (
 
 ################################ START 物业上传文件的状态记录 ################################
 # 物业上传文件的状态记录
-CREATE TABLE `itianluo`.`itl_wuye_file_upload` (
+DROP TABLE IF EXISTS `itl_wuye_file_upload`;
+CREATE TABLE `itl_wuye_file_upload` (
   `id`            INT          NOT NULL,
   `zone_id`       INT          NOT NULL,
   `type`          VARCHAR(45)  NOT NULL
@@ -178,6 +181,57 @@ CREATE TABLE `itianluo`.`itl_wuye_file_upload` (
   PRIMARY KEY (`id`)
 );
 
-ALTER TABLE `itianluo`.`itl_wuye_file_upload`
+ALTER TABLE `itl_wuye_file_upload`
   CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
 ################################ END 物业上传文件的状态记录 ################################
+
+# 20170620 itl_company 新增表
+DROP TABLE IF EXISTS `itl_company`;
+CREATE TABLE `itl_company` (
+  `id`            INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `company_name`  VARCHAR(256)     NOT NULL
+  COMMENT '公司名',
+  `status`        INT(4)           NOT NULL DEFAULT '1'
+  COMMENT '状态。0可用 1不可用',
+  `comment`       VARCHAR(256)              DEFAULT NULL
+  COMMENT '备注',
+  `created_time`  DATETIME         NOT NULL
+  COMMENT '创建时间',
+  `modified_time` DATETIME         NOT NULL
+  COMMENT '修改时间',
+  `modified_by`   INT(11) UNSIGNED          DEFAULT NULL
+  COMMENT '最后修改人',
+  `alias`         VARCHAR(50)      NULL
+  COMMENT '公司简称',
+
+  PRIMARY KEY (`id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+
+# 20170712 岗位表
+DROP TABLE IF EXISTS `itl_job_title`;
+CREATE TABLE `itl_job_title` (
+  `id`         INT(32)      NOT NULL  AUTO_INCREMENT
+  COMMENT '数据库自增ID',
+  `gmt_create` DATETIME     NOT NULL  DEFAULT '1970-01-01 00:00:01'
+  COMMENT '数据创建时间',
+  `gmt_modify` DATETIME     NOT NULL  DEFAULT '1970-01-01 00:00:01'
+  COMMENT '数据修改时间',
+
+  `name`       VARCHAR(32)  NOT NULL
+  COMMENT '头衔名称',
+  `duties`     VARCHAR(256) NOT NULL
+  COMMENT '职责',
+  `remark`     VARCHAR(128) NOT NULL  DEFAULT ''
+  COMMENT '类型：公司总部，项目',
+  `type`       VARCHAR(32)  NOT NULL  DEFAULT '项目'
+  COMMENT '类型：公司总部，项目',
+
+  PRIMARY KEY (`id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COMMENT '岗位表';
+
+COMMIT;

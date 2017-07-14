@@ -1,6 +1,7 @@
 """
 填充数据
 """
+from handle.itl.handleFor170716.dbUtil import DbUtil
 
 
 class PaddingData:
@@ -93,5 +94,5 @@ class PaddingData:
 
 
 if __name__ == '__main__':
-    handle = PaddingData()
+    handle = PaddingData(**{'dbUtil': DbUtil()})
     handle.handle()
