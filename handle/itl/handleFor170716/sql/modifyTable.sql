@@ -66,7 +66,7 @@ COMMENT '项目类型，住宅、写字楼、商业体、其他公建'
 COMMENT '住宅类型：高层、小高层、多层、别墅、排屋'
   AFTER `type`;
 
-# 20170712 user 修改字段可以为空
+# user 修改字段可以为空
 ALTER TABLE user
   CHANGE `old_user_id` `old_user_id` INT(11) DEFAULT NULL
 COMMENT '老的admin_employee的ID';
@@ -75,5 +75,10 @@ ALTER TABLE user
   CHANGE `verification_code` `verification_code` VARCHAR(10) DEFAULT NULL
 COMMENT '密码注册重置验证码';
 
+# 修改账户权限相关表的自增ID
+alter table permission AUTO_INCREMENT=2784;
+alter table role AUTO_INCREMENT=57;
+alter table role_attribute AUTO_INCREMENT=51;
+alter table role_permission_relation AUTO_INCREMENT=2991;
 
 COMMIT;
