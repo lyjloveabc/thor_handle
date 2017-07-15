@@ -75,4 +75,5 @@ ALTER TABLE user
   CHANGE `verification_code` `verification_code` VARCHAR(10) DEFAULT NULL
 COMMENT '密码注册重置验证码';
 
+
 COMMIT;

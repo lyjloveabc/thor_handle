@@ -1,0 +1,15 @@
+数据迁移
+
+一、执行流程
+1、表的新建、表结构的变更：createTable.sql、modifyTable.sql；
+2、账户权限体系相关表数据（permission、role、role_attribute、role_permission_relation），以online数据为基础，新增数据；
+3、执行'车位费+公司+岗位.sql'；
+    添加车位费product_type
+    添加车位费product
+    添加目前的全部的公司
+    更新现有小区的公司名称
+    所有的人员更新公司
+    添加所有的岗位
+4、bill表新增字段填充（is_checked、financial_income）
+   userID填充（这里必须是需要用新版的小区）：chat、subscription_enter、task、task_map、summary_plan、bug_report、
+                appraisal、appraisal_emp、appraisal_progress、appraisal_adjust、appraisal_assignee
