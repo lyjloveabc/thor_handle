@@ -39,8 +39,7 @@ if __name__ == '__main__':
     #     for line in f.readlines():
     #         mobiles.append(line[:-1])
     mobiles = [
-        '18212389350',
-        '13282169889',
+        '13216166891',
     ]
 
     for item in mobiles:
