@@ -39,8 +39,8 @@ class ToLegal:
         for row in data:
             if ToLegal._check_param(row):
                 ws.cell(row=index, column=1).value = ToLegal._type_name_to_type(row['type'])
-                ws.cell(row=index, column=2).value = row['content'].strip()
-                ws.cell(row=index, column=3).value = row['standard'].strip()
+                ws.cell(row=index, column=2).value = ToLegal._transform_text(row['content'])
+                ws.cell(row=index, column=3).value = ToLegal._transform_text(row['standard'])
                 ws.cell(row=index, column=4).value = ToLegal._rate_name_to_rate(row['rate'])
                 ws.cell(row=index, column=5).value = int(row['startTime'])
                 ws.cell(row=index, column=6).value = int(row['endTime'])
@@ -82,7 +82,7 @@ class ToLegal:
 
     @staticmethod
     def _transform_text(text):
-        return str(text).replace(',', '，').replace('\n', '')
+        return str(text).strip().replace(',', '，').replace('\n', '')
 
 
 if __name__ == '__main__':
