@@ -92,4 +92,4 @@ class TaskExcelToLegalCsv:
 
 if __name__ == '__main__':
     handle = TaskExcelToLegalCsv()
-    handle.handle('房总任务库-20170718删除泳池版 .xlsx')
+    handle.handle('03.任务池(住宅)房总-启动培训配置版.xlsx')
