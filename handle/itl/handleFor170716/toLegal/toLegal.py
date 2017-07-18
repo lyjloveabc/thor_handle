@@ -1,6 +1,8 @@
 """
 处理菜单
 """
+import os
+
 from openpyxl import Workbook
 
 from handle.itl.handleFor170716.menu.data.roleData import RoleData
@@ -84,6 +86,9 @@ class ToLegal:
 
 if __name__ == '__main__':
     file_name = '房总物业任务池(住宅)-产品导入版.xlsx'
+
+    print(os.getcwd())
+    print(os.listdir())
 
     handle = ToLegal()
     handle.handle(file_name)
