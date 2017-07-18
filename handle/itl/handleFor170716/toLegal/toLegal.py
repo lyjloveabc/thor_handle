@@ -3,7 +3,6 @@
 """
 from openpyxl import Workbook
 
-# from handle.itl.handleFor170716.dbUtil import DbUtil
 from handle.itl.handleFor170716.menu.data.roleData import RoleData
 from utils.file.excel.readUtil import ReadUtil
 
@@ -13,11 +12,9 @@ class ToLegal:
     _RATE = {'日': 'D', '周': 'W', '月': 'M', '年': 'Y'}
 
     def __init__(self, *args, **kw):
-        pass
-        # self.dbUtil = kw['dbUtil']
-        # _ROLE = self.dbUtil.get_all_role()
+        print('init')
 
-    def handle(self):
+    def handle(self, file_name):
         field_index = {
             'role': 0,
             'type': 1,
@@ -28,10 +25,10 @@ class ToLegal:
             'endTime': 6,
         }
 
-        self.write_file(ReadUtil.read_file('房总物业任务池(住宅)-产品导入版.xlsx', field_index))
+        self.write_file(ReadUtil.read_file(file_name, field_index), file_name)
 
     @staticmethod
-    def write_file(data):
+    def write_file(data, file_name):
         wb = Workbook()  # 在内存中创建一个workbook对象，而且会至少创建一个 worksheet
         ws = wb.active  # 获取当前活跃的worksheet,默认就是第一个worksheet
 
@@ -50,7 +47,7 @@ class ToLegal:
                 print(row)
             index += 1
 
-        wb.save(filename="/Users/luoyanjie/abc2223.xlsx")  # 保存
+        wb.save(filename="/Users/luoyanjie/out_" + file_name)  # 保存
 
     @staticmethod
     def _check_param(row):
@@ -86,6 +83,7 @@ class ToLegal:
 
 
 if __name__ == '__main__':
-    # handle = ToLegal(**{'dbUtil': DbUtil()})
+    file_name = '房总物业任务池(住宅)-产品导入版.xlsx'
+
     handle = ToLegal()
-    handle.handle()
+    handle.handle(file_name)
