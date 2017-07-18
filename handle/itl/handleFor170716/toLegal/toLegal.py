@@ -28,25 +28,27 @@ class ToLegal:
             'endTime': 6,
         }
 
-        self.write_file(ReadUtil.read_file('职能任务池-7月15日发技术.xlsx', field_index))
+        self.write_file(ReadUtil.read_file('房总物业任务池(住宅)-产品导入版.xlsx', field_index))
 
     @staticmethod
     def write_file(data):
         wb = Workbook()  # 在内存中创建一个workbook对象，而且会至少创建一个 worksheet
         ws = wb.active  # 获取当前活跃的worksheet,默认就是第一个worksheet
 
-        for index in range(1, len(data)):
-            if ToLegal._check_param(data[index]):
-                ws.cell(row=index, column=1).value = ToLegal._type_name_to_type(data[index]['type'])
-                ws.cell(row=index, column=2).value = data[index]['content'].strip()
-                ws.cell(row=index, column=3).value = data[index]['standard'].strip()
-                ws.cell(row=index, column=4).value = ToLegal._rate_name_to_rate(data[index]['rate'])
-                ws.cell(row=index, column=5).value = int(data[index]['startTime'])
-                ws.cell(row=index, column=6).value = int(data[index]['endTime'])
-                ws.cell(row=index, column=7).value = RoleData.ROLE_ALL[data[index]['role']]
-                ws.cell(row=index, column=8).value = data[index]['role']
+        index = 1
+        for row in data:
+            if ToLegal._check_param(row):
+                ws.cell(row=index, column=1).value = ToLegal._type_name_to_type(row['type'])
+                ws.cell(row=index, column=2).value = row['content'].strip()
+                ws.cell(row=index, column=3).value = row['standard'].strip()
+                ws.cell(row=index, column=4).value = ToLegal._rate_name_to_rate(row['rate'])
+                ws.cell(row=index, column=5).value = int(row['startTime'])
+                ws.cell(row=index, column=6).value = int(row['endTime'])
+                ws.cell(row=index, column=7).value = RoleData.ROLE_ALL[row['role']]
+                ws.cell(row=index, column=8).value = row['role']
             else:
-                print(data[index])
+                print(row)
+            index += 1
 
         wb.save(filename="/Users/luoyanjie/abc2223.xlsx")  # 保存
 
@@ -63,8 +65,6 @@ class ToLegal:
                    and row['rate'] in ToLegal._RATE.keys() \
                    and start_time <= end_time \
                    and row['role'] in RoleData.ROLE_ALL.keys()
-            print(flag)
-
             return flag
         except Exception as e:
             print(e)
