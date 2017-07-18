@@ -1,8 +1,11 @@
 """
 处理菜单
 """
+import codecs
+import csv
 import os
 
+import re
 from openpyxl import Workbook
 
 from handle.itl.handleFor170716.menu.data.roleData import RoleData
@@ -31,25 +34,35 @@ class ToLegal:
 
     @staticmethod
     def write_file(data, file_name):
-        wb = Workbook()  # 在内存中创建一个workbook对象，而且会至少创建一个 worksheet
-        ws = wb.active  # 获取当前活跃的worksheet,默认就是第一个worksheet
+        # wb = Workbook()  # 在内存中创建一个workbook对象，而且会至少创建一个 worksheet
+        # ws = wb.active  # 获取当前活跃的worksheet,默认就是第一个worksheet
+        #
+        # index = 1
+        # for row in data:
+        #     if ToLegal._check_param(row):
+        #         ws.cell(row=index, column=1).value = ToLegal._type_name_to_type(row['type'])
+        #         ws.cell(row=index, column=2).value = ToLegal._transform_text(row['content'])
+        #         ws.cell(row=index, column=3).value = ToLegal._transform_text(row['standard'])
+        #         ws.cell(row=index, column=4).value = ToLegal._rate_name_to_rate(row['rate'])
+        #         ws.cell(row=index, column=5).value = int(row['startTime'])
+        #         ws.cell(row=index, column=6).value = int(row['endTime'])
+        #         ws.cell(row=index, column=7).value = RoleData.ROLE_ALL[row['role']]
+        #         ws.cell(row=index, column=8).value = row['role']
+        #     else:
+        #         print(row)
+        #     index += 1
+        # wb.save(filename="/Users/luoyanjie/out_" + file_name)  # 保存
 
-        index = 1
-        for row in data:
-            if ToLegal._check_param(row):
-                ws.cell(row=index, column=1).value = ToLegal._type_name_to_type(row['type'])
-                ws.cell(row=index, column=2).value = ToLegal._transform_text(row['content'])
-                ws.cell(row=index, column=3).value = ToLegal._transform_text(row['standard'])
-                ws.cell(row=index, column=4).value = ToLegal._rate_name_to_rate(row['rate'])
-                ws.cell(row=index, column=5).value = int(row['startTime'])
-                ws.cell(row=index, column=6).value = int(row['endTime'])
-                ws.cell(row=index, column=7).value = RoleData.ROLE_ALL[row['role']]
-                ws.cell(row=index, column=8).value = row['role']
-            else:
-                print(row)
-            index += 1
+        with open('/Users/luoyanjie/out_' + re.search(r'(.+)\.', file_name).group(1) + '.csv', 'w', encoding='gbk') as csv_file:
+            csv_writer = csv.writer(csv_file, dialect='excel')
 
-        wb.save(filename="/Users/luoyanjie/out_" + file_name)  # 保存
+            for row in data:
+                if ToLegal._check_param(row):
+                    csv_writer.writerow([ToLegal._type_name_to_type(row['type']), ToLegal._transform_text(row['content']),
+                                         ToLegal._transform_text(row['standard']), ToLegal._rate_name_to_rate(row['rate']),
+                                         int(row['startTime']), int(row['endTime']), RoleData.ROLE_ALL[row['role']], row['role']])
+                else:
+                    print(row)
 
     @staticmethod
     def _check_param(row):
@@ -66,6 +79,7 @@ class ToLegal:
                    and row['role'] in RoleData.ROLE_ALL.keys()
             return flag
         except Exception as e:
+            print(row)
             print(e)
             return False
         finally:
@@ -85,7 +99,7 @@ class ToLegal:
 
 
 if __name__ == '__main__':
-    file_name = '房总物业任务池(住宅)-产品导入版.xlsx'
+    file_name = '任务池(住宅类)20170718 .xlsx'
 
     print(os.getcwd())
     print(os.listdir())
