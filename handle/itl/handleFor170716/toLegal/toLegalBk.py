@@ -2,41 +2,62 @@
 处理菜单
 """
 import csv
+import os
 import re
 
+from handle.itl.handleFor170716.menu.data.roleData import RoleData
 from utils.file.excel.readUtil import ReadUtil
 
 
 class ToLegal:
     _TYPE = {'确认': '1A', '拍照': '1B', '检查': '1C', '抽检': '1D', '巡更': '1E'}
     _RATE = {'日': 'D', '周': 'W', '月': 'M', '年': 'Y'}
-    _ROLE_ALL = {
-        '第一权限管理员': '第一权限管理员', '项目负责人': '项目负责人', '客服负责人': '客服负责人', '保洁负责人': '保洁负责人',
-        '保洁': '保洁', '绿化负责人': '绿化负责人', '绿化': '绿化', '保安负责人': '保安负责人', '门岗': '门岗',
-        '巡逻岗': '巡逻岗', '监控岗': '监控岗', '车库岗': '车库岗', '工程负责人': '工程负责人', '工程': '工程', '外部维修商': '外部维修商',
-        '财务': '财务', '外围观测者': '外围观测者', '苹果审核专用': '苹果审核专用', '巡更': '巡更', '业委会': '业委会',
-        '管家客服': '管家客服', '前台客服': '前台客服', '保安领班': '保安领班', '高配': '高配', '弱电': '弱电',
-        '行政内务': '行政内务', '抽检': '抽检', '小二': '小二', '物业公司管理员': '物业公司管理员', '后台项目管理员': '后台项目管理员'
-    }
 
     def __init__(self, *args, **kw):
-        print('init object')
+        print('init')
 
     def handle(self, file_name):
-        field_index = {'role': 0, 'type': 1, 'content': 2, 'standard': 3, 'rate': 4, 'startTime': 5, 'endTime': 6}
+        field_index = {
+            'role': 0,
+            'type': 1,
+            'content': 2,
+            'standard': 3,
+            'rate': 4,
+            'startTime': 5,
+            'endTime': 6,
+        }
 
         self.write_file(ReadUtil.read_file(file_name, field_index), file_name)
 
     @staticmethod
     def write_file(data, file_name):
-        with open('out_' + re.search(r'(.+)\.', file_name).group(1) + '.csv', 'w', encoding='gbk') as csv_file:
+        # wb = Workbook()  # 在内存中创建一个workbook对象，而且会至少创建一个 worksheet
+        # ws = wb.active  # 获取当前活跃的worksheet,默认就是第一个worksheet
+        #
+        # index = 1
+        # for row in data:
+        #     if ToLegal._check_param(row):
+        #         ws.cell(row=index, column=1).value = ToLegal._type_name_to_type(row['type'])
+        #         ws.cell(row=index, column=2).value = ToLegal._transform_text(row['content'])
+        #         ws.cell(row=index, column=3).value = ToLegal._transform_text(row['standard'])
+        #         ws.cell(row=index, column=4).value = ToLegal._rate_name_to_rate(row['rate'])
+        #         ws.cell(row=index, column=5).value = int(row['startTime'])
+        #         ws.cell(row=index, column=6).value = int(row['endTime'])
+        #         ws.cell(row=index, column=7).value = RoleData.ROLE_ALL[row['role']]
+        #         ws.cell(row=index, column=8).value = row['role']
+        #     else:
+        #         print(row)
+        #     index += 1
+        # wb.save(filename="/Users/luoyanjie/out_" + file_name)  # 保存
+
+        with open('/Users/luoyanjie/out_' + re.search(r'(.+)\.', file_name).group(1) + '.csv', 'w', encoding='gbk') as csv_file:
             csv_writer = csv.writer(csv_file, dialect='excel')
 
             for row in data:
                 if ToLegal._check_param(row):
                     csv_writer.writerow([ToLegal._type_name_to_type(row['type']), ToLegal._transform_text(row['content']),
                                          ToLegal._transform_text(row['standard']), ToLegal._rate_name_to_rate(row['rate']),
-                                         int(row['startTime']), int(row['endTime']), ToLegal._ROLE_ALL[row['role']], row['role']])
+                                         int(row['startTime']), int(row['endTime']), RoleData.ROLE_ALL[row['role']], row['role']])
                 else:
                     print(row)
 
@@ -52,9 +73,10 @@ class ToLegal:
                    and len(row['content'].strip()) <= 512 \
                    and row['rate'] in ToLegal._RATE.keys() \
                    and start_time <= end_time \
-                   and row['role'] in ToLegal._ROLE_ALL.keys()
+                   and row['role'] in RoleData.ROLE_ALL.keys()
             return flag
         except Exception as e:
+            print(row)
             print(e)
             return False
         finally:
@@ -74,5 +96,10 @@ class ToLegal:
 
 
 if __name__ == '__main__':
+    file_name = '房总任务库-20170718删除泳池版 .xlsx'
+
+    print(os.getcwd())
+    print(os.listdir())
+
     handle = ToLegal()
-    handle.handle('房总任务库-20170718删除泳池版 .xlsx')
+    handle.handle(file_name)
