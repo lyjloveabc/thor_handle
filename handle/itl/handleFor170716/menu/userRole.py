@@ -24,7 +24,7 @@ class UserRole:
             sql = UserRole._BASE_SQL_UPDATE.format(old_role_code=row['old_code'], role_code=row['code'])
             sql_define.append(sql)
 
-        self.dbUtil.out_sql(sql_define, '')
+        self.dbUtil.out_sql(sql_define, '更新老角色到新角色')
         # self.dbUtil.exe_on_db(sql_define)
 
     def _tran(self):
@@ -34,11 +34,11 @@ class UserRole:
         for row in ids:
             sql_define.append(UserRole._BASE_SQL_TRAN.format(user_id=row['user_id']))
 
-        self.dbUtil.out_sql(sql_define, '')
+        self.dbUtil.out_sql(sql_define, '新增以前的客服为前台客服')
         # self.dbUtil.exe_on_db(sql_define)
 
     def _del(self):
-        self.dbUtil.out_sql([UserRole._BASE_SQL_DEL], '')
+        self.dbUtil.out_sql([UserRole._BASE_SQL_DEL], '删除不用的角色相关关系表')
         # self.dbUtil.exe_on_db([UserRole._BASE_SQL_DEL])
 
 

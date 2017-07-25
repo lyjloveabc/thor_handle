@@ -52,5 +52,5 @@ class MySQLConfig:
         config['host'] = 'localhost'
         config['user'] = 'itianluo'
         config['password'] = 'Itianluo303!'
-        config['db'] = 'sky'
+        config['db'] = 'itianluo'
         return config
