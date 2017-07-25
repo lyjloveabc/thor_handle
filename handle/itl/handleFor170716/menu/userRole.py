@@ -25,21 +25,21 @@ class UserRole:
             sql_define.append(sql)
 
         self.dbUtil.out_sql(sql_define, '')
-        self.dbUtil.exe_on_db(sql_define)
+        # self.dbUtil.exe_on_db(sql_define)
 
     def _tran(self):
-        self.dbUtil.out_sql([UserRole._BASE_SQL_DEL], '')
-        self.dbUtil.exe_on_db([UserRole._BASE_SQL_DEL])
-
-    def _del(self):
         sql_define = list()
 
         ids = self.dbUtil.temp()
         for row in ids:
-            sql_define.append(UserRole._BASE_SQL_TRAN.format(user_id=row['id']))
+            sql_define.append(UserRole._BASE_SQL_TRAN.format(user_id=row['user_id']))
 
         self.dbUtil.out_sql(sql_define, '')
-        self.dbUtil.exe_on_db(sql_define)
+        # self.dbUtil.exe_on_db(sql_define)
+
+    def _del(self):
+        self.dbUtil.out_sql([UserRole._BASE_SQL_DEL], '')
+        # self.dbUtil.exe_on_db([UserRole._BASE_SQL_DEL])
 
 
 if __name__ == '__main__':

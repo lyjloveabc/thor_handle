@@ -108,7 +108,7 @@ class DbUtil:
 
     # START TEMP
     def temp(self):
-        return self.dao.get_all('SELECT id FROM user_role_relation WHERE role_code = \'customerService\';')
+        return self.dao.get_all('SELECT user_id FROM user_role_relation WHERE role_code = \'customerService\';')
 
     def role_permission_relation(self):
         return self.dao.get_all('SELECT role_code, permission_code FROM role_permission_relation WHERE role_code IN (\'propertyManager\', \'xiaoer\');')
