@@ -5,7 +5,7 @@
 
 
 class UpdateSomeUser:
-    DAY = '_20170619'
+    DAY = '_20170726'
     BASE_PATH = 'file/' + DAY + '/'
 
     def __init__(self):
