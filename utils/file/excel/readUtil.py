@@ -33,6 +33,5 @@ class ReadUtil:
                     result_list.append(row_data)
                 except ValueError as e:
                     log.error(e)
-        log.info(file_name + ' :: ' + str(len(result_list)))
 
         return result_list

@@ -172,4 +172,8 @@ INSERT INTO user_role_relation(gmt_create, gmt_modify, user_id, role_code) VALUE
 # 删除不用的角色相关关系表
 DELETE FROM user_role_relation WHERE role_code IN ('jobAdjustment', 'companyManager', 'energyMeterReader', 'businessExecutive', 'liftWorker');
 
+# 公司管理账号建立
+
+# 老小区管理账号建立
+
 # 老小区的临时任务处理
