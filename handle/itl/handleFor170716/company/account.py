@@ -8,6 +8,11 @@ class Account:
     _INSERT_USER = 'INSERT INTO user(gmt_create, gmt_modify, account, password, name, nickname, company_id, zone_id, zone_ids) VALUES ' \
                    '(now(), now(), "{account}", "{password}", "{name}", "{nickname}", (SELECT id FROM itl_company WHERE company_name = "{company_name}"),' \
                    '"{zone_id}", "{zone_ids}");'
+
+    _INSERT_USER_2222 = 'INSERT INTO user(gmt_create, gmt_modify, account, password, name, nickname, company_id, zone_id, zone_ids) VALUES ' \
+                        '(now(), now(), "{account}", "{password}", "{name}", "{nickname}", (SELECT id FROM itl_company WHERE company_name = "{company_name}"),' \
+                        '(SELECT id FROM zones WHERE name = "{zone_name}"), (SELECT id FROM zones WHERE name = "{zone_name}"));'
+
     _UPDATE_COMPANY = 'UPDATE itl_company SET manager_id = (SELECT id FROM user WHERE account = "{account}") WHERE company_name = "{company_name}";'
 
     _UPDATE_ZONE = 'UPDATE zones SET manager_id = (SELECT id FROM user WHERE account = "{account}") WHERE name = "{zone_name}";'
@@ -36,10 +41,9 @@ class Account:
         xm = ReadUtil.read_file(Account._BASE_PATH + '物业后台账号-项目管理员拆分版.xlsx', {'company': 0, 'zone': 1, 'account': 2, 'pwd': 3})
         for row in xm:
             name = row['zone'] + '-管理员'
-            print(Account._INSERT_USER.format(account=row['account'], password=hashlib.md5(row['pwd'].encode('utf-8')).hexdigest(),
-                                              name=name, nickname=name, company_name=row['company'],
-                                              zone_id='(select id from zones where name = \'' + row['zone'] + '\')',
-                                              zone_ids='(select id from zones where name = \'' + row['zone'] + '\')'))
+            print(Account._INSERT_USER_2222.format(account=row['account'], password=hashlib.md5(row['pwd'].encode('utf-8')).hexdigest(),
+                                                   name=name, nickname=name, company_name=row['company'],
+                                                   zone_name=row['zone']))
             print(Account._UPDATE_ZONE.format(account=row['account'], zone_name=row['zone']))
             print(Account._INSERT_R.format(account=row['account'], role_code='后台项目管理员'))
             print(Account._INSERT_CATEGORY.format(zone_name=row['zone']))

@@ -91,5 +91,18 @@ class TaskExcelToLegalCsv:
 
 
 if __name__ == '__main__':
+    base_path = ''
     handle = TaskExcelToLegalCsv()
-    handle.handle('03.任务池(住宅)房总-启动培训配置版.xlsx')
+
+    handle.handle(base_path + '20170725景江苑任务库迁移梳理-韦护.xls')
+    handle.handle(base_path + '20170725碧景园任务库迁移梳理-韦护.xls')
+    handle.handle(base_path + '20170725黄龙雅苑任务库迁移梳理-韦护.xls')
+    handle.handle(base_path + '万源城依据.xlsx')
+    handle.handle(base_path + '东园高层.xlsx')
+    handle.handle(base_path + '中山御庭.xlsx')
+    handle.handle(base_path + '凯喜雅大厦.xlsx')
+    handle.handle(base_path + '北海公园.xlsx')
+    handle.handle(base_path + '政苑小区.xlsx')
+    handle.handle(base_path + '时代长岛之春.xlsx')
+    handle.handle(base_path + '臻园.xlsx')
+    handle.handle(base_path + '西溪金座.xlsx')
