@@ -42,7 +42,7 @@ class MySQLConfig:
         config = MySQLConfig.__common_config()
         config['host'] = '106.15.201.198'
         config['user'] = 'itianluo'
-        config['password'] = 'Itianluo303!'
+        config['password'] = 'Aijia1501$'
         config['db'] = 'itianluo'
         return config
 
@@ -51,6 +51,6 @@ class MySQLConfig:
         config = MySQLConfig.__common_config()
         config['host'] = 'localhost'
         config['user'] = 'itianluo'
-        config['password'] = 'Itianluo303!'
+        config['password'] = 'Aijia1501$'
         config['db'] = 'itianluo'
         return config
