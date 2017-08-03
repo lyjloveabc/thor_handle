@@ -41,12 +41,12 @@ class Account:
         xm = ReadUtil.read_file(Account._BASE_PATH + '物业后台账号-项目管理员拆分版.xlsx', {'company': 0, 'zone': 1, 'account': 2, 'pwd': 3})
         for row in xm:
             name = row['zone'] + '-管理员'
-            print(Account._INSERT_USER_2222.format(account=row['account'], password=hashlib.md5(row['pwd'].encode('utf-8')).hexdigest(),
-                                                   name=name, nickname=name, company_name=row['company'],
-                                                   zone_name=row['zone']))
-            print(Account._UPDATE_ZONE.format(account=row['account'], zone_name=row['zone']))
-            print(Account._INSERT_R.format(account=row['account'], role_code='后台项目管理员'))
-            print(Account._INSERT_CATEGORY.format(zone_name=row['zone']))
+            # print(Account._INSERT_USER_2222.format(account=row['account'], password=hashlib.md5(row['pwd'].encode('utf-8')).hexdigest(),
+            #                                        name=name, nickname=name, company_name=row['company'],
+            #                                        zone_name=row['zone']))
+            # print(Account._UPDATE_ZONE.format(account=row['account'], zone_name=row['zone']))
+            print(Account._INSERT_R.format(account=row['account'], role_code='小二'))
+            # print(Account._INSERT_CATEGORY.format(zone_name=row['zone']))
         print('COMMIT;')
 
 
