@@ -94,4 +94,11 @@ if __name__ == '__main__':
     base_path = ''
     handle = TaskExcelToLegalCsv()
 
-    handle.handle(base_path + '任务库示例-韦护.xls')
+    handle.handle(base_path + '任务库-东湖家园.xlsx')
+    handle.handle(base_path + '任务库-吴兴科创园.xlsx')
+    handle.handle(base_path + '任务库-府庙双子大厦.xlsx')
+    handle.handle(base_path + '任务库-新华府潘家廊.xlsx')
+    handle.handle(base_path + '任务库-滨河园.xlsx')
+    handle.handle(base_path + '任务库-莲花庄小区.xlsx')
+    handle.handle(base_path + '任务库-金田家园.xlsx')
+    handle.handle(base_path + '任务库-锦绣苑.xlsx')
