@@ -40,15 +40,6 @@ class MySQLConfig:
     @staticmethod
     def stable():
         config = MySQLConfig.__common_config()
-        config['host'] = '106.15.201.198'
-        config['user'] = 'itianluo'
-        config['password'] = 'Aijia1501$'
-        config['db'] = 'itianluo'
-        return config
-
-    @staticmethod
-    def stable_sky():
-        config = MySQLConfig.__common_config()
         config['host'] = 'localhost'
         config['user'] = 'itianluo'
         config['password'] = 'Aijia1501$'
