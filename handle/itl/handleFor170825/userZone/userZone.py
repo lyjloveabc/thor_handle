@@ -19,7 +19,7 @@ class UserZone:
     _BASE_SQL = 'INSERT INTO itl_user_zone_relation (created_time, modified_time, user_id, zone_id) VALUES (now(), now(), "{userId}", "{zoneId}");'
 
     def __init__(self):
-        self.dao = DaoUtils(**{'dbType': 'MySQL', 'config': MySQLConfig.stable()})
+        self.dao = DaoUtils(**{'dbType': 'MySQL', 'config': MySQLConfig.localhost()})
 
     def handle(self):
         data = self.dao.get_all(

@@ -13,7 +13,7 @@ class MySQLConfig:
     @staticmethod
     def __common_config():
         config = {
-            'port': 3307,
+            'port': 3306,
             'charset': MySQLConfig.CHARSET,
             'cursorclass': MySQLConfig.CURSOR_CLASS
         }
@@ -25,15 +25,15 @@ class MySQLConfig:
         config['host'] = '127.0.0.1'
         config['user'] = 'root'
         config['password'] = '123456'
-        config['db'] = 'wcs'
+        config['db'] = 'itianluo'
         return config
 
     @staticmethod
     def inner():
         config = MySQLConfig.__common_config()
-        config['host'] = '192.168.1.101'
+        config['host'] = '192.168.25.40'
         config['user'] = 'itianluo'
-        config['password'] = '^itianluo@0928$'
+        config['password'] = '^2807@AIjiaTianluo!1501$'
         config['db'] = 'itianluo'
         return config
 
