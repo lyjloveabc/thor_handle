@@ -9,6 +9,12 @@ FROM
 WHERE
     user_role_relation.role_code NOT IN ('物业公司管理员' , '后台项目管理员', '小二') and user.zone_id > 0
 GROUP BY user.id;
+
+V2:
+select user.id, user.zone_id, user.zone_ids
+from user
+where user.zone_id > 0
+and user.id not in (select user_id from user_role_relation where role_code in ('物业公司管理员' , '后台项目管理员', '小二'))
 """
 from utils.constant.constant import Constant
 from utils.db.daoUtil import DaoUtils
@@ -24,15 +30,10 @@ class UserZone:
     def handle(self):
         data = self.dao.get_all(
             """
-            SELECT
-            user.id, user.zone_id, user.zone_ids, count(user.id)
-            FROM
-            user
-            LEFT JOIN
-            user_role_relation ON user_role_relation.user_id = user.id
-            WHERE
-            user_role_relation.role_code NOT IN ('物业公司管理员' , '后台项目管理员', '小二') AND user.zone_id > 0
-            GROUP BY user.id;
+            SELECT user.id, user.zone_id, user.zone_ids
+            FROM user
+            WHERE user.zone_id > 0 
+            AND user.id NOT IN (SELECT user_id FROM user_role_relation WHERE role_code IN ('物业公司管理员' , '后台项目管理员', '小二'));
             """
         )
         print(len(data))
