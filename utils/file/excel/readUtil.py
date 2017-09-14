@@ -28,7 +28,7 @@ class ReadUtil:
                 try:
                     row_data = dict()
                     for k, v in field_index.items():
-                        row_data[k] = sheet.row_values(i)[v]
+                        row_data[k] = str(sheet.row_values(i)[v])
 
                     result_list.append(row_data)
                 except ValueError as e:
