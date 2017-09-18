@@ -94,4 +94,15 @@ if __name__ == '__main__':
     base_path = ''
     handle = TaskExcelToLegalCsv()
 
-    handle.handle(base_path + '项目配置表 绿岸科创园(1).xlsx')
+    # handle.handle("Wechat南湖明筑苑.xlsx")
+    handle.handle("Wechat新世纪广场.xlsx")
+    # handle.handle("Wechat晴彩巴厘.xlsx")
+    # handle.handle("Wechat柳浪新苑.xlsx")
+    # handle.handle("Wechat桐汭首府.xlsx")
+    # handle.handle("Wechat泗水古城.xlsx")
+    # handle.handle("Wechat海创大厦.xlsx")
+    # handle.handle("Wechat野风启城.xlsx")
+    # handle.handle("Wechat铭鹤花园.xlsx")
+    handle.handle("Wechat阳光嘉园.xlsx")
+    handle.handle("Wechat阳光幸福里.xlsx")
+    # handle.handle("Wechat龙湖国际.xlsx")
