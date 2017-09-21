@@ -48,9 +48,12 @@ class TaskExcelToLegalCsv:
             for row in data:
                 if TaskExcelToLegalCsv._check_param(row):
                     # 数据按行写入到csv
+                    # csv_writer.writerow([TaskExcelToLegalCsv._type_name_to_type(row['type']), TaskExcelToLegalCsv._transform_text(row['content']),
+                    #                      TaskExcelToLegalCsv._transform_text(row['standard']), TaskExcelToLegalCsv._rate_name_to_rate(row['rate']),
+                    #                      int(row['startTime']), int(row['endTime']), TaskExcelToLegalCsv._ROLE_ALL[row['role']], row['role']])
                     csv_writer.writerow([TaskExcelToLegalCsv._type_name_to_type(row['type']), TaskExcelToLegalCsv._transform_text(row['content']),
                                          TaskExcelToLegalCsv._transform_text(row['standard']), TaskExcelToLegalCsv._rate_name_to_rate(row['rate']),
-                                         int(row['startTime']), int(row['endTime']), TaskExcelToLegalCsv._ROLE_ALL[row['role']], row['role']])
+                                         round(float(row['startTime'])), round(float(row['endTime'])), TaskExcelToLegalCsv._ROLE_ALL[row['role']], row['role']])
                 else:
                     print(row)  # 有问题的行打印到控制
 
@@ -58,8 +61,10 @@ class TaskExcelToLegalCsv:
     def _check_param(row):
         """ 检查每一行记录的数据是否合法，合法直接返回True，数据有问题则直接返回False """
         try:
-            start_time = int(row['startTime'])
-            end_time = int(row['endTime']) if int(row['endTime']) != -1 else 1  # 完成时间为-1表示的是日任务可以延期，这里做一下特殊处理，方便后续计算
+            # start_time = int(row['startTime'])
+            start_time = round(float(row['startTime']))
+            # end_time = int(row['endTime']) if int(row['endTime']) != -1 else 1  # 完成时间为-1表示的是日任务可以延期，这里做一下特殊处理，方便后续计算
+            end_time = round(float(row['endTime'])) if round(float(row['endTime'])) != -1 else 1  # 完成时间为-1表示的是日任务可以延期，这里做一下特殊处理，方便后续计算
 
             return row['type'] != '' \
                    and row['type'] in TaskExcelToLegalCsv._TYPE.keys() \
@@ -94,15 +99,6 @@ if __name__ == '__main__':
     base_path = ''
     handle = TaskExcelToLegalCsv()
 
-    # handle.handle("Wechat南湖明筑苑.xlsx")
-    handle.handle("Wechat新世纪广场.xlsx")
-    # handle.handle("Wechat晴彩巴厘.xlsx")
-    # handle.handle("Wechat柳浪新苑.xlsx")
-    # handle.handle("Wechat桐汭首府.xlsx")
-    # handle.handle("Wechat泗水古城.xlsx")
-    # handle.handle("Wechat海创大厦.xlsx")
-    # handle.handle("Wechat野风启城.xlsx")
-    # handle.handle("Wechat铭鹤花园.xlsx")
-    handle.handle("Wechat阳光嘉园.xlsx")
-    handle.handle("Wechat阳光幸福里.xlsx")
-    # handle.handle("Wechat龙湖国际.xlsx")
+    handle.handle("新世纪广场.xlsx")
+    handle.handle("阳光嘉园.xlsx")
+    handle.handle("阳光幸福里.xlsx")
