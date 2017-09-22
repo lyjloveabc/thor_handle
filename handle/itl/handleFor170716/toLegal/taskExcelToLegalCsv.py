@@ -99,6 +99,4 @@ if __name__ == '__main__':
     base_path = ''
     handle = TaskExcelToLegalCsv()
 
-    handle.handle("新世纪广场.xlsx")
-    handle.handle("阳光嘉园.xlsx")
-    handle.handle("阳光幸福里.xlsx")
+    handle.handle("枫丹苑.xlsx")
