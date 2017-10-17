@@ -25,7 +25,7 @@ class MySQLConfig:
         config['host'] = '127.0.0.1'
         config['user'] = 'root'
         config['password'] = '123456'
-        config['db'] = 'itianluo'
+        config['db'] = 'wcs'
         return config
 
     @staticmethod
