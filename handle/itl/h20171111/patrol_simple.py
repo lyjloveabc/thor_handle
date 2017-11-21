@@ -88,7 +88,8 @@ class PatrolSimple:
         print(json.dumps(param))
 
         headers = {'content-type': 'application/json'}
-        requests.post("http://premanager.itianluo.cn/patrol/oldDataHandle?token=092ef9338413437abdf58e9560a0842a", headers=headers, data=json.dumps(param))
+        # requests.post("http://premanager.itianluo.cn/patrol/oldDataHandle?token=092ef9338413437abdf58e9560a0842a", headers=headers, data=json.dumps(param))
+        requests.post("http://manager.itianluo.cn/patrol/oldDataHandle?token=092ef9338413437abdf58e9560a0842a", headers=headers, data=json.dumps(param))
 
 
 if __name__ == '__main__':
