@@ -13,8 +13,8 @@ logging.basicConfig(level=logging.DEBUG,
 
 
 class ClearOldLog:
-    __DAY = 10  # 日期阈值
-    __MAIL_TO = ["546223592@qq.com", 'luoyanjie@itianluo.cn', 'huangzhen@itianluo.cn']  # 目标邮箱列表
+    __DAY = 20  # 日期阈值
+    __MAIL_TO = ["546223592@qq.com", 'luoyanjie@itianluo.cn', 'huangzhen@itianluo.cn', '853467358@qq.com']  # 目标邮箱列表
 
     def __init__(self):
         self.log = list()
