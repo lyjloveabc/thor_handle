@@ -89,7 +89,7 @@ class Email:
         user = 'luoyanjiewade@163.com'
         pwd = ''  # 163邮箱smtp生成的密码
 
-        me = Email.__ME.format(user)
+        me = "Thor" + "<" + user + ">"
 
         msg = MIMEText(content, _subtype='plain', _charset='utf-8')
         msg['Subject'] = sub
@@ -113,7 +113,7 @@ class Email:
         user = 'luoyanjie@itianluo.cn'
         pwd = ''
 
-        me = Email.__ME.format(user)
+        me = "Thor" + "<" + user + ">"
 
         msg = MIMEText(content, _subtype='plain', _charset='utf-8')
         msg["Subject"] = sub
