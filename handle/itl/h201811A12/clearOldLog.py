@@ -67,14 +67,14 @@ class ClearOldLog:
 
 
 class Email:
-    __HOST = "smtp.163.com"  # SMTP 服务器主机
-    __USER = "luoyanjiewade@163.com"
-    __PWD = "zucc416lyj"  # 163邮箱smtp生成的密码
+    __ME = me = 'Thor' + '<%s>'
 
     @staticmethod
     def send_mail(sub, content, to_list, product='netease'):
         if product == 'netease':
             Email.netease(sub, content, to_list)
+        elif product == 'tencent':
+            Email.tencent(sub, content, to_list)
 
     @staticmethod
     def netease(sub, content, to_list):
@@ -85,17 +85,44 @@ class Email:
         :param to_list: 发送目标
         :return: 发送成功返回True
         """
-        me = "Thor" + "<" + Email.__USER + ">"
+        host = 'smtp.163.com'  # SMTP 服务器主机
+        user = 'luoyanjiewade@163.com'
+        pwd = ''  # 163邮箱smtp生成的密码
+
+        me = Email.__ME.format(user)
 
         msg = MIMEText(content, _subtype='plain', _charset='utf-8')
         msg['Subject'] = sub
         msg['From'] = me
-        msg['To'] = ";".join(to_list)
+        msg['To'] = ';'.join(to_list)
 
         try:
             server = smtplib.SMTP()
-            server.connect(Email.__HOST)
-            server.login(Email.__USER, Email.__PWD)
+            server.connect(host)
+            server.login(user, pwd)
+            server.sendmail(me, to_list, msg.as_string())
+            server.close()
+
+            return True
+        except smtplib.SMTPException:
+            return False
+
+    @staticmethod
+    def tencent(sub, content, to_list):
+        host = 'smtp.exmail.qq.com'  # SMTP 服务器主机
+        user = 'luoyanjie@itianluo.cn'
+        pwd = ''
+
+        me = Email.__ME.format(user)
+
+        msg = MIMEText(content, _subtype='plain', _charset='utf-8')
+        msg["Subject"] = sub
+        msg["From"] = me
+        msg["To"] = ";".join(to_list)
+
+        try:
+            server = smtplib.SMTP_SSL(host, port=465)
+            server.login(user, pwd)
             server.sendmail(me, to_list, msg.as_string())
             server.close()
 
