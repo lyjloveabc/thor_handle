@@ -1,0 +1,65 @@
+Wed, 29 Nov 2017 16:15:31 clearOldLog.py[line:14] INFO ============> init 2017-11-29 16:15:31.329295
+Wed, 29 Nov 2017 16:15:40 clearOldLog.py[line:14] INFO ============> init 2017-11-29 16:15:40.343488
+Wed, 29 Nov 2017 16:16:05 clearOldLog.py[line:14] INFO 
+
+Wed, 29 Nov 2017 16:16:05 clearOldLog.py[line:15] INFO ============> init 2017-11-29 16:16:05.098330
+Wed, 29 Nov 2017 16:16:41 clearOldLog.py[line:14] INFO ============> init 2017-11-29 16:16:41.803551
+Wed, 29 Nov 2017 16:16:41 clearOldLog.py[line:32] INFO End. 
+
+Wed, 29 Nov 2017 16:16:46 clearOldLog.py[line:14] INFO ============> init 2017-11-29 16:16:46.892084
+Wed, 29 Nov 2017 16:16:46 clearOldLog.py[line:32] INFO End. 
+
+Wed, 29 Nov 2017 16:16:51 clearOldLog.py[line:14] INFO ============> init 2017-11-29 16:16:51.493301
+Wed, 29 Nov 2017 16:16:51 clearOldLog.py[line:32] INFO End. 
+
+Wed, 29 Nov 2017 16:18:38 clearOldLog.py[line:14] INFO ============> init 2017-11-29 16:18:38.710627
+Wed, 29 Nov 2017 16:18:38 clearOldLog.py[line:32] INFO End. 
+
+Wed, 29 Nov 2017 16:18:55 clearOldLog.py[line:14] INFO ============> init 2017-11-29 16:18:55.371353
+Wed, 29 Nov 2017 16:18:55 clearOldLog.py[line:51] INFO > delete: /Users/luoyanjie/IdeaProjects/logs/cloud-logs/cloud-web/common.2017-11-23.log
+Wed, 29 Nov 2017 16:18:55 clearOldLog.py[line:51] INFO > delete: /Users/luoyanjie/IdeaProjects/logs/cloud-logs/cloud-web/error.2017-11-23.log
+Wed, 29 Nov 2017 16:18:55 clearOldLog.py[line:51] INFO > delete: /Users/luoyanjie/IdeaProjects/logs/cloud-logs/auth/db.2017-11-23.log
+Wed, 29 Nov 2017 16:18:55 clearOldLog.py[line:51] INFO > delete: /Users/luoyanjie/IdeaProjects/logs/cloud-logs/cloud-web/warn.2017-11-23.log
+Wed, 29 Nov 2017 16:18:55 clearOldLog.py[line:32] INFO End. 
+
+Wed, 29 Nov 2017 16:20:37 clearOldLog.py[line:16] INFO ============> init 2017-11-29 16:20:37.203438
+Wed, 29 Nov 2017 16:20:37 clearOldLog.py[line:34] INFO End. 
+
+Wed, 29 Nov 2017 16:21:24 clearOldLog.py[line:16] INFO ============> init 2017-11-29 16:21:24.639750
+Wed, 29 Nov 2017 16:21:24 clearOldLog.py[line:34] INFO End. 
+
+Wed, 29 Nov 2017 16:21:32 clearOldLog.py[line:16] INFO ============> init 2017-11-29 16:21:32.772622
+Wed, 29 Nov 2017 16:21:32 clearOldLog.py[line:34] INFO End. 
+
+Wed, 29 Nov 2017 16:21:45 clearOldLog.py[line:16] INFO ============> init 2017-11-29 16:21:45.496899
+Wed, 29 Nov 2017 16:21:45 clearOldLog.py[line:51] INFO no data to delete!
+Wed, 29 Nov 2017 16:21:45 clearOldLog.py[line:34] INFO End. 
+
+Wed, 29 Nov 2017 16:22:02 clearOldLog.py[line:16] INFO ============> init 2017-11-29 16:22:02.864678
+Wed, 29 Nov 2017 16:22:02 clearOldLog.py[line:51] INFO ^.^ no data to delete ^.^
+Wed, 29 Nov 2017 16:22:02 clearOldLog.py[line:34] INFO End. 
+
+Wed, 29 Nov 2017 16:40:09 clearOldLog.py[line:21] INFO ============> init 2017-11-29 16:40:09.120009
+Wed, 29 Nov 2017 16:40:09 clearOldLog.py[line:59] INFO ^.^ no data to delete ^.^
+Wed, 29 Nov 2017 16:40:09 clearOldLog.py[line:40] INFO End. 
+
+Wed, 29 Nov 2017 16:40:48 clearOldLog.py[line:21] INFO ============> init 2017-11-29 16:40:48.242186
+Wed, 29 Nov 2017 16:40:48 clearOldLog.py[line:59] INFO ^.^ no data to delete ^.^
+Wed, 29 Nov 2017 16:40:48 clearOldLog.py[line:40] INFO End. 
+
+Wed, 29 Nov 2017 16:43:36 clearOldLog.py[line:21] INFO ============> init 2017-11-29 16:43:36.328756
+Wed, 29 Nov 2017 16:43:36 clearOldLog.py[line:59] INFO ^.^ no data to delete ^.^
+Wed, 29 Nov 2017 16:43:36 clearOldLog.py[line:40] INFO End. 
+
+Wed, 29 Nov 2017 16:46:15 clearOldLog.py[line:21] INFO ============> init 2017-11-29 16:46:15.523712
+Wed, 29 Nov 2017 16:46:15 clearOldLog.py[line:60] INFO ^.^ no data to delete ^.^
+Wed, 29 Nov 2017 16:46:15 clearOldLog.py[line:40] INFO End. 
+
+Wed, 29 Nov 2017 16:46:45 clearOldLog.py[line:21] INFO ============> init 2017-11-29 16:46:45.715845
+Wed, 29 Nov 2017 16:46:45 clearOldLog.py[line:60] INFO ^.^ no data to delete ^.^
+Wed, 29 Nov 2017 16:46:45 clearOldLog.py[line:40] INFO End. 
+
+Wed, 29 Nov 2017 16:47:08 clearOldLog.py[line:22] INFO ============> init 2017-11-29 16:47:08.218869
+Wed, 29 Nov 2017 16:47:08 clearOldLog.py[line:61] INFO ^.^ no data to delete ^.^
+Wed, 29 Nov 2017 16:47:08 clearOldLog.py[line:41] INFO End. 
+
