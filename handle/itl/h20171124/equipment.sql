@@ -80,43 +80,6 @@ CREATE TABLE `itl_equipment_maintain_standard` (
   DEFAULT CHARSET = utf8mb4
   COMMENT '设备保养标准';
 
-# 20171120 预算或支出人员流转
-DROP TABLE IF EXISTS `itl_budget_approval_flow`;
-CREATE TABLE `itl_budget_approval_flow` (
-  `id`                 INT(11)      NOT NULL AUTO_INCREMENT
-  COMMENT '数据库自增ID',
-  `created_time`       DATETIME     NOT NULL DEFAULT '1970-01-01 00:00:00'
-  COMMENT '数据创建时间',
-  `modified_time`      DATETIME     NOT NULL DEFAULT '1970-01-01 00:00:00'
-  COMMENT '数据修改时间',
-
-  `group_value`        INT          NOT NULL
-  COMMENT '流转组值',
-  `budget_approval_id` INT          NOT NULL
-  COMMENT '预算或支出审批主体的ID',
-
-  `exe_id`             INT          NOT NULL
-  COMMENT '操作这个审批同意拒绝的人的ID，业主/物业人员的userId',
-  `exe_type`           VARCHAR(6)   NOT NULL
-  COMMENT '操作者类型，枚举值：STAFF、OWNER',
-
-  `reason`             VARCHAR(128) NULL
-  COMMENT '理由',
-  `images`             VARCHAR(512) NULL
-  COMMENT '图片的url地址，多张图片用英文逗号隔开',
-  `is_executed`        TINYINT(4)   NOT NULL DEFAULT '0'
-  COMMENT '是否已经执行审批：1执行了、0未执行',
-  `result`             TINYINT(4)   NULL
-  COMMENT '操作结果：1操作通过（同意）、2操作拒绝（拒绝）',
-
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk` (`group_value`, `budget_approval_id`, `exe_id`),
-  INDEX `idx`(`budget_approval_id`)
-)
-  ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4
-  COMMENT '预算或支出人员流转';
-
 #################################### START 初始化数据 ####################################
 
 
