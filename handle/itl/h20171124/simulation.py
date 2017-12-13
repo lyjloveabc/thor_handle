@@ -37,5 +37,10 @@ class Simulation:
 
 
 if __name__ == '__main__':
-    acl = Simulation()
-    acl.handle()
+    # acl = Simulation()
+    # acl.handle()
+
+    response = requests.post('https://huaihua.anjuke.com/community/',  verify=False, allow_redirects=False)
+    print(response.headers['Location'])
+    print(response)
+    print(response.text)
