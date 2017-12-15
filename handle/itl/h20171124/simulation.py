@@ -40,7 +40,9 @@ if __name__ == '__main__':
     # acl = Simulation()
     # acl.handle()
 
-    response = requests.post('https://huaihua.anjuke.com/community/',  verify=False, allow_redirects=False)
-    print(response.headers['Location'])
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+    }
+    response = requests.get('https://anqing.anjuke.com/community/view/691592', headers=headers, verify=False, allow_redirects=False)
     print(response)
     print(response.text)
