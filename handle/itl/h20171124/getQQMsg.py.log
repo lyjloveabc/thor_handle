@@ -163,3 +163,5 @@ Thu, 14 Dec 2017 16:13:26 connectionpool.py[line:818] DEBUG Starting new HTTPS c
 Thu, 14 Dec 2017 16:13:26 connectionpool.py[line:395] DEBUG https://anqing.anjuke.com:443 "GET /community/view/691592/ HTTP/1.1" 301 None
 Thu, 14 Dec 2017 16:13:31 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): anqing.anjuke.com
 Thu, 14 Dec 2017 16:13:32 connectionpool.py[line:395] DEBUG https://anqing.anjuke.com:443 "GET /community/view/691592 HTTP/1.1" 200 None
+Fri, 15 Dec 2017 14:07:10 connectionpool.py[line:818] DEBUG Starting new HTTPS connection (1): anqing.anjuke.com
+Fri, 15 Dec 2017 14:07:10 connectionpool.py[line:395] DEBUG https://anqing.anjuke.com:443 "GET /community/view/691592 HTTP/1.1" 200 None
