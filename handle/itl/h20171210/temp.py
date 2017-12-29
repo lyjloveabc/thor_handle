@@ -39,36 +39,6 @@ content = [
     "抗议抗议",
 ]
 
-# time = [
-#     "080000",
-#     "090201",
-#     "100300",
-#     "110000",
-#     "120000",
-#     "130000",
-# 
-#     "080000",
-#     "090201",
-#     "100300",
-#     "110000",
-#     "120000",
-#     "130000",
-# 
-#     "20171220080000",
-#     "20171220090201",
-#     "20171220100300",
-#     "20171220110000",
-#     "20171220120000",
-#     "20171220130000",
-# 
-#     "20171221080000",
-#     "20171221090201",
-#     "20171221100300",
-#     "20171221110000",
-#     "20171221120000",
-#     "20171221130000"
-# ]
-
 time = [
     "080000",
     "090201",
@@ -78,16 +48,10 @@ time = [
     "130000",
 ]
 
-group_ids = [
-    "89757213",
-    "65213980",
-    "1238656523"
-]
-
 
 def aa(gr):
-    start = '2017-11-20'
-    end = '2017-12-24'
+    start = '2017-12-24'
+    end = '2017-12-26'
 
     datestart = datetime.datetime.strptime(start, '%Y-%m-%d')
     dateend = datetime.datetime.strptime(end, '%Y-%m-%d')
@@ -104,5 +68,24 @@ def aa(gr):
         datestart += datetime.timedelta(days=1)
 
 
-for index in range(111111, 111141):
-    aa(str(index))
+def bb(gr):
+    start = '2017-11-19'
+    end = '2017-12-26'
+
+    datestart = datetime.datetime.strptime(start, '%Y-%m-%d')
+    dateend = datetime.datetime.strptime(end, '%Y-%m-%d')
+    with open("file/g15_today_messages.data", "a") as f:
+        while datestart < dateend:
+            date_str = datestart.strftime('%Y%m%d')
+            for index in range(1, 2001):
+                p = person[random.randint(0, len(person) - 1)]
+                c = content[random.randint(0, len(content) - 1)]
+                t = date_str + time[random.randint(0, len(time) - 1)]
+
+                f.write("{person}|{content}|{time}|{group}|{day}".format(person=p, content=c, time=t, group=gr, day=date_str))
+                f.write("\n")
+            datestart += datetime.timedelta(days=1)
+
+
+for index in range(1, 6):
+    bb(str(index))
