@@ -24,7 +24,7 @@ SET
   billing_period = '商铺公共维修费 2017年12月-2018年11月',
   gmt_start      = '2017-12-01',
   gmt_end        = '2018-11-30'
-WHERE zone_id = 76 AND id = 180;
+WHERE zone_id = 76 AND sub_period_id = 180;
 
 ###### START 处理住宅公共维修费 ######
 # 删除2017年度的账期
@@ -59,6 +59,6 @@ SET
   billing_period = '住宅公共维修费 2017年12月-2018年11月',
   gmt_start      = '2017-12-01',
   gmt_end        = '2018-11-30'
-WHERE zone_id = 76 AND id = 182;
+WHERE zone_id = 76 AND sub_period_id = 182;
 
 COMMIT;
