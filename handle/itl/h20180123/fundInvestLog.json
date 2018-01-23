@@ -494,12 +494,12 @@
     "belongTo": 1
   },
   {
-    "fundCode": "160716",
+    "fundCode": "020003",
     "realAmount": 0.00,
     "discountAmount": 0.00,
     "operateDirection": "SHARE",
     "operateAmount": 0.00,
-    "capitalChannel": "-",
+    "capitalChannel": "NULL",
     "investTime": "2017-09-08 11:12:12",
     "operateType": "SHARE_BUY_AGAIN",
     "operateReason": "国泰金龙行业混合分红再投资",
