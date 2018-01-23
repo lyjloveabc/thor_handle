@@ -1026,25 +1026,6 @@
     "belongTo": 1
   },
   {
-    "fundCode": "110022",
-    "realAmount": 1000.00,
-    "discountAmount": 0.00,
-    "operateDirection": "BUY",
-    "operateAmount": 1000.00,
-    "capitalChannel": "ZSYH_CXK",
-    "investTime": "2018-01-02 12:17:44",
-    "operateType": "FUND_PLEDGE",
-    "operateReason": "基金定投",
-    "operatePlatform": "ANTFORTUNE",
-    "acknowledgingAmount": 998.80,
-    "acknowledgingShare": 631.75,
-    "acknowledgingNetValue": 1.5810,
-    "serviceCharge": 1.20,
-    "acknowledgingTime": "2018-01-03",
-    "remark": "",
-    "belongTo": 1
-  },
-  {
     "fundCode": "020003",
     "realAmount": 1000.00,
     "discountAmount": 0.00,
