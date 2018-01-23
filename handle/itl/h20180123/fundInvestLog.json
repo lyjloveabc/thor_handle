@@ -574,7 +574,7 @@
     "realAmount": 500.00,
     "discountAmount": 0.00,
     "operateDirection": "BUY",
-    "operateAmount": 600.00,
+    "operateAmount": 500.00,
     "capitalChannel": "ZSYH_CXK",
     "investTime": "2017-09-28 12:21:32",
     "operateType": "MANUALLY_ADD",
@@ -589,7 +589,7 @@
     "belongTo": 1
   },
   {
-    "fundCode": "31318",
+    "fundCode": "310318",
     "realAmount": 1000.00,
     "discountAmount": 0.00,
     "operateDirection": "BUY",
@@ -808,10 +808,10 @@
     "operateType": "FUND_PLEDGE",
     "operateReason": "基金定投",
     "operatePlatform": "ANTFORTUNE",
-    "acknowledgingAmount": 998.80,
-    "acknowledgingShare": 656.11,
-    "acknowledgingNetValue": 1.5223,
-    "serviceCharge": 1.20,
+    "acknowledgingAmount": 998.50,
+    "acknowledgingShare": 434.51,
+    "acknowledgingNetValue": 2.2980,
+    "serviceCharge": 1.50,
     "acknowledgingTime": "2017-11-02",
     "remark": "",
     "belongTo": 1
@@ -849,7 +849,7 @@
     "acknowledgingAmount": 499.25,
     "acknowledgingShare": 224.79,
     "acknowledgingNetValue": 2.2210,
-    "serviceCharge": 0.60,
+    "serviceCharge": 0.75,
     "acknowledgingTime": "2017-11-27",
     "remark": "",
     "belongTo": 1
