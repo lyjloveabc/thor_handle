@@ -1,0 +1,16 @@
+[
+  {
+    "belongTo": 1,
+    "investTime": "2017-05-31 14:59:48",
+    "fundCode": "020003",
+    "buyPlatform": "ANTFORTUNE",
+    "operateDirection": "BUY",
+    "operateAmount": 10.00,
+    "operateShare": 14.73,
+    "operateType": "ORDINARY_BUY",
+    "operateReason": "看了文章之后，第一次试水买了10块钱",
+    "serviceCharge": 0.01,
+    "acknowledgingTime": "2017-06-01",
+    "remark": "第一次买基金"
+  }
+]
