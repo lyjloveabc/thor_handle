@@ -4,7 +4,7 @@ from utils.file.excel.readUtil import ReadUtil
 
 class HandleZdArea:
     def __init__(self):
-        self.sql = 'UPDATE house_info SET area = "{area}", uname = "{un}", mobile="{m}", notice="阿苏->罗宣修改" WHERE id = {id};'
+        self.sql = 'UPDATE house_info SET area = "{area}", uname = "{un}", mobile="{m}", notice="阿苏->罗宣修改" WHERE id = {id} and zone_id = 82;'
 
     def handle(self):
         field_index = {
