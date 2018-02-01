@@ -1,0 +1,40 @@
+[
+  {
+    "fundCode": "160706",
+    "realAmount": 500.00,
+    "discountAmount": 0.00,
+    "operateDirection": "BUY",
+    "operateAmount": 500.00,
+    "capitalChannel": "YEB",
+    "investTime": "2017-01-29 14:29:40",
+    "operateType": "ORDINARY_BUY",
+    "operateReason": "补充",
+    "operatePlatform": "ANTFORTUNE",
+    "acknowledgingAmount": 499.25,
+    "acknowledgingShare": 415.45,
+    "acknowledgingNetValue": 1.2017,
+    "serviceCharge": 0.75,
+    "acknowledgingTime": "2018-01-30",
+    "remark": "",
+    "belongTo": 1
+  },
+  {
+    "fundCode": "162711",
+    "realAmount": 500.00,
+    "discountAmount": 0.00,
+    "operateDirection": "BUY",
+    "operateAmount": 500.00,
+    "capitalChannel": "YEB",
+    "investTime": "2017-01-29 14:33:15",
+    "operateType": "ORDINARY_BUY",
+    "operateReason": "补充",
+    "operatePlatform": "ANTFORTUNE",
+    "acknowledgingAmount": 499.40,
+    "acknowledgingShare": 373.49,
+    "acknowledgingNetValue": 1.3371,
+    "serviceCharge": 0.60,
+    "acknowledgingTime": "2018-01-30",
+    "remark": "",
+    "belongTo": 1
+  }
+]
