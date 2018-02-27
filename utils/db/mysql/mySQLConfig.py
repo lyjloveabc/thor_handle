@@ -45,3 +45,12 @@ class MySQLConfig:
         config['password'] = 'Aijia1501$'
         config['db'] = 'itianluo'
         return config
+
+    @staticmethod
+    def stable_from_outer():
+        config = MySQLConfig.__common_config()
+        config['host'] = '106.15.201.198'
+        config['user'] = 'itianluo'
+        config['password'] = 'Aijia1501$'
+        config['db'] = 'itianluo'
+        return config
