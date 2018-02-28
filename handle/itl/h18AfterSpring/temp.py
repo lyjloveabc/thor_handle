@@ -20,7 +20,3 @@ with open('file/车位所有者.txt', 'r') as f:
                 print(sql_2.format(contact=data[2], contact_mobile=data[3], name=data[0]))
         except:
             print('----', data)
-
-# for k, v in house_db.items():
-#     print(k, v)
-# print(int(len(house_db.keys())))
