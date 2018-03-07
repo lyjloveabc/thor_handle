@@ -27,8 +27,8 @@ class Tj:
 
     def handle(self):
         app_id = self.android_yz
-        sd = '20160801'
-        ed = '20180306'
+        sd = '20180205'
+        ed = '20180307'
         os = self.android
         title = os + '埋点数据统计'
 
@@ -42,12 +42,12 @@ class Tj:
 
         json_data = json.loads(response.text)
 
-        with open(title + self.today_str + '.txt', 'a') as f:
-            f.write('事件ID: 事件总数    最后一日事件数')
-            f.write('\n')
-            for row in json_data['stats']:
-                f.write(str(row['event']) + ': ' + str(row['total-pv']) + '    ' + str(row['today-pv']))
-                f.write('\n')
+        # with open(title + self.today_str + '.txt', 'a') as f:
+        #     f.write('事件ID: 事件总数    最后一日事件数')
+        #     f.write('\n')
+        #     for row in json_data['stats']:
+        #         f.write(str(row['event']) + ': ' + str(row['total-pv']) + '    ' + str(row['today-pv']))
+        #         f.write('\n')
 
         wb = openpyxl.Workbook()
         sheet = wb.active
@@ -62,6 +62,16 @@ class Tj:
             sheet.cell(row=i, column=3, value=str(json_data['stats'][i - 2]['today-pv']))
 
         wb.save(title + self.today_str + '.xlsx')
+
+    def get_data(self, app_id, start_date, end_date, os):
+        # 预获取总数据量
+        response_init = requests.get(self.base_url + self.url.format(appid=app_id, sd=start_date, ed=end_date, limit=self.limit, os=os), cookies=self.cookies)
+        json_data_init = json.loads(response_init.text)
+        limit = int(json_data_init['total'])
+
+        response = requests.get(self.base_url + self.url.format(appid=app_id, sd=sd, ed=ed, limit=limit, os=os), cookies=self.cookies)
+
+        return json.loads(response.text)
 
 
 if __name__ == '__main__':
