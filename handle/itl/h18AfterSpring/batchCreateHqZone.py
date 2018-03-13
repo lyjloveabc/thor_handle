@@ -78,18 +78,18 @@ class BatchCreateHqZone:
                         f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=category['id'], category_pool_name=category['category']))
                         f.write('\n')
 
-                    for hq_user in self.hq_user_list:
-                        # 删除他的任务
-                        f.write(self.delete_task_sql.format(user_id=hq_user['id']))
-                        f.write('\n')
-
-                        # 删除他的小区
-                        f.write(self.delete_user_zone_sql.format(user_id=hq_user['id']))
-                        f.write('\n')
-
-                        # 添加user_zone记录
-                        f.write(self.insert_user_hq.format(user_id=hq_user['id'], zone_id=row['id']))
-                        f.write('\n')
+                    # for hq_user in self.hq_user_list:
+                    #     # 删除他的任务
+                    #     f.write(self.delete_task_sql.format(user_id=hq_user['id']))
+                    #     f.write('\n')
+                    #
+                    #     # 删除他的小区
+                    #     f.write(self.delete_user_zone_sql.format(user_id=hq_user['id']))
+                    #     f.write('\n')
+                    #
+                    #     # 添加user_zone记录
+                    #     f.write(self.insert_user_hq.format(user_id=hq_user['id'], zone_id=row['id']))
+                    #     f.write('\n')
                 else:
                     f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=27, category_pool_name='项目管理部'))
                     f.write('\n')
