@@ -8,6 +8,7 @@ class BatchCreateHqZone:
     def __init__(self, dao):
         self.dao = dao
 
+        # 插入总部小区
         self.insert_sql = "INSERT INTO zones " \
                           "(id, name, description, buildtime, total_area, houses, address, service, helpme, " \
                           "seal_icon, funds, property_fee, cars_fee, energy, status, enter_time, off_time, cars_num, " \
@@ -15,27 +16,42 @@ class BatchCreateHqZone:
                           "VALUES ('{id}', '总部小区', '{description}', '2016-10-01', '0', 0, '', '', '', '', " \
                           "0.00, 0.00, 0.00, 0.00, 0, 1475251200, 1495555200, 0, 0, 0, 0, 0, '{company_id}', '{manager_id}', '');"
 
-        self.insert_category_sql = """
-                          INSERT INTO itl_zone_category (gmt_create, gmt_modify, zone_id, category_pool_id, category_pool_name, leader_user_ids) 
-                          VALUES (now(), now(), '{zone_id}', '{category_pool_id}', '{category_pool_name}', NULL);
-                          """
+        # 插入总部小区的相关部门
+        self.insert_category_sql = "INSERT INTO itl_zone_category (gmt_create, gmt_modify, zone_id, category_pool_id, category_pool_name, leader_user_ids) " \
+                                   "VALUES (now(), now(), '{zone_id}', '{category_pool_id}', '{category_pool_name}', NULL);"
 
-        self.update_sql = """
-                          UPDATE itl_company SET hq_zone_id = '{hq_zone_id}' WHERE id = '{id}';
-                          """
+        # 更新公司的总部小区ID字段
+        self.update_sql = "UPDATE itl_company SET hq_zone_id = '{hq_zone_id}' WHERE id = '{id}';"
 
-        self.category = dict()
-        self.category[21] = '总经办'
-        self.category[22] = '市场部'
-        self.category[23] = '财务部'
-        self.category[24] = '人事部'
-        self.category[25] = '行政部'
-        self.category[26] = '人力资源和行政部'
-        self.category[27] = '项目管理部'
-        self.category[28] = '项目运营部'
-        self.category[29] = '项目品质部'
-        self.category[30] = '研发部'
-        self.category[31] = '产品运营部'
+        # 删除该人的所有任务
+        self.delete_task_sql = "DELETE FROM itl_user_task WHERE user_id = '{user_id}';"
+
+        # 删除该人的当前所有小区
+        self.delete_user_zone_sql = "DELETE FROM itl_user_zone_relation WHERE user_id = '{user_id}';"
+
+        # 公明公司人员添加小区
+        self.insert_user_hq = "INSERT INTO itl_user_zone_relation(created_time, modified_time, user_id, zone_id) VALUES (now(), now(), '{user_id}', '{zone_id}');"
+
+        # 总部部门
+        self.category_list = [
+            {'id': 21, 'category': '总经办'},
+            {'id': 22, 'category': '市场部'},
+            {'id': 23, 'category': '财务部'},
+            {'id': 26, 'category': '人力资源和行政部'},
+            {'id': 27, 'category': '项目管理部'},
+            {'id': 30, 'category': '研发部'},
+            {'id': 31, 'category': '产品运营部'},
+        ]
+
+        # 公明物业的总部人员
+        self.hq_user_list = [
+            {'id': 8, 'category': '总经办'},
+        ]
+
+        # 公明物业的需要所有小区的人员
+        self.hq_user_list = [
+            {'id': 8, 'category': '总经办'},
+        ]
 
     def h(self, file):
         company = self.dao.get_all('SELECT id, alias, manager_id FROM itl_company ORDER BY id;')  # 获取所有的公司
@@ -58,13 +74,24 @@ class BatchCreateHqZone:
 
                 # 总部小区新增部门
                 if row['id'] == 1:
-                    for key, value in self.category.items():
-                        f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=key, category_pool_name=value))
+                    for category in self.category_list:
+                        f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=category['id'], category_pool_name=category['category']))
+                        f.write('\n')
+
+                    for hq_user in self.hq_user_list:
+                        # 删除他的任务
+                        f.write(self.delete_task_sql.format(user_id=hq_user['id']))
+                        f.write('\n')
+
+                        # 删除他的小区
+                        f.write(self.delete_user_zone_sql.format(user_id=hq_user['id']))
+                        f.write('\n')
+
+                        # 添加user_zone记录
+                        f.write(self.insert_user_hq.format(user_id=hq_user['id'], zone_id=row['id']))
                         f.write('\n')
                 else:
-                    f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=27, category_pool_name=self.category[27]))
+                    f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=27, category_pool_name='项目管理部'))
                     f.write('\n')
                 zone_id += 1
             f.write('\n')
-
-            # 总部人员迁移到这个小区
