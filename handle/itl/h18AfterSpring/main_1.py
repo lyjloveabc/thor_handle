@@ -8,7 +8,7 @@ from handle.itl.h18AfterSpring.batchCreateHqZone import BatchCreateHqZone
 from utils.constant.constant import Constant
 
 
-class Main:
+class Main_1:
     def __init__(self):
         # 必须保持跟线上同步的数据库表
         self.now_update = {
@@ -19,7 +19,7 @@ class Main:
 
 if __name__ == '__main__':
     dao = DEFAULT_DB_ENV  # 数据库连接对象
-    file = 'file/out.sql'  # 输出的sql文件
+    file = 'file/out_1.sql'  # 输出的sql文件
 
     if os.path.exists(file):
         os.remove(file)  # 删除已经存在的输出文件
