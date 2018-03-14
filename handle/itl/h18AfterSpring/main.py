@@ -15,6 +15,9 @@ class Main:
         self.now_update = {
             'itl_company',
             'zones',
+            'user',
+            'itl_user_zone_relation',
+            'itl_zone_category',
         }
 
 
