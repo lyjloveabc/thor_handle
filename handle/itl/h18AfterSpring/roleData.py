@@ -13,7 +13,7 @@ class RoleData:
                           "VALUES (now(), now(), '{user_id}', '{role_code}', '{zone_id}');"
 
         # 插入用户部门数据
-        self.insert_category_sql = "INSERT INTO itl_user_category_relation (gmt_create, gmt_modify, user_id, zone_category_id, zone_category_name, zone_id) " \
+        self.insert_category_sql = "INSERT INTO itl_user_category_relation (created_time, modified_time, user_id, zone_category_id, zone_category_name, zone_id) " \
                                    "VALUES (now(), now(), '{user_id}', '{zone_category_id}', '{zone_category_name}', '{zone_id}');"
 
     def h(self, file):

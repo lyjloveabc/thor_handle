@@ -12,14 +12,14 @@ from utils.constant.constant import Constant
 class Main:
     def __init__(self):
         # 必须保持跟线上同步的数据库表
-        self.now_update = {
+        self.now_update = [
             'user',
             'user_role_relation',
             'zones',
             'itl_company',
             'itl_user_zone_relation',
             'itl_zone_category',
-        }
+        ]
 
 
 if __name__ == '__main__':

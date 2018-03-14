@@ -1,0 +1,16 @@
+1、把下面这些表导入到本地数据库
+[
+'user',
+'user_role_relation',
+'zones',
+'itl_company',
+'itl_user_zone_relation',
+'itl_zone_category',
+]
+
+2、执行Main
+
+3、out.sql上传到线上
+scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql root@106.15.201.198:/root/zSky/doc/
+
+scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql lufei@114.55.118.242:/home/lufei/

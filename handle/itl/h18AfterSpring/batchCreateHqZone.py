@@ -27,11 +27,11 @@ class BatchCreateHqZone:
         self.category_list = [
             {'id': 21, 'category': '总经办'},
             {'id': 22, 'category': '市场部'},
-            {'id': 23, 'category': '财务部'},
-            {'id': 26, 'category': '人力资源和行政部'},
-            {'id': 27, 'category': '项目管理部'},
-            {'id': 30, 'category': '研发部'},
-            {'id': 31, 'category': '产品运营部'},
+            {'id': 13, 'category': '财务部'},
+            {'id': 25, 'category': '人力资源和行政部'},
+            {'id': 26, 'category': '项目管理部'},
+            {'id': 29, 'category': '研发部'},
+            {'id': 30, 'category': '产品运营部'},
         ]
 
         # 公明物业的总部人员
@@ -70,7 +70,7 @@ class BatchCreateHqZone:
                         f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=category['id'], category_pool_name=category['category']))
                         f.write('\n')
                 else:
-                    f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=27, category_pool_name='项目管理部'))
+                    f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=26, category_pool_name='项目管理部'))
                     f.write('\n')
                 zone_id += 1
             f.write('\n')
