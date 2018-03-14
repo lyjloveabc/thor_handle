@@ -13,7 +13,7 @@ class BatchCreateHqZone:
                           "(id, name, description, buildtime, total_area, houses, address, service, helpme, " \
                           "seal_icon, funds, property_fee, cars_fee, energy, status, enter_time, off_time, cars_num, " \
                           "perm_house, rent_house, shop_house, leave_house, company_id, manager_id, shoufeiguize_content) " \
-                          "VALUES ('{id}', '总部小区', '{description}', '2016-10-01', '0', 0, '', '', '', '', " \
+                          "VALUES ('{id}', '{name}', '{description}', '2016-10-01', '0', 0, '', '', '', '', " \
                           "0.00, 0.00, 0.00, 0.00, 0, 1475251200, 1495555200, 0, 0, 0, 0, 0, '{company_id}', '{manager_id}', '');"
 
         # 插入总部小区的相关部门
@@ -54,9 +54,10 @@ class BatchCreateHqZone:
             f.write('\n')
             f.write('# 根据所有公司创建总部小区、更新公司的总部小区ID、总部小区新增部门')
             f.write('\n')
+
             for row in company:
                 # 添加总部小区
-                f.write(self.insert_sql.format(id=zone_id, description=row['alias'], company_id=row['id'], manager_id=row['manager_id']))
+                f.write(self.insert_sql.format(id=zone_id, name=row['alias'] + '-总部小区', description=row['alias'], company_id=row['id'], manager_id=row['manager_id']))
                 f.write('\n')
 
                 # 更新公司的总部小区ID
@@ -64,7 +65,7 @@ class BatchCreateHqZone:
                 f.write('\n')
 
                 # 总部小区新增部门
-                if row['id'] == 1:
+                if row['id'] == 1:  # 公明物业
                     for category in self.category_list:
                         f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=category['id'], category_pool_name=category['category']))
                         f.write('\n')
