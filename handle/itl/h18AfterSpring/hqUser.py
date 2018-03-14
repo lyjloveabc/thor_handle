@@ -16,6 +16,9 @@ class HqUser:
         # 公明公司人员添加小区
         self.insert_user_zone = "INSERT INTO itl_user_zone_relation(created_time, modified_time, user_id, zone_id) VALUES (now(), now(), '{user_id}', '{zone_id}');"
 
+        # 更新用户信息
+        self.update_user = "UPDATE user SET zone_id = '{zone_id}', zone_ids = '{zone_ids}', category_id = '{category_id}', category_name = '{category_name}' WHERE id = '{id}';"
+
         # 员工部门
         self.insert_user_cate = "INSERT INTO itl_user_category_relation(created_time, modified_time, user_id, zone_category_id, zone_category_name, zone_id) VALUES" \
                                 " (now(), now(), '{user_id}', '{zone_category_id}', '{zone_category_name}', '{zone_id}');"
@@ -31,9 +34,12 @@ class HqUser:
         ]
 
     def h(self, file):
-        company = self.dao.get_all('SELECT id, alias, manager_id FROM itl_company ORDER BY id;')  # 获取所有的公司
-        start_id = int(self.dao.get_one('SELECT max(id) AS max_id FROM zones;')['max_id'])  # 获取当前小区ID的最大值
-        zone_id = start_id + 1
+        zone_category_map = list()
+
+        hq_zone_id = self.dao.get_one('SELECT hq_zone_id FROM itl_company WHERE id = 1;')
+        zone_category = self.dao.get_all('SELECT id, category_pool_name FROM itl_zone_category WHERE zone_id = "{zone_id}";'.format(zone_id=hq_zone_id))
+        for row in zone_category:
+            zone_category_map[row['category_pool_name']] = row['id']
 
         with open(file, 'a') as f:
             f.write('\n')
@@ -50,25 +56,17 @@ class HqUser:
                 f.write('\n')
 
                 # 添加user_zone记录
-                f.write(self.insert_user_zone.format(user_id=row['id'], zone_id=2222222222))
+                f.write(self.insert_user_zone.format(user_id=row['id'], zone_id=hq_zone_id))
                 f.write('\n')
 
-                # 添加user_zone记录
-                f.write(self.insert_user_cate.format(user_id=row['id'], zone_id=2222222222))
+                # # 添加user_zone记录
+                f.write(
+                    self.update_user.format(zone_id=hq_zone_id, zone_ids=hq_zone_id, category_id=zone_category_map[row['category']], category_name=row['category'], id=row['id'])
+                )
                 f.write('\n')
 
-            company = self.dao.get_all('SELECT id, alias, manager_id FROM itl_company ORDER BY id;')  # 获取所有的公司
-        start_id = int(self.dao.get_one('SELECT max(id) AS max_id FROM zones;')['max_id'])  # 获取当前小区ID的最大值
-
-        # 根据所有公司创建总部小区
-        with open(file, 'a') as f:
-            f.write('\n')
-            f.write('# 根据所有公司创建总部小区')
-            f.write('\n')
-            for row in company:
-                f.write(self.insert_sql.format(id=start_id, description=row['alias'], company_id=row['id'], manager_id=row['manager_id']))
-                f.write('\n')
-                start_id += 1
-            f.write('\n')
-
-            # 总部人员迁移到这个小区
+                # # 添加user_zone记录
+                # f.write(
+                #     self.insert_user_cate.format(user_id=row['id'], zone_category_id=zone_category_map[row['category']], zone_category_name=row['category'], zone_id=hq_zone_id)
+                # )
+                # f.write('\n')
