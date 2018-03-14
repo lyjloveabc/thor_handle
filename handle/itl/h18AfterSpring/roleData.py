@@ -17,7 +17,7 @@ class RoleData:
                                    "VALUES (now(), now(), '{user_id}', '{zone_category_id}', '{zone_category_name}', '{zone_id}');"
 
     def h(self, file):
-        user_list = self.dao.get_all('SELECT id, category_id, category_name, zone_id FROM user;')
+        user_list = self.dao.get_all('SELECT id, category_id, category_name, zone_id, company_id FROM user;')
         uz_list = self.dao.get_all('SELECT user_id, zone_id FROM itl_user_zone_relation;')
         role_list = self.dao.get_all('SELECT user_id, role_code FROM user_role_relation;')
         zc_list = self.dao.get_all('SELECT id, zone_id, category_pool_id, category_pool_name FROM itl_zone_category;')
@@ -52,6 +52,13 @@ class RoleData:
 
             # 遍历处理所有的用户
             for user in user_list:
+                if user['id'] in role_map.keys():
+                    if '物业公司管理员' in role_map[user['id']]:
+                        f.write(self.insert_sql.format(user_id=user['id'], role_code='物业公司管理员', zone_id=user['zone_id']))
+                        f.write('\n')
+                    if '后台项目管理员' in role_map[user['id']]:
+                        f.write(self.insert_sql.format(user_id=user['id'], role_code='后台项目管理员', zone_id=user['zone_id']))
+                        f.write('\n')
                 if user['id'] in uz_map.keys() and int(user['id']) > 0:
                     for user_zone in uz_map[user['id']]:
                         if user['id'] in role_map.keys():
