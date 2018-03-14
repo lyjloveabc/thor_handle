@@ -5,10 +5,11 @@ import os
 
 from handle.global_setting import DEFAULT_DB_ENV
 from handle.itl.h18AfterSpring.batchCreateHqZone import BatchCreateHqZone
+from handle.itl.h18AfterSpring.roleData import RoleData
 from utils.constant.constant import Constant
 
 
-class Main_1:
+class Main:
     def __init__(self):
         # 必须保持跟线上同步的数据库表
         self.now_update = {
@@ -32,6 +33,10 @@ if __name__ == '__main__':
     # 处理总部小区：根据现有公司生成总部小区、总部人员处理
     batchCreateHqZone = BatchCreateHqZone(dao)
     batchCreateHqZone.h(file)
+
+    # 处理总部小区：根据现有公司生成总部小区、总部人员处理
+    roleDate = RoleData(dao)
+    roleDate.h(file)
 
     # 写入事物的结束sql语句
     with open(file, 'a') as f:

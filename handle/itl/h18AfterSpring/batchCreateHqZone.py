@@ -23,15 +23,6 @@ class BatchCreateHqZone:
         # 更新公司的总部小区ID字段
         self.update_sql = "UPDATE itl_company SET hq_zone_id = '{hq_zone_id}' WHERE id = '{id}';"
 
-        # 删除该人的所有任务
-        self.delete_task_sql = "DELETE FROM itl_user_task WHERE user_id = '{user_id}';"
-
-        # 删除该人的当前所有小区
-        self.delete_user_zone_sql = "DELETE FROM itl_user_zone_relation WHERE user_id = '{user_id}';"
-
-        # 公明公司人员添加小区
-        self.insert_user_hq = "INSERT INTO itl_user_zone_relation(created_time, modified_time, user_id, zone_id) VALUES (now(), now(), '{user_id}', '{zone_id}');"
-
         # 总部部门
         self.category_list = [
             {'id': 21, 'category': '总经办'},
