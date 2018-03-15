@@ -17,8 +17,8 @@ class BatchCreateHqZone:
                           "0.00, 0.00, 0.00, 0.00, 0, 1475251200, 1495555200, 0, 0, 0, 0, 0, '{company_id}', '{manager_id}', '');"
 
         # 插入总部小区的相关部门
-        self.insert_category_sql = "INSERT INTO itl_zone_category (gmt_create, gmt_modify, zone_id, category_pool_id, category_pool_name, leader_user_ids) " \
-                                   "VALUES (now(), now(), '{zone_id}', '{category_pool_id}', '{category_pool_name}', NULL);"
+        self.insert_category_sql = "INSERT INTO itl_zone_category (gmt_create, gmt_modify, zone_id, category_pool_id, category_pool_name) " \
+                                   "VALUES (now(), now(), '{zone_id}', '{category_pool_id}', '{category_pool_name}');"
 
         # 更新公司的总部小区ID字段
         self.update_sql = "UPDATE itl_company SET hq_zone_id = '{hq_zone_id}' WHERE id = '{id}';"
