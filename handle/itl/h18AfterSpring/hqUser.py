@@ -19,9 +19,16 @@ class HqUser:
         # 更新用户信息
         self.update_user = "UPDATE user SET zone_id = {zone_id}, zone_ids = '{zone_ids}', category_id = {category_id}, category_name = '{category_name}' WHERE id = {id};"
 
+        # 更新用户信息
+        self.update_user_job_title = "UPDATE user SET job_title_id = 19, job_title_name = '总部领导' WHERE id = {id} AND job_title_id < 19;"
+
         # 员工部门
         self.insert_user_cate = "INSERT INTO itl_user_category_relation(created_time, modified_time, user_id, zone_category_id, zone_category_name, zone_id) VALUES" \
                                 " (now(), now(), {user_id}, {zone_category_id}, '{zone_category_name}', {zone_id});"
+
+        # 插入用户职能数据
+        self.insert_role_sql = "INSERT INTO itl_user_role_relation(created_time, modified_time, user_id, role_code, zone_id) " \
+                               "VALUES (now(), now(), '{user_id}', '{role_code}', '{zone_id}');"
 
         # 公明物业的总部人员
         self.hq_user_list = [
@@ -99,3 +106,15 @@ class HqUser:
                     self.insert_user_cate.format(user_id=row['id'], zone_category_id=zone_category_map[row['category']], zone_category_name=row['category'], zone_id=hq_zone_id)
                 )
                 f.write('\n')
+
+                # 更新用户头衔
+                f.write(
+                    self.update_user_job_title.format(id=row['id'])
+                )
+                f.write('\n')
+
+                # 总部小区的人员处理
+                user_role_list = self.dao.get_all('SELECT id, role_code FROM user_role_relation WHERE user_id = ' + str(row['id']) + ';')
+                for user_role in user_role_list:
+                    f.write(self.insert_role_sql.format(user_id=row['id'], role_code=user_role['role_code'], zone_id=hq_zone_id))
+                    f.write('\n')

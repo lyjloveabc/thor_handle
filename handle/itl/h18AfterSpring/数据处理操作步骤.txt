@@ -15,5 +15,5 @@ scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring
 
 scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql lufei@114.55.118.242:/home/lufei/
 
-4、切到处理后的数据库
+4、必须执行itl_company
 处理hqUser
