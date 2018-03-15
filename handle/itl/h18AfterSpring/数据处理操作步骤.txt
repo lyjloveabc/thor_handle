@@ -24,6 +24,8 @@ scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring
 
 
 总体的处理逻辑：
+source /Users/luoyanjie/201803151503.sql;
+
 source /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchNewTable.sql;
 
 source /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchSupport.sql;
@@ -31,3 +33,26 @@ source /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchSupport.s
 source /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql;
 
 source /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out_sub.sql;
+
+
+////
+
+scp -P 22 /Users/luoyanjie/201803151503.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
+
+scp -P 22 /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchNewTable.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
+
+scp -P 22 /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchSupport.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
+
+scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
+
+scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out_sub.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
+
+
+
+source /root/zSky/doc/sqlFile/marchNewTable.sql;
+
+source /root/zSky/doc/sqlFile/marchSupport.sql;
+
+source /root/zSky/doc/sqlFile/out.sql;
+
+source /root/zSky/doc/sqlFile/out_sub.sql;
