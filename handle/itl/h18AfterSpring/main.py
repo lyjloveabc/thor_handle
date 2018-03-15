@@ -5,6 +5,7 @@ import os
 
 from handle.global_setting import DEFAULT_DB_ENV
 from handle.itl.h18AfterSpring.batchCreateHqZone import BatchCreateHqZone
+from handle.itl.h18AfterSpring.hqUser import HqUser
 from handle.itl.h18AfterSpring.roleData import RoleData
 from utils.constant.constant import Constant
 
@@ -38,9 +39,13 @@ if __name__ == '__main__':
     batchCreateHqZone = BatchCreateHqZone(dao)
     batchCreateHqZone.h(file)
 
-    # 处理总部小区：根据现有公司生成总部小区、总部人员处理
+    # 用户职能、部门统一处理
     roleDate = RoleData(dao)
     roleDate.h(file)
+
+    # 公明物业的总部人员小区处理
+    hqUser = HqUser(dao)
+    hqUser.h(file)
 
     # 写入事物的结束sql语句
     with open(file, 'a') as f:

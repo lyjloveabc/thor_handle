@@ -8,20 +8,20 @@ class HqUser:
         self.dao = dao
 
         # 删除该人的所有任务
-        self.delete_task_sql = "DELETE FROM itl_user_task WHERE user_id = '{user_id}';"
+        self.delete_task_sql = "DELETE FROM itl_user_task WHERE user_id = {user_id};"
 
         # 删除该人的当前所有小区
-        self.delete_user_zone_sql = "DELETE FROM itl_user_zone_relation WHERE user_id = '{user_id}';"
+        self.delete_user_zone_sql = "DELETE FROM itl_user_zone_relation WHERE user_id = {user_id};"
 
         # 公明公司人员添加小区
-        self.insert_user_zone = "INSERT INTO itl_user_zone_relation(created_time, modified_time, user_id, zone_id) VALUES (now(), now(), '{user_id}', '{zone_id}');"
+        self.insert_user_zone = "INSERT INTO itl_user_zone_relation(created_time, modified_time, user_id, zone_id) VALUES (now(), now(), {user_id}, {zone_id});"
 
         # 更新用户信息
-        self.update_user = "UPDATE user SET zone_id = '{zone_id}', zone_ids = '{zone_ids}', category_id = '{category_id}', category_name = '{category_name}' WHERE id = '{id}';"
+        self.update_user = "UPDATE user SET zone_id = {zone_id}, zone_ids = '{zone_ids}', category_id = {category_id}, category_name = '{category_name}' WHERE id = {id};"
 
         # 员工部门
         self.insert_user_cate = "INSERT INTO itl_user_category_relation(created_time, modified_time, user_id, zone_category_id, zone_category_name, zone_id) VALUES" \
-                                " (now(), now(), '{user_id}', '{zone_category_id}', '{zone_category_name}', '{zone_id}');"
+                                " (now(), now(), {user_id}, {zone_category_id}, '{zone_category_name}', {zone_id});"
 
         # 公明物业的总部人员
         self.hq_user_list = [
@@ -55,16 +55,19 @@ class HqUser:
         ]
 
         # 公明物业的需要所有小区的人员
-        self.hq_user_list = [
+        self.all_zone_list = [
             {'id': 8, 'category': '总经办'},
         ]
 
     def h(self, file):
-        zone_category_map = list()
+        zone_category_map = dict()
 
-        hq_zone_id = self.dao.get_one('SELECT hq_zone_id FROM itl_company WHERE id = 1;')
-        zone_category = self.dao.get_all('SELECT id, category_pool_name FROM itl_zone_category WHERE zone_id = "{zone_id}";'.format(zone_id=hq_zone_id))
-        for row in zone_category:
+        # 公明物业的总部小区ID
+        hq_zone_id = self.dao.get_one('SELECT hq_zone_id FROM itl_company WHERE id = 1;')['hq_zone_id']
+
+        # 公明的总部小区所有的部门
+        zone_category_list = self.dao.get_all('SELECT id, category_pool_name FROM itl_zone_category WHERE zone_id = "{zone_id}";'.format(zone_id=hq_zone_id))
+        for row in zone_category_list:
             zone_category_map[row['category_pool_name']] = row['id']
 
         with open(file, 'a') as f:
@@ -85,14 +88,14 @@ class HqUser:
                 f.write(self.insert_user_zone.format(user_id=row['id'], zone_id=hq_zone_id))
                 f.write('\n')
 
-                # # 添加user_zone记录
+                # 更新用户信息
                 f.write(
                     self.update_user.format(zone_id=hq_zone_id, zone_ids=hq_zone_id, category_id=zone_category_map[row['category']], category_name=row['category'], id=row['id'])
                 )
                 f.write('\n')
 
-                # # 添加user_zone记录
-                # f.write(
-                #     self.insert_user_cate.format(user_id=row['id'], zone_category_id=zone_category_map[row['category']], zone_category_name=row['category'], zone_id=hq_zone_id)
-                # )
-                # f.write('\n')
+                # 添加user_zone记录
+                f.write(
+                    self.insert_user_cate.format(user_id=row['id'], zone_category_id=zone_category_map[row['category']], zone_category_name=row['category'], zone_id=hq_zone_id)
+                )
+                f.write('\n')

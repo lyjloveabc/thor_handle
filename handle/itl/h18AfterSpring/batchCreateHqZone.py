@@ -13,15 +13,15 @@ class BatchCreateHqZone:
                           "(id, name, description, buildtime, total_area, houses, address, service, helpme, " \
                           "seal_icon, funds, property_fee, cars_fee, energy, status, enter_time, off_time, cars_num, " \
                           "perm_house, rent_house, shop_house, leave_house, company_id, manager_id, shoufeiguize_content) " \
-                          "VALUES ('{id}', '{name}', '{description}', '2016-10-01', '0', 0, '', '', '', '', " \
-                          "0.00, 0.00, 0.00, 0.00, 0, 1475251200, 1495555200, 0, 0, 0, 0, 0, '{company_id}', '{manager_id}', '');"
+                          "VALUES ({id}, '{name}', '{description}', '2016-10-01', '0', 0, '', '', '', '', " \
+                          "0.00, 0.00, 0.00, 0.00, 0, 1475251200, 1495555200, 0, 0, 0, 0, 0, {company_id}, {manager_id}, '');"
 
         # 插入总部小区的相关部门
         self.insert_category_sql = "INSERT INTO itl_zone_category (gmt_create, gmt_modify, zone_id, category_pool_id, category_pool_name) " \
-                                   "VALUES (now(), now(), '{zone_id}', '{category_pool_id}', '{category_pool_name}');"
+                                   "VALUES (now(), now(), {zone_id}, {category_pool_id}, '{category_pool_name}');"
 
         # 更新公司的总部小区ID字段
-        self.update_sql = "UPDATE itl_company SET hq_zone_id = '{hq_zone_id}' WHERE id = '{id}';"
+        self.update_sql = "UPDATE itl_company SET hq_zone_id = {hq_zone_id} WHERE id = {id};"
 
         # 总部部门
         self.category_list = [
@@ -30,18 +30,9 @@ class BatchCreateHqZone:
             {'id': 13, 'category': '财务部'},
             {'id': 25, 'category': '人力资源和行政部'},
             {'id': 26, 'category': '项目管理部'},
+            {'id': 28, 'category': '项目品质部'},
             {'id': 29, 'category': '研发部'},
             {'id': 30, 'category': '产品运营部'},
-        ]
-
-        # 公明物业的总部人员
-        self.hq_user_list = [
-            {'id': 8, 'category': '总经办'},
-        ]
-
-        # 公明物业的需要所有小区的人员
-        self.hq_user_list = [
-            {'id': 8, 'category': '总经办'},
         ]
 
     def h(self, file):

@@ -14,3 +14,6 @@
 scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql root@106.15.201.198:/root/zSky/doc/
 
 scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql lufei@114.55.118.242:/home/lufei/
+
+4、切到处理后的数据库
+处理hqUser
