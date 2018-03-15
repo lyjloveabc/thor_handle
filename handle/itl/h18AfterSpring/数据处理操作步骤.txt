@@ -17,3 +17,17 @@ scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring
 
 4、必须执行itl_company
 处理hqUser
+
+
+
+
+
+
+总体的处理逻辑：
+source /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchNewTable.sql;
+
+source /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchSupport.sql;
+
+source /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql;
+
+source /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out_sub.sql;

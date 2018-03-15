@@ -4,12 +4,11 @@
 import os
 
 from handle.global_setting import DEFAULT_DB_ENV
-from handle.itl.h18AfterSpring.batchCreateHqZone import BatchCreateHqZone
-from handle.itl.h18AfterSpring.roleData import RoleData
+from handle.itl.h18AfterSpring.hqUser import HqUser
 from utils.constant.constant import Constant
 
 
-class Main:
+class Sub:
     def __init__(self):
         # 必须保持跟线上同步的数据库表
         self.now_update = [
@@ -24,7 +23,7 @@ class Main:
 
 if __name__ == '__main__':
     dao = DEFAULT_DB_ENV  # 数据库连接对象
-    file = 'file/out.sql'  # 输出的sql文件
+    file = 'file/out_sub.sql'  # 输出的sql文件
 
     if os.path.exists(file):
         os.remove(file)  # 删除已经存在的输出文件
@@ -34,13 +33,9 @@ if __name__ == '__main__':
         f.write(Constant.SQL_BEGIN)
         f.write('\n')
 
-    # 处理总部小区：根据现有公司生成总部小区、总部人员处理
-    batchCreateHqZone = BatchCreateHqZone(dao)
-    batchCreateHqZone.h(file)
-
-    # 用户职能、部门统一处理
-    roleDate = RoleData(dao)
-    roleDate.h(file)
+    # 公明物业的总部人员小区处理
+    hqUser = HqUser(dao)
+    hqUser.h(file)
 
     # 写入事物的结束sql语句
     with open(file, 'a') as f:
