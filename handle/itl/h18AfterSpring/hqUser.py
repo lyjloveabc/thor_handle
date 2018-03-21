@@ -58,7 +58,8 @@ class HqUser:
             {'id': '2151', 'category': '人力资源和行政部'},
             {'id': '2202', 'category': '项目品质部'},
             {'id': '2254', 'category': '总经办'},
-            {'id': '8', 'category': '总经办'}
+            {'id': '8', 'category': '总经办'},
+            {'id': '941', 'category': '研发部'}
         ]
 
         # 公明物业的需要所有小区的人员
