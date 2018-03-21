@@ -37,7 +37,7 @@ source /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/fi
 
 ////
 
-scp -P 22 /Users/luoyanjie/201803151503.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
+scp -P 22 /Users/luoyanjie/201803210903.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
 
 scp -P 22 /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchNewTable.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
 
