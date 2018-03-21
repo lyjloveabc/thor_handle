@@ -35,9 +35,9 @@ source /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/fi
 source /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out_sub.sql;
 
 
-////
+////预发布
 
-scp -P 22 /Users/luoyanjie/201803210903.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
+scp -P 22 /Users/luoyanjie/201803211103.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
 
 scp -P 22 /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchNewTable.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
 
@@ -48,11 +48,28 @@ scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring
 scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out_sub.sql root@106.15.201.198:/root/zSky/doc/sqlFile/;
 
 
-
 source /root/zSky/doc/sqlFile/marchNewTable.sql;
-
 source /root/zSky/doc/sqlFile/marchSupport.sql;
-
 source /root/zSky/doc/sqlFile/out.sql;
-
 source /root/zSky/doc/sqlFile/out_sub.sql;
+
+
+、、、、、、、、、、、、、、
+scp -P 22 /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchNewTable.sql lufei@114.55.118.242:/home/lufei/
+
+scp -P 22 /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchSupport.sql lufei@114.55.118.242:/home/lufei/
+
+scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql lufei@114.55.118.242:/home/lufei/
+
+scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out_sub.sql lufei@114.55.118.242:/home/lufei/
+
+
+
+======
+scp -P 22 /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchNewTable.sql lufei@114.55.118.242:/home/lufei/
+
+scp -P 22 /Users/luoyanjie/IdeaProjects/cloud/doc/sql/20180305-March/marchSupport.sql lufei@114.55.118.242:/home/lufei/
+
+scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out.sql lufei@114.55.118.242:/home/lufei/
+
+scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl/h18AfterSpring/file/out_sub.sql lufei@114.55.118.242:/home/lufei/
