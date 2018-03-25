@@ -1,0 +1,174 @@
+[
+  {
+    "house_id": 481,
+    "device_type": 2,
+    "z_name": "pre景江苑",
+    "house_code": "1010101",
+    "avtar": "http:\/\/itianluo-apiupload.oss-cn-hangzhou.aliyuncs.com\/",
+    "job": "",
+    "mobile": "15669016778",
+    "nick_opt": 1,
+    "zone_id": 2,
+    "signature": "",
+    "update_at": "1521860611",
+    "sex": 0,
+    "offline": "2000",
+    "address": "pre景江苑1幢1单元0101室",
+    "hoster": "",
+    "nick": "",
+    "ca_status": 2,
+    "device": "ios",
+    "feed_type": [
+      {
+        "icon": "http:\/\/itianluo-apiupload.oss-cn-hangzhou.aliyuncs.com\/feedtype\/161008\/1475911116.png",
+        "id": 6,
+        "hint": "发布自己的生活新闻",
+        "name": "邻里生活",
+        "descri": "晒晒新鲜事，随便唠家常"
+      },
+      {
+        "icon": "http:\/\/itianluo-apiupload.oss-cn-hangzhou.aliyuncs.com\/feedtype\/161008\/1475911108.png",
+        "id": 7,
+        "hint": "发布自己的闲置物品哦",
+        "name": "邻里闲置",
+        "descri": "分享闲置东西，方便实惠"
+      },
+      {
+        "icon": "http:\/\/itianluo-apiupload.oss-cn-hangzhou.aliyuncs.com\/feedtype\/161008\/1475911103.png",
+        "id": 8,
+        "hint": "寻求帮助，帮助他人",
+        "name": "邻里求助",
+        "descri": "生活中的大小问题，邻居帮你"
+      },
+      {
+        "icon": "http:\/\/itianluo-apiupload.oss-cn-hangzhou.aliyuncs.com\/feedtype\/161008\/1475911145.png",
+        "id": 9,
+        "hint": "发表邻居之间的活动",
+        "name": "邻里活动",
+        "descri": "结伴活动，三缺一、遛狗、K歌都可以"
+      }
+    ],
+    "id": 7686,
+    "passwd": "",
+    "house_info": {
+      "house_num": 1,
+      "block_name": "",
+      "block_id": 0,
+      "door_num": "0101",
+      "build_num": 1
+    },
+    "city": "杭州市",
+    "token": "7e6571e9e66f02b73e6354468458b83b",
+    "feed_tab": [
+      {
+        "types": "9,8,7,6,4",
+        "name": "邻里交流",
+        "id": 14
+      },
+      {
+        "types": "3",
+        "name": "公共报修",
+        "id": 3
+      },
+      {
+        "types": "1,2",
+        "name": "表扬投诉",
+        "id": 2
+      },
+      {
+        "types": "6,10,4,2,3,1,7,9,8,5",
+        "name": "全部",
+        "id": 1
+      }
+    ],
+    "email": "guest@caijia.cn",
+    "relationship": "业主家属",
+    "module": [
+      {
+        "m": 1,
+        "icon": "http:\/\/oda3qkbe9.bkt.clouddn.com\/homePage-consult.png",
+        "u": "",
+        "status": 1,
+        "name": "客服咨询"
+      },
+      {
+        "m": 2,
+        "icon": "http:\/\/oda3qkbe9.bkt.clouddn.com\/homePage-complain.png",
+        "u": "",
+        "status": 1,
+        "name": "投诉表扬"
+      },
+      {
+        "m": 3,
+        "icon": "http:\/\/oda3qkbe9.bkt.clouddn.com\/homePage-mail.png",
+        "u": "",
+        "status": 1,
+        "name": "小邮局"
+      },
+      {
+        "m": 4,
+        "icon": "http:\/\/oda3qkbe9.bkt.clouddn.com\/homePage-repair.png",
+        "u": "",
+        "status": 1,
+        "name": "维修报修"
+      },
+      {
+        "m": 5,
+        "icon": "http:\/\/oda3qkbe9.bkt.clouddn.com\/homePage-passport.png",
+        "u": "",
+        "status": 1,
+        "name": "访客申请"
+      },
+      {
+        "m": 17,
+        "icon": "http:\/\/oda3qkbe9.bkt.clouddn.com\/homePage-money.png",
+        "u": "http:\/\/user.itianluo.cn\/shouzhigongkai?targetUrl=http:\/\/user.itianluo.cn\/money?1=1&firstLoad=1",
+        "status": 1,
+        "name": "小区收支"
+      },
+      {
+        "m": 10,
+        "icon": "http:\/\/oda3qkbe9.bkt.clouddn.com\/homePage-vote.png",
+        "u": "",
+        "status": 1,
+        "name": "投票"
+      },
+      {
+        "m": 15,
+        "icon": "http:\/\/oda3qkbe9.bkt.clouddn.com\/homePage-pay.png",
+        "u": "",
+        "status": 1,
+        "name": "生活缴费"
+      },
+      {
+        "m": 17,
+        "icon": "http:\/\/oda3qkbe9.bkt.clouddn.com\/homePage-money.png",
+        "u": "http:\/\/preuser.itianluo.cn\/money?1=1&firstLoad=1",
+        "status": 1,
+        "name": "收支公开"
+      },
+      {
+        "m": 20,
+        "icon": "http:\/\/itianluo.oss-cn-hangzhou.aliyuncs.com\/images\/zone_module_icon\/shouhujiayuan.png",
+        "u": "",
+        "status": 1,
+        "name": "守护家园"
+      },
+      {
+        "m": 19,
+        "icon": "http:\/\/itianluo.oss-cn-hangzhou.aliyuncs.com\/images\/zone_module_icon\/xiaoqucheweixinxi.png",
+        "u": "",
+        "status": 1,
+        "name": "车位信息"
+      }
+    ],
+    "is_owners_committee": 0,
+    "identity": 0,
+    "online": "0800",
+    "has_feed": 1,
+    "type": 1,
+    "tag": "",
+    "name": "流川枫",
+    "version": ""
+  }
+]
