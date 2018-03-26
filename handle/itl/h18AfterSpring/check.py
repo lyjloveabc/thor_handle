@@ -2,66 +2,83 @@
 itl_company
 zones
 """
+from handle.global_setting import DEFAULT_DB_ENV
 
 
 class Check:
     def __init__(self, dao):
         self.dao = dao
 
-        # 插入总部小区
-        self.insert_sql = "INSERT INTO zones " \
-                          "(id, name, description, buildtime, total_area, houses, address, service, helpme, " \
-                          "seal_icon, funds, property_fee, cars_fee, energy, status, enter_time, off_time, cars_num, " \
-                          "perm_house, rent_house, shop_house, leave_house, company_id, manager_id, shoufeiguize_content) " \
-                          "VALUES ({id}, '{name}', '{description}', '2016-10-01', '0', 0, '', '', '', '', " \
-                          "0.00, 0.00, 0.00, 0.00, 0, 1475251200, 1495555200, 0, 0, 0, 0, 0, {company_id}, {manager_id}, '');"
+    def h(self):
+        # 检验职能处理 #
+        self.check_role()
 
-        # 插入总部小区的相关部门
-        self.insert_category_sql = "INSERT INTO itl_zone_category (gmt_create, gmt_modify, zone_id, category_pool_id, category_pool_name) " \
-                                   "VALUES (now(), now(), {zone_id}, {category_pool_id}, '{category_pool_name}');"
+        # 检验部门处理 #
+        self.check_category()
 
-        # 更新公司的总部小区ID字段
-        self.update_sql = "UPDATE itl_company SET hq_zone_id = {hq_zone_id} WHERE id = {id};"
+    def check_role(self):
+        old_data = self.dao.get_all('SELECT user.id AS uId, role_code AS rCode FROM user LEFT JOIN user_role_relation ON user.id = user_role_relation.user_id;')
+        old_map = dict()
+        for old in old_data:
+            if old['uId'] not in old_map:
+                old_map[old['uId']] = list()
+            old_map[old['uId']].append(old['rCode'])
 
-        # 总部部门
-        self.category_list = [
-            {'id': 21, 'category': '总经办'},
-            {'id': 22, 'category': '市场部'},
-            {'id': 13, 'category': '财务部'},
-            {'id': 25, 'category': '人力资源和行政部'},
-            {'id': 26, 'category': '项目管理部'},
-            {'id': 28, 'category': '项目品质部'},
-            {'id': 29, 'category': '研发部'},
-            {'id': 30, 'category': '产品运营部'},
-        ]
+        new_data = self.dao.get_all('SELECT user.id AS uId, r.zone_id AS rZone, r.role_code AS rCode FROM user LEFT JOIN itl_user_role_relation r ON r.user_id = user.id;')
+        new_map = dict()
+        for new in new_data:
+            if new['uId'] not in new_map:
+                new_map[new['uId']] = set()
+            new_map[new['uId']].add(new['rCode'])
 
-    def h(self, file):
-        company = self.dao.get_all('SELECT id, alias, manager_id FROM itl_company ORDER BY id;')  # 获取所有的公司
-        start_id = int(self.dao.get_one('SELECT max(id) AS max_id FROM zones;')['max_id'])  # 获取当前小区ID的最大值
-        zone_id = start_id + 1
-
-        # 根据所有公司创建总部小区
-        with open(file, 'a') as f:
-            f.write('\n')
-            f.write('# 根据所有公司创建总部小区、更新公司的总部小区ID、总部小区新增部门')
-            f.write('\n')
-
-            for row in company:
-                # 添加总部小区
-                f.write(self.insert_sql.format(id=zone_id, name=row['alias'] + '-总部小区', description=row['alias'], company_id=row['id'], manager_id=row['manager_id']))
-                f.write('\n')
-
-                # 更新公司的总部小区ID
-                f.write(self.update_sql.format(id=row['id'], hq_zone_id=zone_id))
-                f.write('\n')
-
-                # 总部小区新增部门
-                if row['id'] == 1:  # 公明物业
-                    for category in self.category_list:
-                        f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=category['id'], category_pool_name=category['category']))
-                        f.write('\n')
+        except_data = set()
+        for k, v in old_map.items():
+            for item in v:
+                if item in new_map[k]:
+                    pass
                 else:
-                    f.write(self.insert_category_sql.format(zone_id=zone_id, category_pool_id=26, category_pool_name='项目管理部'))
-                    f.write('\n')
-                zone_id += 1
-            f.write('\n')
+                    print('no: ', k, item)
+                    except_data.add(str(k))
+
+        except_zone = self.dao.get_all('SELECT id, zone_id FROM user WHERE id IN ({ids}) and zone_id not in (-1 ,1);'.format(ids=','.join(except_data)))
+        for row in except_zone:
+            print(row['id'], row['zone_id'])
+
+    def check_category(self):
+        zone_data = self.dao.get_all('SELECT user_id AS uId, zone_id AS zId FROM itl_user_zone_relation;')
+        zone_map = dict()
+        for zone in zone_data:
+            if zone['uId'] not in zone_map:
+                zone_map[zone['uId']] = set()
+            zone_map[zone['uId']].add(zone['zId'])
+
+        old_data = self.dao.get_all('SELECT id AS uId, category_id AS cId, category_name AS cName FROM user;')
+        old_map = dict()
+        for old in old_data:
+            old_map[old['uId']] = old['cName']
+
+        new_data = self.dao.get_all('SELECT user_id AS uId, zone_id AS zId, zone_category_id AS cId, zone_category_name AS cName FROM itl_user_category_relation;')
+        new_map = dict()
+        for new in new_data:
+            new_map[str(new['uId']) + '-' + str(new['zId'])] = new['cName']
+
+        except_data = set()
+        for k, v in old_map.items():
+            if k not in zone_map:
+                continue
+            for zone in zone_map[k]:
+                key = str(k) + '-' + str(zone)
+
+                if key not in new_map:
+                    continue
+
+                if v == new_map[key]:
+                    pass
+                else:
+                    print('no: ', k, v, key)
+                    except_data.add(str(k))
+
+
+if __name__ == '__main__':
+    check = Check(DEFAULT_DB_ENV)
+    check.h()
