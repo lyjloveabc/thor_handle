@@ -48,7 +48,7 @@ class BatchCreateHqZone:
 
             for row in company:
                 # 添加总部小区
-                f.write(self.insert_sql.format(id=zone_id, name=row['alias'] + '-总部小区', description=row['alias'], company_id=row['id'], manager_id=row['manager_id']))
+                f.write(self.insert_sql.format(id=zone_id, name='总部小区', description=row['alias'], company_id=row['id'], manager_id=row['manager_id']))
                 f.write('\n')
 
                 # 更新公司的总部小区ID
