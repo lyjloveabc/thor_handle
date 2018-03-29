@@ -42,13 +42,6 @@ class Tj:
 
         json_data = json.loads(response.text)
 
-        # with open(title + self.today_str + '.txt', 'a') as f:
-        #     f.write('事件ID: 事件总数    最后一日事件数')
-        #     f.write('\n')
-        #     for row in json_data['stats']:
-        #         f.write(str(row['event']) + ': ' + str(row['total-pv']) + '    ' + str(row['today-pv']))
-        #         f.write('\n')
-
         wb = openpyxl.Workbook()
         sheet = wb.active
         sheet.title = title
