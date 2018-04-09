@@ -18,19 +18,22 @@ class TjMd:
         self.base_url = 'https://leancloud.cn'
         self.url = '/1/stats/load_table_data?appid={appid}&end_date={ed}&limit={limit}&os={os}&skip=0&start_date={sd}&stats=event_summary'
         self.cookies = {
-            'XSRF-TOKEN': 'c8c2662bb42317e376f7fc70e6e5e8198166eaf6f71961b573c42dd00c9b4abc',
-            'gr_session_id_a268202b003f2516': '1cd558d3-e4d3-4443-bd67-664d363cde2d',
-            'gr_user_id': '1b56188c-6bbe-490d-9c40-9e4da31ae684',
-            'uluru_user': 'loXtak8tEi4EnYq58mxYYA%3D%3D',
+            'XSRF-TOKEN': '1428b2677cf1bcbfdb2e5a2309573eb1d13812d255b8593e68325195cd52013c',
             '_ga': 'GA1.2.1636345834.1513403984',
-            '_gid': 'GA1.2.574324827.1520412993'
+            '_gat': '1',
+            '_gid': 'GA1.2.1820349074.1522845238',
+            'gr_session_id_a268202b003f2516': '614820a6-305a-4e68-bcc3-6d001611b293',
+            'gr_user_id': '1b56188c-6bbe-490d-9c40-9e4da31ae684',
+            'uluru_user': 'wR3SaGf%2Be%2FAOs9ubX2F%2F4g%3D%3D',
+
+
         }
         self.limit = 150
 
     def handle(self):
-        app_id = self.android_yz
+        app_id = self.appstore_ios_yz
         init_start_date = '20180205'
-        os = self.android
+        os = self.ios
         title = os + '埋点数据按照周统计'
         event_list = list()
         total_map = dict()
@@ -38,7 +41,7 @@ class TjMd:
         start_date = datetime.datetime.strptime(init_start_date, '%Y%m%d')
         end_date = start_date + datetime.timedelta(days=6)
 
-        for index in range(1, 6):
+        for index in range(1, 10):
             total_map[index] = dict()
             items = self.get_data(app_id, start_date.strftime('%Y%m%d'), end_date.strftime('%Y%m%d'), os)
 
@@ -60,11 +63,15 @@ class TjMd:
         sheet.cell(row=1, column=4, value='第3周(20180219~20180225)')
         sheet.cell(row=1, column=5, value='第4周(20180226~20180304)')
         sheet.cell(row=1, column=6, value='第5周(20180305~20180311)')
+        sheet.cell(row=1, column=7, value='第6周(20180312~20180318)')
+        sheet.cell(row=1, column=8, value='第6周(20180319~20180325)')
+        sheet.cell(row=1, column=9, value='第6周(20180326~20180401)')
+        sheet.cell(row=1, column=10, value='第6周(20180402~20180404)')
 
         for row in range(2, len(event_list) + 2):
             sheet.cell(row=row, column=1, value=event_list[row - 2])
 
-        for index in range(1, 6):
+        for index in range(1, 10):
             for event_index in range(0, len(event_list)):
                 if event_list[event_index] in total_map[index]:
                     sheet.cell(row=event_index + 2, column=index + 1, value=total_map[index][event_list[event_index]])
