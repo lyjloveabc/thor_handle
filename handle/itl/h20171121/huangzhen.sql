@@ -75,7 +75,7 @@ SET passwd = 'e10adc3949ba59abbe56e057f20f883e';
 
 
 UPDATE permission
-SET function_url = 'http://preeye.itianluo.cn/#/login'
+SET function_url = 'http://preeye.itianluo.cn/#/login?1=1'
 WHERE id = 2739;
 
 COMMIT;
