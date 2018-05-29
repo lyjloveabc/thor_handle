@@ -27,15 +27,15 @@ class Work:
         post_thing = 'POST_THING'
         post_thing_search_param = {
             'postThingListFrom': 'POST_CENTER',
-            'launchEndTime': '2017-05-11',
-            'content': 'Op',
-            'returnVisitStatus': 'NEED_TO',
-            'postThingStatus': '1',
-            'returnVisitResult': 'HIGH',
-            'followIdStr': '1750',
-            'launchStartTime': '2016-05-11',
-            'launchUserIdStr': '312',
-            'isUrgent': '0',
+            # 'launchEndTime': '2017-05-11',
+            # 'content': 'Op',
+            # 'returnVisitStatus': 'NEED_TO',
+            # 'postThingStatus': '1',
+            # 'returnVisitResult': 'HIGH',
+            # 'followIdStr': '1750',
+            # 'launchStartTime': '2016-05-11',
+            # 'launchUserIdStr': '312',
+            # 'isUrgent': '0',
         }
 
         complain = 'COMPLAIN'
@@ -52,18 +52,19 @@ class Work:
         repair = 'REPAIR'
         repair_search_param = {
             'repairListFrom': 'REPAIR_CENTER',
-            'repairType': 200,
+            'returnVisitStatus': 'NEED_TO',
         }
 
         rv = 'RETURN_VISIT'
         rv_search_param = {
             # 'returnVisitType': 'POST_THING'
-            'returnVisitStatus': 'NEED_TO',
+            # 'returnVisitStatus': 'NEED_TO',
             # 'returnVisitType': 'POST_THING'
+            'ownerHouseInfoId': '3139'
         }
 
-        work_type = rv
-        search_param = rv_search_param
+        work_type = post_thing
+        search_param = post_thing_search_param
 
         param = {
             # 'app': 'GJ',

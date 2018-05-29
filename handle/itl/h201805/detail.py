@@ -27,3 +27,6 @@ if __name__ == '__main__':
 
 
 #http://127.0.0.1:8001/work/workDetail.do?app=GJ&client=iPhone&version=1.6.6&outerType=STAFF&token=77f56c02a13b828aa80769cf495cf0fc&userId=35&zoneId=1&detailType=COMPALIN&detailId=1630
+
+
+http://127.0.0.1:8001/work/workDetail.do?app=GJ&client=iPhone&version=1.6.6&outerType=STAFF&token=77f56c02a13b828aa80769cf495cf0fc&userId=35&zoneId=1&detailType=POST_THING&detailId=2285
