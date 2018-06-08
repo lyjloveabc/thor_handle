@@ -58,13 +58,13 @@ class Work:
         rv = 'RETURN_VISIT'
         rv_search_param = {
             # 'returnVisitType': 'POST_THING'
-            # 'returnVisitStatus': 'NEED_TO',
+            'returnVisitStatus': 'NEED_TO',
             # 'returnVisitType': 'POST_THING'
-            'ownerHouseInfoId': '3139'
+            # 'ownerHouseInfoId': '3139'
         }
 
-        work_type = post_thing
-        search_param = post_thing_search_param
+        work_type = rv
+        search_param = rv_search_param
 
         param = {
             # 'app': 'GJ',
