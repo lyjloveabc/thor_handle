@@ -10,7 +10,7 @@ class Dododo:
 
         # self.ENV_IP = '127.0.0.1:8001'
         self.ENV_IP = 'prenewcloud.itianluo.cn'
-        self.url = 'http://{ENV_IP}/usedInLua/batchCreateEnergyBill?periodId=394&operatorId=431' \
+        self.url = 'http://{ENV_IP}/usedInLua/batchCreateEnergyBill?periodId=381&operatorId=431' \
             .format(ENV_IP=self.ENV_IP)
 
     def handle(self):
