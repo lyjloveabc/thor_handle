@@ -1,5 +1,6 @@
 from PIL import Image
 
+# ascii_char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
 ascii_char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
 
 
@@ -17,7 +18,7 @@ def get_char(r, g, b, alpha=256):
 if __name__ == '__main__':
     WIDTH = 120
     HEIGHT = 80
-    im = Image.open('file/2B973C0B-09C7-4C1F-84B2-CFF83C2B9F52.png')
+    im = Image.open('file/BO.jpeg')
     im = im.resize((WIDTH, HEIGHT), Image.NEAREST)
 
     txt = ""
@@ -32,4 +33,3 @@ if __name__ == '__main__':
     # 字符画输出到文件
     with open("output.txt", 'w') as f:
         f.write(txt)
-
