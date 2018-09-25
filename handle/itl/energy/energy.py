@@ -5,7 +5,7 @@ from utils.file.excel.readUtil import ReadUtil
 sql = 'INSERT INTO itl_energy_table(gmt_create, gmt_modified, zone_id, energy_table_kind, is_stopped,' \
       'name, type, estate, estate_id, estate_name, base, creator_id, last, last_time, last_person) VALUES ' \
       '(now(), now(), "{zone_id}", "{energy_table_kind}", 0, "{name}", "{type}", "{estate}", ' \
-      '"{estate_id}", "{estate_name}", "{base}", "{creator_id}", NULL, NULL, NULL);'
+      '"{estate_id}", "{estate_name}", "{base}", "{creator_id}", "{last}", now(), "{last_person}");'
 
 # 表类型：ELECTRIC-电表、WATER-水表
 kind = {
@@ -28,7 +28,7 @@ with open(house_file, 'r') as f:
     for row in f.readlines():
         row = row.replace('\n', '')
         data = row.split(',')
-        house[int(data[0])] = str(data[1]) + '幢' + str(data[2]) + '单元' + str(data[1]) + '室'
+        house[int(data[0])] = str(data[1]) + '幢' + str(data[2]) + '单元' + str(data[3]) + '室'
 
 # 店铺数据
 shop = dict()
@@ -68,7 +68,7 @@ with open('out.sql', 'w') as f:
         f.write(
             sql.format(
                 zone_id=row['zone'], energy_table_kind=energy_table_kind, name=name, type='PRIVATE', estate=estate[row['type']], estate_id=row['house'],
-                estate_name=name, base=row['base'], creator_id=399
+                estate_name=name, base=row['base'], creator_id=399, last=row['base'], last_person=399
             ) + '\n'
         )
     f.write(Constant.SQL_COMMIT + '\n')
