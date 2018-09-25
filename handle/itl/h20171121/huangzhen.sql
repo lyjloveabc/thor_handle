@@ -92,7 +92,7 @@ SET `id` = '159', `zone_id` = '76', `module` = '21', `name` = '审批', `url` = 
 WHERE (`id` = '159');
 UPDATE `itianluo`.`zone_module`
 SET `id` = '112', `zone_id` = '24', `module` = '17', `name` = '收支公开', `url` = 'http://preuser.itianluo.cn/html5?id=126',
-  `icon` = 'http://itianluo-apiupload.oss-cn-hangzhou.aliyuncs.com/itl/test/p/c8befafd-64df-4c2b-87c1-cb5b3fc97712.png', `status` = '1', `sort_by` = '5'
+  `icon` = 'http://itianluenergyo-apiupload.oss-cn-hangzhou.aliyuncs.com/itl/test/p/c8befafd-64df-4c2b-87c1-cb5b3fc97712.png', `status` = '1', `sort_by` = '5'
 WHERE (`id` = '112');
 UPDATE `itianluo`.`zone_module`
 SET `id` = '201', `zone_id` = '76', `module` = '18', `name` = '小区文件', `url` = 'http://preuser.itianluo.cn/html5?id=432',

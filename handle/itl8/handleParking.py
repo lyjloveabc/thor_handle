@@ -28,7 +28,7 @@ spIdListStr = list()
 for sp in spIdList:
     spIdListStr.append(str(sp))
 spIds = ",".join(spIdListStr)
-url = "http://prenewcloud.itianluo.cn/external/cb?token=d43b24c4a103464c887605727a6c2031&parkingId={parkingId}&subscriptionId={subscriptionId}&spIdStr={spIdStr}&operatorId=431"
+url = "http://newcloud.itianluo.cn/external/cb?token=d43b24c4a103464c887605727a6c2031&parkingId={parkingId}&subscriptionId={subscriptionId}&spIdStr={spIdStr}&operatorId=431"
 with open('车位id.txt', 'r') as f:
     for row in f.readlines():
         parkingId = row.replace('\n', '')
