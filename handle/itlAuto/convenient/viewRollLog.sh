@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Created by Thor on 2018-09-30
 
-MAIN_PATH=/root/zSky
+MAIN_PATH=/home/lufei/lyj
 
 case "$1" in
     "m")
