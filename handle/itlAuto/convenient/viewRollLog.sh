@@ -55,7 +55,7 @@ esac
 
 # [viewRollLog.sh]这个文件一般在Java服务的主目录，即线上在/home/lyj、预发布在/root/zSky、测试在/home/lufei/lyj
 
-# 启动方式不变，还是在那些脚本运行就行了。
+# Java系统的启动方式不变，还是运行那些脚本就行了。
 
 # 所有环境都已经更新、优化完毕。
 
