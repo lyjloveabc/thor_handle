@@ -136,6 +136,7 @@ class Email:
 if __name__ == '__main__':
     base = {
         'local': '/Users/luoyanjie/IdeaProjects/',
+        'test': '/Users/luoyanjie/IdeaProjects/',
         'stable': '/root/zSky/',
         'prod': '/home/lyj/'
     }
@@ -149,5 +150,18 @@ if __name__ == '__main__':
                    'auth-web',
                    'cloud-web',
                    'eye-web',
-                   'operation-web'
+                   'operation-web',
+                   'publicnum-web',
+               ])
+
+    # 兼容以前，到时候可以直接删除下面这个调用
+    obj.handle(base[do_env] + 'logs/cloud-logs/',
+               [
+                   'admin-web',
+                   'auth',
+                   'auth-web',
+                   'cloud-web',
+                   'eye-web',
+                   'operation-web',
+                   'publicnum-web',
                ])
