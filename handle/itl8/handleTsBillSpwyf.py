@@ -18,7 +18,7 @@ INSERT INTO bill (id,
                   is_checked,
                   financial_income,
                   sub_period_id)
-VALUES ({b_id}, '{p_name}', now(), now(), "{gmt_start}"," {gmt_end}", {ought_amount}, 40, 'retailProperty', 28, 0, 'NO_PAY', '{pre} 商铺物业费 {title}', 76, 1, {financial_income}, {p_id});
+VALUES ({b_id}, '{p_name}', now(), now(), "{gmt_start}"," {gmt_end}", {ought_amount}, 40, 'retailProperty', 28, 0, 'NO_PAY', '{pre} {title}', 76, 1, {financial_income}, {p_id});
 INSERT INTO itl_business_bill (id, created_time, modified_time, zone_id, business_id, bill_id, type, last_operator)
 VALUES ({biz_id}, now(), now(), 76, {s_id}, {b_id}, 'STORE', 999999999);
 """
