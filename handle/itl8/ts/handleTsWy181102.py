@@ -7,6 +7,13 @@
 select
 id, period_name, date_format(period_start, '%Y-%m-%d'), date_format(period_end, '%Y-%m-%d')
 from subscription_period where zone_id = 76 and product_id = 43;
+
+select id, house, building, door from house_info
+where
+(house = 15 and building = 47 and door = 209)
+or (house = 15 and building = 47 and door = 210)
+or (house = 39 and building = 114 and door = 210)
+or (house = 39 and building = 116 and door = 205);
 """
 
 from utils.file.excel.readUtil import ReadUtil
