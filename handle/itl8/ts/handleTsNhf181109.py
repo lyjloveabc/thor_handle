@@ -31,7 +31,7 @@ INSERT INTO bill (id,
                   financial_income,
                   sub_period_id)
 VALUES 
-({b_id}, '{p_name}', now(), now(), "{start}"," {end}", {house_info_id}, {ought_amount}, 44, 'residencePublicMaintenance', 38, NULL, 'NO_PAY', '{title}', 76, {is_checked}, {financial_income}, {p_id});
+({b_id}, '{p_name}', now(), now(), "{start}"," {end}", {house_info_id}, {ought_amount}, 95, 'HOUSING_ENERGY_COST', 47, NULL, 'NO_PAY', '{title}', 76, {is_checked}, {financial_income}, {p_id});
 """
 
 data = ReadUtil.read_file(
