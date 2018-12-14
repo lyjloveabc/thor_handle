@@ -31,26 +31,26 @@ class MySQLConfig:
     @staticmethod
     def inner():
         config = MySQLConfig.__common_config()
-        config['host'] = '192.168.25.40'
-        config['user'] = 'itianluo'
-        config['password'] = '^2807@AIjiaTianluo!1501$'
-        config['db'] = 'itianluo'
+        config['host'] = ''
+        config['user'] = ''
+        config['password'] = ''
+        config['db'] = ''
         return config
 
     @staticmethod
     def stable():
         config = MySQLConfig.__common_config()
         config['host'] = 'localhost'
-        config['user'] = 'itianluo'
-        config['password'] = 'Aijia1501$'
-        config['db'] = 'itianluo'
+        config['user'] = ''
+        config['password'] = ''
+        config['db'] = ''
         return config
 
     @staticmethod
     def stable_from_outer():
         config = MySQLConfig.__common_config()
-        config['host'] = '106.15.201.198'
-        config['user'] = 'itianluo'
-        config['password'] = 'Aijia1501$'
-        config['db'] = 'itianluo'
+        config['host'] = ''
+        config['user'] = ''
+        config['password'] = ''
+        config['db'] = ''
         return config
