@@ -8,7 +8,7 @@ from utils.file.excel.readUtil import ReadUtil
 
 # 改造战斗感金额的sql
 sql = 'UPDATE bill ' \
-      'SET title = {title}, ought_amount = {ought_amount}, gmt_modify = now(), remark="手动处理", financial_income = {financial_income} ' \
+      'SET title = "{title}", ought_amount = {ought_amount}, gmt_modify = now(), remark="手动处理", financial_income = {financial_income} ' \
       'WHERE zone_id = 24 AND sub_period_id = {sub_period_id} AND house_info_id = {house_info_id};'
 
 # 原始数据
