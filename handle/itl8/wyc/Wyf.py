@@ -3,6 +3,8 @@ select id, house, building, door from house_info where zone_id = 24;
 
 select id, period_start from subscription_period
 where zone_id = 24 and product_id = 24 and id > 161;
+
+scp -P 22 /Users/luoyanjie/PycharmProjects/thor_handle/handle/itl8/wyc/toExe.sql root@106.15.201.198:/root/zSky
 """
 from utils.file.excel.readUtil import ReadUtil
 
