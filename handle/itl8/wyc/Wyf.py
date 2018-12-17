@@ -24,18 +24,17 @@ with open('wycHouse.txt', 'r') as f:
 
 # 账单对应账期
 bill_period = {
-    '2019-01-01': '物业费+车位管理费2019年1月-3月',
-    '2019-04-01': '物业费+车位管理费2019年4月-6月',
-    '2019-07-01': '物业费+车位管理费2019年7月-9月',
-    '2019-10-01': '物业费+车位管理费2019年10月-12月'
+    '01/01/2019': '物业费+车位管理费2019年1月-3月',
+    '04/01/2019': '物业费+车位管理费2019年4月-6月',
+    '07/01/2019': '物业费+车位管理费2019年7月-9月',
+    '10/01/2019': '物业费+车位管理费2019年10月-12月'
 }
 # 万源城物业费的账期
 sub_period = dict()
 with open('wycSubPeriod.txt', 'r') as f:
     for row in f.readlines():
-        hd = row.replace('\n', '').split(',')
-        key = bill_period[row[1]]
-        sub_period[key] = row[0]
+        sb = row.replace('\n', '').split(',')
+        sub_period[bill_period[sb[1]]] = sb[0]
 
 for row in data:
     print(
