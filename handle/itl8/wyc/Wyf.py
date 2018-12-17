@@ -40,10 +40,9 @@ for row in data:
     print(
         sql.format(
             title=row['title'],
-            ought_amount=row['ought_amount'],
-            financial_income=row['financial_income'],
+            ought_amount=row['ought_amount'] if row['ought_amount'] != '' else 0,
+            financial_income=row['financial_income'] if row['financial_income'] != '' else 0,
             sub_period_id=sub_period[row['title']],
             house_info_id=house_info[row['house_name']]
         )
     )
-
