@@ -9,13 +9,15 @@ case "$1" in
         echo "      "
         echo "****************** welcome view log ******************"
         echo "      "
-        echo "./viewRollLog.sh   不带参数或带1个参数都是有效的"
-        echo "m -> menu          打印菜单"
-        echo "a -> admin         查看物业后台系统的日志"
-        echo "c -> cloud         查看app支撑服务的日志"
-        echo "e -> eye           查看天眼后台系统的日志"
-        echo "o -> operation     查看小二后台系统的日志"
-        echo "  -> cloud         不输入任何参数则查看app支撑服务的日志"
+        echo "./viewRollLog.sh    不带参数或带1个参数都是有效的"
+        echo "m -> menu           打印菜单"
+        echo "a -> admin          查看物业后台系统的日志"
+        echo "c -> cloud          查看app支撑服务的日志"
+        echo "e -> eye            查看天眼后台系统的日志"
+        echo "o -> operation      查看小二后台系统的日志"
+        echo "p -> pushService    查看推送服务的日志"
+        echo "y -> publicnum-web  查看推送服务的日志"
+        echo "  -> cloud          不输入任何参数则查看app支撑服务的日志"
         echo "      "
         echo "****************** ^_^ happy coding ******************"
         echo "      "
@@ -33,11 +35,17 @@ case "$1" in
     "o")
         tail -f ${MAIN_PATH}/logs/operation-web/roll.log
         ;;
+    "y")
+        tail -f ${MAIN_PATH}/logs/publicnum-web/roll.log
+        ;;
+    "p")
+        tail -f ${MAIN_PATH}/logs/pushService/roll.log
+        ;;
     "")
         tail -f ${MAIN_PATH}/logs/cloud-web/roll.log
         ;;
     *)
-        tail -f ${MAIN_PATH}/logs/$1-web/roll.log
+        tail -f ${MAIN_PATH}/logs/$1/roll.log
         ;;
 esac
 
