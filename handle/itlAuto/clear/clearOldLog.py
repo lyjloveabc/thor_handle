@@ -152,6 +152,7 @@ if __name__ == '__main__':
                    'eye-web',
                    'operation-web',
                    'publicnum-web',
+                   'pushService',
                ])
 
     # 兼容以前，到时候可以直接删除下面这个调用
@@ -164,4 +165,5 @@ if __name__ == '__main__':
                    'eye-web',
                    'operation-web',
                    'publicnum-web',
+                   'pushService',
                ])
