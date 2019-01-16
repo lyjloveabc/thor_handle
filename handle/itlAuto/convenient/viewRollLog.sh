@@ -16,7 +16,7 @@ case "$1" in
         echo "e -> eye            查看天眼后台系统的日志"
         echo "o -> operation      查看小二后台系统的日志"
         echo "p -> pushService    查看推送服务的日志"
-        echo "y -> publicnum-web  查看推送服务的日志"
+        echo "y -> publicnum-web  查看业委会系统的日志"
         echo "  -> cloud          不输入任何参数则查看app支撑服务的日志"
         echo "      "
         echo "****************** ^_^ happy coding ******************"
