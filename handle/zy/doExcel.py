@@ -1,7 +1,5 @@
 import os
-
 sql = 'INSERT INTO itl_car_info(gmt_create, gmt_modified, name, house_info_id) VALUES (now(), now(), \'{name}\', \'{h_id}\');'
-
 h_m = dict()  # 原始的房号数据
 need = list()  # 读进来的数据
 ok_data = list()  # 处理后OK的数据
@@ -16,7 +14,6 @@ with open('house_2.txt', 'r') as f:
     for row in f.readlines():
         d_a = row.replace('\n', '').split(',')
         h_m[str(d_a[1])] = d_a[0]
-
 with open('lyj.txt', 'r') as f:
     for row in f.readlines():
         row = row.replace('\n', '')
@@ -40,7 +37,6 @@ for row in need:
 with open('out/ok.txt', 'a') as ok_f:
     for row in ok_data:
         ok_f.write(str(row) + '\n')
-
 with open('out/error.txt', 'a') as error_f:
     for row in error_data:
         error_f.write(str(row))
