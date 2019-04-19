@@ -1,0 +1,3 @@
+
+select * from product_type
+where code not in (select product_type_code from itl_payment_sub)
