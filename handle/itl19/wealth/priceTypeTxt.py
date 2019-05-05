@@ -1,14 +1,14 @@
-sql_house = 'UPDATE house_info SET price_type_name = "{price_type_name}" WHERE zone_id = {zone_id} AND id = {id};'
-sql_store = 'UPDATE itl_store SET price_type_name = "{price_type_name}" WHERE zone_id = {zone_id} AND id = {id};'
-sql_parking = 'UPDATE itl_parking SET price_type_name = "{price_type_name}" WHERE zone_id = {zone_id} AND id = {id};'
+sql_house = 'UPDATE house_info SET price_type_name = "{price_type_name}" WHERE  id = {id};'
+sql_store = 'UPDATE itl_store SET price_type_name = "{price_type_name}" WHERE  id = {id};'
+sql_parking = 'UPDATE itl_parking SET price_type_name = "{price_type_name}" WHERE  id = {id};'
 
-file_name = 'file/住宅单价类型订正.csv'
+file_name = 'file/商铺单价类型订正.txt'
 
 data = list()
 with open(file_name, 'r') as f:
     for row in f.readlines():
         row = row.replace('\n', '')
-        arr = row.split(',')
+        arr = row.split('	')
         data.append({
             'id': arr[0],
             'zone_id': arr[1],
@@ -21,9 +21,9 @@ need = list()
 
 for row in data:
     need.append(
-        sql_house.format(price_type_name=row['price_type'], zone_id=row['zone_id'], id=row['id'])
+        sql_store.format(price_type_name=row['price_type'], id=row['id'])
     )
 
-with open(file_name.replace('.', '_' + '_out.txt'), 'a') as f:
+with open(file_name.replace('.', '_') + '_out.txt', 'a') as f:
     for row in need:
         f.write(row + '\n')

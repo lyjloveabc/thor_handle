@@ -16,6 +16,6 @@ for row in data:
         sql_house.format(price_type_name=row['price_type'], zone_id=row['zone_id'], id=row['id'])
     )
 
-with open(file_name.replace('.', '_' + '_out.txt'), 'a') as f:
+with open(file_name.replace('.', '_') + '_out.txt', 'a') as f:
     for row in need:
         f.write(row + '\n')
