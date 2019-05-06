@@ -53,8 +53,8 @@ class Wb:
                             `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id`) 
                             SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
-                            `start_day`, `end_day`, {hang_up_bill_amount}, 0, 0, 0, 
-                            {hang_up_bill_amount}, `estate_type`, `estate_id`, '111', '111', '111', 
+                            `start_day`, `end_day`, {ought_amount}, 0, 0, 0, 
+                            {ought_amount}, `estate_type`, `estate_id`, '111', '111', '111', 
                             '111', `zone_subject_id` FROM itl_finance_bill WHERE id = {id};
                              """
         self.sql_insert_3_2 = """
@@ -83,11 +83,11 @@ class Wb:
 
     def handle(self, path):
         for row in self.source_bill:
-            many_time = list()
-            update = list()
-            insert = list()
-
             if row['id'] in self.mapping_keys:
+                many_time = list()
+                update = list()
+                insert = list()
+
                 if row['ought_amount'] == (row['real_amount'] + row['discount_money']):
                     many_time.append(1)
                     update.append(
@@ -127,7 +127,7 @@ class Wb:
                     )
                     insert.append(
                         self.sql_insert_3_1.format(
-                            hang_up_bill_amount=row['hang_up_bill_amount'],
+                            ought_amount=row['hang_up_bill_amount'],
                             id=self.mapping[row['id']]['new_id']
                         )
                     )
