@@ -1,3 +1,4 @@
+import os
 from decimal import *
 
 
@@ -20,23 +21,33 @@ class Wb:
                             UPDATE itl_finance_bill SET ought_amount = {ought_amount}, 
                             real_amount = {real_amount}, discount_amount = {discount_amount},
                             round_amount = 0, owe_amount = 0,
-                            debtor_card_type = '111',
-                            debtor_card_no = '111',
-                            debtor_name = '111',
-                            debtor_mobile = '111'
+                            debtor_card_type = '手动处理',
+                            debtor_card_no = '手动处理',
+                            debtor_name = '手动处理',
+                            debtor_mobile = '手动处理'
                             WHERE id = {id};
                             """
         self.sql_update_4 = """
                             UPDATE itl_finance_bill SET ought_amount = {ought_amount}, 
                             real_amount = 0, discount_amount = 0,
                             round_amount = 0, owe_amount = {ought_amount},
-                            debtor_card_type = '111',
-                            debtor_card_no = '111',
-                            debtor_name = '111',
-                            debtor_mobile = '111'
+                            debtor_card_type = '手动处理',
+                            debtor_card_no = '手动处理',
+                            debtor_name = '手动处理',
+                            debtor_mobile = '手动处理'
                             WHERE id = {id};
                             """
-        self.sql_update_5 = "UPDATE itl_finance_bill SET debtor_card_type = '111', debtor_card_no = '111', debtor_name = '111', debtor_mobile = '111' WHERE id = {id};"
+        self.sql_update_5 = "UPDATE itl_finance_bill SET debtor_card_type = '手动处理', debtor_card_no = '手动处理', debtor_name = '手动处理', debtor_mobile = '手动处理' WHERE id = {id};"
+        self.sql_update_6 = """
+                            UPDATE itl_finance_bill SET 
+                            real_amount = {real_amount}, discount_amount = 0,
+                            round_amount = 0, owe_amount = 0,
+                            debtor_card_type = '手动处理',
+                            debtor_card_no = '手动处理',
+                            debtor_name = '手动处理',
+                            debtor_mobile = '手动处理'
+                            WHERE id = {id};
+                            """
 
         self.sql_insert_2 = """
                             INSERT INTO `itl_finance_bill` 
@@ -57,8 +68,8 @@ class Wb:
                             `debtor_mobile`, `zone_subject_id`) 
                             SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, {ought_amount}, 0, 0, 0, 
-                            {ought_amount}, `estate_type`, `estate_id`, '111', '111', '111', 
-                            '111', `zone_subject_id` FROM itl_finance_bill WHERE id = {id};
+                            {ought_amount}, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = {id};
                              """
         self.sql_insert_3_2 = """
                                 INSERT INTO `itl_finance_bill` 
@@ -123,7 +134,7 @@ class Wb:
 
                 if row['hang_up_bill_amount'] > 0 \
                         and (row['real_amount'] + row['discount_money']) > 0 \
-                        and row['ought_amount'] > (row['hang_up_bill_amount'] + row['real_amount'] + row['discount_money']):
+                        and row['ought_amount'] >= (row['hang_up_bill_amount'] + row['real_amount'] + row['discount_money']):
                     many_time.append(3)
                     update.append(
                         self.sql_update_3.format(
@@ -139,12 +150,13 @@ class Wb:
                             id=self.mapping[row['id']]['new_id']
                         )
                     )
-                    insert.append(
-                        self.sql_insert_3_2.format(
-                            ought_amount=self.mapping[row['id']]['new_ought'] - (row['real_amount'] + row['discount_money'] + row['hang_up_bill_amount']),
-                            id=self.mapping[row['id']]['new_id']
+                    if row['ought_amount'] > (row['hang_up_bill_amount'] + row['real_amount'] + row['discount_money']):
+                        insert.append(
+                            self.sql_insert_3_2.format(
+                                ought_amount=self.mapping[row['id']]['new_ought'] - (row['real_amount'] + row['discount_money'] + row['hang_up_bill_amount']),
+                                id=self.mapping[row['id']]['new_id']
+                            )
                         )
-                    )
 
                 if (row['real_amount'] + row['discount_money']) == 0 and row['ought_amount'] > row['hang_up_bill_amount'] > 0:
                     many_time.append(4)
@@ -165,6 +177,15 @@ class Wb:
                     many_time.append(5)
                     update.append(
                         self.sql_update_5.format(
+                            id=self.mapping[row['id']]['new_id']
+                        )
+                    )
+
+                if row['hang_up_bill_amount'] == 0 and row['ought_amount'] < (row['hang_up_bill_amount'] + row['real_amount'] + row['discount_money']):
+                    many_time.append(6)
+                    update.append(
+                        self.sql_update_6.format(
+                            real_amount=row['ought_amount'],
                             id=self.mapping[row['id']]['new_id']
                         )
                     )
@@ -217,6 +238,9 @@ class Wb:
         return mapping
 
     def out_sql(self, path):
+        # if os.path.exists(my_file):
+        #     # 删除文件，可使用以下两种方法。
+        #     os.remove(my_file)
         with open(path + '老的账单没有在新的里面' + '.txt', 'a') as f:
             for row in self.not_in_new_bill:
                 f.write(str(row) + '\n')

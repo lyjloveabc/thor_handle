@@ -252,6 +252,17 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 373200;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 50.5, 0, 0, 0, 
+                            50.5, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 287865;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -263,6 +274,17 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 373220;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 21.83, 0, 0, 0, 
+                            21.83, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 373222;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -273,6 +295,61 @@
                             15.52, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 373240;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 21.83, 0, 0, 0, 
+                            21.83, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 373242;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 21.83, 0, 0, 0, 
+                            21.83, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 373262;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 21.83, 0, 0, 0, 
+                            21.83, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 373282;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 21.83, 0, 0, 0, 
+                            21.83, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 373302;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 52.92, 0, 0, 0, 
+                            52.92, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 373322;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -340,6 +417,39 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 393236;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 13, 0, 0, 0, 
+                            13, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393313;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 13.5, 0, 0, 0, 
+                            13.5, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393318;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 21.03, 0, 0, 0, 
+                            21.03, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393385;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -361,6 +471,50 @@
                             31.88, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 393411;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 15.66, 0, 0, 0, 
+                            15.66, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393431;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 14.16, 0, 0, 0, 
+                            14.16, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393500;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 16.39, 0, 0, 0, 
+                            16.39, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393545;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 190.1, 0, 0, 0, 
+                            190.1, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393639;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -395,6 +549,17 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 393729;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 134.76, 0, 0, 0, 
+                            134.76, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393738;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -416,6 +581,17 @@
                             56.46, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 393748;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 102.63, 0, 0, 0, 
+                            102.63, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393749;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -472,6 +648,17 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 393897;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 13.65, 0, 0, 0, 
+                            13.65, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 393935;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -527,6 +714,50 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 394107;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 217.21, 0, 0, 0, 
+                            217.21, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394147;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 24.78, 0, 0, 0, 
+                            24.78, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394185;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 24.78, 0, 0, 0, 
+                            24.78, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394187;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 175.16, 0, 0, 0, 
+                            175.16, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394234;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -537,6 +768,17 @@
                             30.96, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 394255;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 17.65, 0, 0, 0, 
+                            17.65, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394343;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -559,6 +801,28 @@
                             24.85, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 394436;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 25.26, 0, 0, 0, 
+                            25.26, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394456;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 31.53, 0, 0, 0, 
+                            31.53, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394491;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -611,8 +875,8 @@
                             `debtor_mobile`, `zone_subject_id`) 
                             SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, 16.71, 0, 0, 0, 
-                            16.71, `estate_type`, `estate_id`, '111', '111', '111', 
-                            '111', `zone_subject_id` FROM itl_finance_bill WHERE id = 394662;
+                            16.71, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394662;
                              
 
                                 INSERT INTO `itl_finance_bill` 
@@ -627,6 +891,39 @@
                                 `zone_subject_id` FROM itl_finance_bill WHERE id = 394662;
                                 
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 216.71, 0, 0, 0, 
+                            216.71, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394663;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 31.22, 0, 0, 0, 
+                            31.22, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394671;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 15.78, 0, 0, 0, 
+                            15.78, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394732;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -638,6 +935,28 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 394761;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 121.59, 0, 0, 0, 
+                            121.59, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394774;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 197.55, 0, 0, 0, 
+                            197.55, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394823;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -648,6 +967,28 @@
                             16.07, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 394866;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 15, 0, 0, 0, 
+                            15, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394905;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 14.96, 0, 0, 0, 
+                            14.96, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 394961;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -670,6 +1011,17 @@
                             123.69, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 395011;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 26.38, 0, 0, 0, 
+                            26.38, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 395020;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -1265,6 +1617,83 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 169687;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 80.46, 0, 0, 0, 
+                            80.46, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 7365;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 80.46, 0, 0, 0, 
+                            80.46, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 8385;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 80.46, 0, 0, 0, 
+                            80.46, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 9405;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 80.46, 0, 0, 0, 
+                            80.46, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 10425;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 80.46, 0, 0, 0, 
+                            80.46, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 11445;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 80.46, 0, 0, 0, 
+                            80.46, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 12465;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 80.46, 0, 0, 0, 
+                            80.46, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 13485;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -1759,6 +2188,17 @@
                             28.12, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 45890;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 26.67, 0, 0, 0, 
+                            26.67, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 45912;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -7568,6 +8008,28 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 347894;
                             
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 169.72, 0, 0, 0, 
+                            169.72, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 347916;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 98.85, 0, 0, 0, 
+                            98.85, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 347980;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -7589,6 +8051,17 @@
                             502.79, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 348075;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 0.06, 0, 0, 0, 
+                            0.06, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 348197;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -7909,6 +8382,72 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 362188;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 3, 0, 0, 0, 
+                            3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 362225;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 3, 0, 0, 0, 
+                            3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 362230;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 9.02, 0, 0, 0, 
+                            9.02, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 362297;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 3, 0, 0, 0, 
+                            3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 362343;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 3, 0, 0, 0, 
+                            3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 362412;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 3, 0, 0, 0, 
+                            3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 362457;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -7952,6 +8491,17 @@
                             3.00, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 362641;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 26.3, 0, 0, 0, 
+                            26.3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 362650;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -7997,6 +8547,50 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 363019;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 26.3, 0, 0, 0, 
+                            26.3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 363059;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 18.32, 0, 0, 0, 
+                            18.32, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 363097;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 19, 0, 0, 0, 
+                            19, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 363099;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 3, 0, 0, 0, 
+                            3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 363255;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -8007,6 +8601,39 @@
                             3.00, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 363284;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 26, 0, 0, 0, 
+                            26, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 363686;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 26.25, 0, 0, 0, 
+                            26.25, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 363735;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 3, 0, 0, 0, 
+                            3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 363873;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -8173,6 +8800,116 @@
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 53890;
                           
 
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 6.65, 0, 0, 0, 
+                            6.65, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 268560;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 30.59, 0, 0, 0, 
+                            30.59, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 268607;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 15.5, 0, 0, 0, 
+                            15.5, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 268686;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 26.66, 0, 0, 0, 
+                            26.66, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 269074;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 25.33, 0, 0, 0, 
+                            25.33, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 269141;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 25.33, 0, 0, 0, 
+                            25.33, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 269146;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 5.33, 0, 0, 0, 
+                            5.33, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 269177;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 21.33, 0, 0, 0, 
+                            21.33, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 269428;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 26.66, 0, 0, 0, 
+                            26.66, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 270926;
+                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 13.33, 0, 0, 0, 
+                            13.33, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 272181;
+                             
+
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
                             `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
@@ -8304,6 +9041,17 @@
                             63.24, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 233148;
                             
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 144.3, 0, 0, 0, 
+                            144.3, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 233230;
+                             
 
                             INSERT INTO `itl_finance_bill` 
                             (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
@@ -9129,3 +9877,14 @@
                             0.06, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
                             `debtor_mobile`, `zone_subject_id` FROM itl_finance_bill WHERE id = 203437;
                           
+
+                              INSERT INTO `itl_finance_bill` 
+                            (`gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, `ought_amount`, `real_amount`, `discount_amount`, `round_amount`, 
+                            `owe_amount`, `estate_type`, `estate_id`, `debtor_card_type`, `debtor_card_no`, `debtor_name`, 
+                            `debtor_mobile`, `zone_subject_id`) 
+                            SELECT `gmt_create`, `gmt_modified`, `zone_id`, `subject_id`, `bill_period_id`, 
+                            `start_day`, `end_day`, 13, 0, 0, 0, 
+                            13, `estate_type`, `estate_id`, '手动处理', '手动处理', '手动处理', 
+                            '手动处理', `zone_subject_id` FROM itl_finance_bill WHERE id = 424808;
+                             
