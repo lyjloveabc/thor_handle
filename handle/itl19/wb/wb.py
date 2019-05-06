@@ -240,8 +240,7 @@ class Wb:
     def out_sql(self, path):
         for root, dirs, files in os.walk(path):
             for name in files:
-                if name.endswith(".jpg"):
-                    os.remove(os.path.join(root, name))
+                os.remove(os.path.join(root, name))
 
         with open(path + '老的账单没有在新的里面' + '.txt', 'a') as f:
             for row in self.not_in_new_bill:
@@ -255,11 +254,11 @@ class Wb:
             for row in self.match_many:
                 f.write(str(row) + '\n')
 
-        with open(path + '最终需要更新的数据' + '.sql', 'a') as f:
+        with open(path + 'update' + '.sql', 'a') as f:
             for row in self.need_update:
                 f.write(row + '\n')
 
-        with open(path + '最终需要插入的数据' + '.sql', 'a') as f:
+        with open(path + 'insert' + '.sql', 'a') as f:
             for row in self.need_insert:
                 f.write(row + '\n')
 
