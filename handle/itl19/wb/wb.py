@@ -194,8 +194,10 @@ class Wb:
                     self.no_match.append(row)
                 elif len(many_time) == 1:
                     for u in update:
+                        # u += '=case=' + str(many_time[0]) + '=' + str(row['id'])
                         self.need_update.append(u)
                     for i in insert:
+                        # i += '=case=' + str(many_time[0]) + '=' + str(row['id'])
                         self.need_insert.append(i)
                 else:
                     row['case'] = str(many_time)
@@ -265,4 +267,5 @@ class Wb:
 
 if __name__ == '__main__':
     wb = Wb('file/source_bill.txt', 'file/mapping.txt')
+    # wb.handle('file_out_case/')
     wb.handle('file_out/')
