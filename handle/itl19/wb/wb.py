@@ -1,3 +1,6 @@
+from decimal import *
+
+
 class Wb:
     def __init__(self, source_bill_file, mapping_file):
         self.source_bill = Wb.read_source_bill(source_bill_file)  # 老的账单
@@ -87,6 +90,11 @@ class Wb:
                 many_time = list()
                 update = list()
                 insert = list()
+
+                if row['id'] == '1809':
+                    print(row['ought_amount'] == (row['real_amount'] + row['discount_money']))
+                    print(row['ought_amount'])
+                    print((row['real_amount'] + row['discount_money']))
 
                 if row['ought_amount'] == (row['real_amount'] + row['discount_money']):
                     many_time.append(1)
@@ -185,11 +193,11 @@ class Wb:
                 arr = row.split(',')
                 source_bill.append({
                     'id': arr[0],
-                    'discount_money': float(arr[1]),
-                    'financial_income': float(arr[2]),
-                    'hang_up_bill_amount': float(arr[3]),
-                    'ought_amount': float(arr[4]),
-                    'real_amount': float(arr[5]),
+                    'discount_money': Decimal(arr[1]),
+                    'financial_income': Decimal(arr[2]),
+                    'hang_up_bill_amount': Decimal(arr[3]),
+                    'ought_amount': Decimal(arr[4]),
+                    'real_amount': Decimal(arr[5]),
                 })
         print('老的bill数量：', len(source_bill))
         return source_bill
@@ -203,7 +211,7 @@ class Wb:
                 arr = row.split(',')
                 mapping[arr[0]] = {
                     'new_id': arr[1],
-                    'new_ought': float(arr[2])
+                    'new_ought': Decimal(arr[2])
                 }  # key是老bill
         print('老的对应新的数量：', len(mapping))
         return mapping
