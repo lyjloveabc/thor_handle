@@ -221,11 +221,11 @@ class Wb:
             for row in self.match_many:
                 f.write(str(row) + '\n')
 
-        with open(path + '最终需要更新的数据' + '.txt', 'a') as f:
+        with open(path + '最终需要更新的数据' + '.sql', 'a') as f:
             for row in self.need_update:
                 f.write(row + '\n')
 
-        with open(path + '最终需要插入的数据' + '.txt', 'a') as f:
+        with open(path + '最终需要插入的数据' + '.sql', 'a') as f:
             for row in self.need_insert:
                 f.write(row + '\n')
 
