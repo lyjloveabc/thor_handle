@@ -238,9 +238,11 @@ class Wb:
         return mapping
 
     def out_sql(self, path):
-        # if os.path.exists(my_file):
-        #     # 删除文件，可使用以下两种方法。
-        #     os.remove(my_file)
+        for root, dirs, files in os.walk(path):
+            for name in files:
+                if name.endswith(".jpg"):
+                    os.remove(os.path.join(root, name))
+
         with open(path + '老的账单没有在新的里面' + '.txt', 'a') as f:
             for row in self.not_in_new_bill:
                 f.write(str(row) + '\n')
