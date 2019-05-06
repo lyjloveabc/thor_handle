@@ -1,0 +1,12 @@
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 382;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 383;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 384;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 385;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 386;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 387;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 299;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 300;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 301;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 302;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 303;
+UPDATE itl_store SET price_type_name = "外围商铺" WHERE  id = 304;

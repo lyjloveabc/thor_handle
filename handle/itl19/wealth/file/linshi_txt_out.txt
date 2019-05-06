@@ -1,0 +1,12 @@
+UPDATE itl_store SET price_type_name = "5-11层" WHERE  id = 299;
+UPDATE itl_store SET price_type_name = "5-11层" WHERE  id = 300;
+UPDATE itl_store SET price_type_name = "5-11层" WHERE  id = 301;
+UPDATE itl_store SET price_type_name = "5-11层" WHERE  id = 302;
+UPDATE itl_store SET price_type_name = "1层" WHERE  id = 303;
+UPDATE itl_store SET price_type_name = "2-4层" WHERE  id = 304;
+UPDATE itl_store SET price_type_name = "12层及以上" WHERE  id = 382;
+UPDATE itl_store SET price_type_name = "12层及以上" WHERE  id = 383;
+UPDATE itl_store SET price_type_name = "12层及以上" WHERE  id = 384;
+UPDATE itl_store SET price_type_name = "" WHERE  id = 385;
+UPDATE itl_store SET price_type_name = "" WHERE  id = 386;
+UPDATE itl_store SET price_type_name = "" WHERE  id = 387;
