@@ -266,6 +266,6 @@ class Wb:
 
 
 if __name__ == '__main__':
-    wb = Wb('file/source_bill.txt', 'file/mapping.txt')
+    wb = Wb('file/source_bill.txt', 'file/mapping_shop.txt')
     # wb.handle('file_out_case/')
-    wb.handle('file_out/')
+    wb.handle('file_out_shop/')
