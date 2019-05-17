@@ -20,7 +20,7 @@ sql_update = 'UPDATE itl_finance_payment SET' \
              ' is_garbage = "{is_garbage}",' \
              ' number_condition = "{number_condition}"' \
              ' WHERE id ={id};'
-data = ReadUtil.read_file('file/要调账的数据（小罗要的格式）.xlsx', {
+data = ReadUtil.read_file('file/要调账的数据（小罗要的格式）_190517.xlsx', {
     'id': 0,
     'gmt_create': 1,
     'gmt_modified': 2,
