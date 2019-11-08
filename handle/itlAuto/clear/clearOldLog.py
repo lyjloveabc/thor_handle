@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG,
 
 
 class ClearOldLog:
-    __DAY = 4  # 日期阈值
+    __DAY = 1  # 日期阈值
     __MAIL_TO = ["546223592@qq.com", 'luoyanjie@itianluo.cn', 'huangzhen@itianluo.cn', '853467358@qq.com']  # 目标邮箱列表
 
     def __init__(self, env):
@@ -153,17 +153,19 @@ if __name__ == '__main__':
                    'operation-web',
                    'publicnum-web',
                    'pushService',
+                   'wealthService',
                ])
 
     # 兼容以前，到时候可以直接删除下面这个调用
-    obj.handle(base[do_env] + 'logs/cloud-logs/',
-               [
-                   'admin-web',
-                   'auth',
-                   'auth-web',
-                   'cloud-web',
-                   'eye-web',
-                   'operation-web',
-                   'publicnum-web',
-                   'pushService',
-               ])
+    # obj.handle(base[do_env] + 'logs/cloud-logs/',
+    #            [
+    #                'admin-web',
+    #                'auth',
+    #                'auth-web',
+    #                'cloud-web',
+    #                'eye-web',
+    #                'operation-web',
+    #                'publicnum-web',
+    #                'pushService',
+    #                'wealthService',
+    #            ])
