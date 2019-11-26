@@ -20,6 +20,7 @@ with open(file_name, 'r') as f:
                 'is_test': data[6],
             }
         )
+source_shop = source_shop[1: len(source_shop)]
 
 # baseshop 表处理
 baseshop_sql = "insert ignore into baseshop (code, name, province_code, city_code, region_code, place, is_test)" \
@@ -42,7 +43,7 @@ with open(out_baseshop, 'a') as f:
         ) + '\n')
 
 # authshop_new 表处理
-auth_sql = "insert into authshop_new (code) values ('{code}');"
+auth_sql = "insert ignore into authshop_new (code) values ('{code}');"
 out_auth = 'out_auth_' + file_name
 
 if os.path.exists(out_auth):
