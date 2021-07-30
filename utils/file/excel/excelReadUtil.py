@@ -19,11 +19,11 @@ class ExcelReadUtil:
         logger.info(self.__str__() + ' del')
 
     @staticmethod
-    def read_file(file_name, field_index_dict, first_row_flag=False):
+    def read_file(file_name, field_index_dict, first_row_flag=False, pre_index_sheet=None):
         result_list = list()
         data = xlrd.open_workbook(file_name)
 
-        for sheet in data.sheets():
+        for sheet in (data.sheets() if pre_index_sheet is None else data.sheets()[:pre_index_sheet]):
             rows = sheet.nrows
             if first_row_flag:
                 ran = range(rows)
