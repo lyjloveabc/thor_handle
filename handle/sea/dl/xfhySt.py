@@ -1,22 +1,22 @@
 # 处理日期
-day = '210801'
+day = '20210802'
 
 # 读取所有数据
 total = dict()  # 分组数据
 total_every = list()  # 所有数据
-with open('data{}/total.txt'.format(day), 'r', encoding="UTF-8-sig") as f:
-    for row in f.readlines():
+with open('data/沪深Ａ股{}.txt'.format(day), 'r') as f:
+    all_row = f.readlines()
+    for row in all_row[2: len(all_row) - 1]:
         row = row.replace('\n', '')
+        value_array = row.split('	')
+        xfhy = value_array[9]
 
-        if row == '':
-            continue
+        total_every.append(xfhy)
 
-        total_every.append(row)
-
-        if row in total:
-            total[row] = total[row] + 1
+        if xfhy in total:
+            total[xfhy] = total[xfhy] + 1
         else:
-            total[row] = 1
+            total[xfhy] = 1
 print('total: ', total)
 
 # 读取动量榜前排的数据
@@ -46,8 +46,8 @@ for k, v in total.items():
 print('res: ', res)
 
 # 输出结果
-with open('data{}/res.txt'.format(day), 'w', encoding="UTF-8-sig") as f:
+with open('res/res{}.txt'.format(day), 'w', encoding="UTF-8-sig") as f:
     f.truncate()
-    f.write('{0} {1} {2}\n'.format('细分行业', '动量分值', '个数占比'))
+    # f.write('{0} {1} {2}\n'.format('细分行业', '动量分值', '个数占比'))
     for row in sorted(res.items(), key=lambda kv: (kv[1]['score'], kv[0]), reverse=True):
         f.write('{0} {1} {2}\n'.format(row[0], row[1]['score'], row[1]['rate']))
