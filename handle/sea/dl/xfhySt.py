@@ -1,5 +1,6 @@
+# 读取动量榜前排的数据
 part = dict()
-with open('part.txt', 'r', encoding="UTF-8-sig") as f:
+with open('data210801/part.txt', 'r', encoding="UTF-8-sig") as f:
     for row in f.readlines():
         row = row.replace('\n', '')
 
@@ -7,30 +8,33 @@ with open('part.txt', 'r', encoding="UTF-8-sig") as f:
             part[row] = part[row] + 1
         else:
             part[row] = 1
-print(part)
+print('part: ', part)
 
-all = dict()
-with open('all.txt', 'r', encoding="UTF-8-sig") as f:
+# 读取所有数据
+total = dict()
+with open('data210801/total.txt', 'r', encoding="UTF-8-sig") as f:
     for row in f.readlines():
         row = row.replace('\n', '')
 
-        if row in all:
-            all[row] = all[row] + 1
+        if row in total:
+            total[row] = total[row] + 1
         else:
-            all[row] = 1
-print(all)
+            total[row] = 1
+print('total: ', total)
 
+# 计算板块的动量分值
 res = dict()
-for k, v in all.items():
-    print(part[k], all[k])
+for k, v in total.items():
     score = 0
     if k in part:
-        score = part[k] * part[k] / all[k]
+        score = part[k] * part[k] / total[k]
     else:
         score = 0
     res[k] = score
+print('res: ', res)
 
-print(res)
-
-for row in sorted(res.items(), key=lambda kv: (kv[1], kv[0]), reverse=True):
-    print(row[0], row[1])
+# 输出结果
+with open('data210801/res.txt', 'w', encoding="UTF-8-sig") as f:
+    f.truncate()
+    for row in sorted(res.items(), key=lambda kv: (kv[1], kv[0]), reverse=True):
+        f.write(row[0] + ':  ' + str(round(float(row[1]), 3)) + '\n')
