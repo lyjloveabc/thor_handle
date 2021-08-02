@@ -1,4 +1,4 @@
-from handle.sea import qqq
+from handle.sea.history import qqq
 from utils.file.excel.excelReadUtil import ExcelReadUtil
 
 ld = ExcelReadUtil.read_file(file_name='operate_log_all.xlsx',
