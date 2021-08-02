@@ -10,10 +10,13 @@ class XfhyDl:
         total_every = list()  # 所有数据
         with open('data/沪深Ａ股{}.txt'.format(day), 'r') as f:
             all_row = f.readlines()
-            for row in all_row[2: len(all_row) - 1]:
+            for row in all_row[2: len(all_row) - 2]:
                 row = row.replace('\n', '')
                 value_array = row.split('	')
                 xfhy = value_array[9]
+
+                if xfhy == '':
+                    continue
 
                 total_every.append(xfhy)
 
