@@ -39,15 +39,16 @@ for k, v in total.items():
     }
     if k in part:
         value = {
-            'rate': round(100 * part[k] / total[k], 4),
-            'score': round(part[k] * part[k] / total[k], 4),
+            'rate': part[k] / total[k],
+            'score': part[k] * part[k] / total[k],
         }
     res[k] = value
 print('res: ', res)
 
 # 输出结果
-with open('data{}/res.txt'.format(day), 'w', encoding="UTF-8-sig") as f:
+with open('data{}/res222.txt'.format(day), 'w', encoding="UTF-8-sig") as f:
     f.truncate()
-    f.write('{0} {1} {2}\n'.format('细分行业', '动量分值', '个数占比'))
+    f.write('{0} ================ {1} ================ {2}\n'.format('细分行业', '动量分值', '个数占比'))
     for row in sorted(res.items(), key=lambda kv: (kv[1]['score'], kv[0]), reverse=True):
-        f.write('{0} {1} {2}\n'.format(row[0], row[1]['score'], row[1]['rate']))
+        f.write('{0}                   {1}                   {2}\n'.format(row[0], round(row[1]['score'], 3), round(float(row[1]['rate']), 3)))
+        # f.write('{0}:  {1}  {2}\n'.format(row[0], str(round(float(), 3)), str(round(float(row[1]['rate']), 3))))
