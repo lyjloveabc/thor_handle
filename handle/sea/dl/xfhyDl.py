@@ -61,4 +61,4 @@ class XfhyDl:
 
 
 if __name__ == '__main__':
-    XfhyDl.handle('20210806')
+    XfhyDl.handle()
