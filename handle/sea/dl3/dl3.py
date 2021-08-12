@@ -1,10 +1,13 @@
 # 处理日期
 import os
 
+import openpyxl
+from openpyxl.styles import Font, colors, Alignment
+
 
 class Bkdl:
     @staticmethod
-    def handle(path='data', out='res/res.txt'):
+    def handle(path='data', out='res/res'):
         for root, dirs, files in os.walk(path):
             # root 表示当前正在访问的文件夹路径
             # dirs 表示该文件夹下的子目录名list
@@ -23,13 +26,16 @@ class Bkdl:
                 row_data = list()
                 row_data.append(row[0])
                 for temp_data in all_data[::-1]:
-                    row_data.append(temp_data[row[0]]['rank'])
+                    # row_data.append(temp_data[row[0]]['rank'])
+                    row_data.append(temp_data[row[0]])
                 res_data.append(row_data)
 
-            with open(out, 'w', encoding='utf-8-sig') as f:
-                for row in res_data:
-                    f.write(' '.join(str(i) for i in row))
-                    f.write('\n')
+            # with open(out + '.txt', 'w', encoding='utf-8-sig') as f:
+            #     for row in res_data:
+            #         f.write(' '.join(str(i) for i in row))
+            #         f.write('\n')
+
+            Bkdl.write_07_excel(out, res_data)
 
     @staticmethod
     def day_dl(file):
@@ -38,6 +44,7 @@ class Bkdl:
         :param file:
         :return: 字典，key是行业名称，value是占比和分值
         """
+
         # 读取所有数据
         all_gp = list()  # 所有股票数据
         total_group = dict()  # 细分行业分组数据
@@ -92,6 +99,29 @@ class Bkdl:
         print(file, 'day_dl_res: ', res)
 
         return res
+
+    @staticmethod
+    def write_07_excel(out, res_data):
+        wb = openpyxl.Workbook()
+
+        sheet = wb.active
+        sheet.title = 'TDX行业排名变化'
+
+        for i in range(0, len(res_data)):
+            for j in range(0, len(res_data[i])):
+                sheet.cell(row=i + 1, column=j + 1, value=str(res_data[i][j]['rank']) if j > 0 else str(res_data[i][j]))
+
+        sheet = wb.create_sheet(index=2, title='TDX行业分值变化')
+        for i in range(0, len(res_data)):
+            for j in range(0, len(res_data[i])):
+                sheet.cell(row=i + 1, column=j + 1, value=str(res_data[i][j]['score']) if j > 0 else str(res_data[i][j]))
+
+        sheet = wb.create_sheet(index=2, title='TDX行业占比变化')
+        for i in range(0, len(res_data)):
+            for j in range(0, len(res_data[i])):
+                sheet.cell(row=i + 1, column=j + 1, value=str(res_data[i][j]['rate']) if j > 0 else str(res_data[i][j]))
+
+        wb.save(out + '.xlsx')
 
 
 if __name__ == '__main__':
