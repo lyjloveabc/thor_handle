@@ -1,5 +1,4 @@
 # 处理日期
-import json
 import os
 
 
@@ -27,7 +26,7 @@ class Bkdl:
                     row_data.append(temp_data[row[0]]['rank'])
                 res_data.append(row_data)
 
-            with open(out, 'w') as f:
+            with open(out, 'w', encoding='utf-8-sig') as f:
                 for row in res_data:
                     f.write(' '.join(str(i) for i in row))
                     f.write('\n')
