@@ -5,7 +5,7 @@ import os
 
 class Bkdl:
     @staticmethod
-    def handle(path='data', out='res/res.txt'):
+    def handle(path='data', out='res/bk_res.txt'):
         for root, dirs, files in os.walk(path):
             # root 表示当前正在访问的文件夹路径
             # dirs 表示该文件夹下的子目录名list
